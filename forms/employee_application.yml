@@ -1,0 +1,436 @@
+position_applying_for:
+  '#type': textfield
+  '#title': 'Position applying for'
+  '#required': true
+personal_information:
+  '#type': fieldset
+  '#title': 'Personal information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle name'
+  social_security_number:
+    '#type': textfield
+    '#title': 'Social Security Number'
+    '#input_mask': 999-99-9999
+  driver_s_license_number:
+    '#type': textfield
+    '#title': 'Driver''s License Number'
+  state:
+    '#type': textfield
+    '#title': State
+contact_information:
+  '#type': fieldset
+  '#title': 'Contact information'
+  home_phone:
+    '#type': tel
+    '#title': 'Home phone'
+    '#required': true
+  cell_phone:
+    '#type': tel
+    '#title': 'Cell phone'
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+    '#required': true
+  current_address:
+    '#type': fieldset
+    '#title': 'Current Address'
+    address:
+      '#type': textfield
+      '#title': Address
+      '#required': true
+    city:
+      '#type': textfield
+      '#title': City
+      '#required': true
+    current_addr_state:
+      '#type': textfield
+      '#title': State
+      '#required': true
+    zip_code:
+      '#type': textfield
+      '#title': 'Zip code'
+      '#input_mask': '99999[-9999]'
+      '#required': true
+  permanent_address_if_different_from_above_:
+    '#type': fieldset
+    '#title': 'Permanent address (if different from above)'
+    perm_address:
+      '#type': textfield
+      '#title': Address
+    perm_city:
+      '#type': textfield
+      '#title': City
+    perm_state:
+      '#type': textfield
+      '#title': State
+    perm_zip_code:
+      '#type': textfield
+      '#title': 'Zip code'
+      '#input_mask': '99999[-9999]'
+background_information:
+  '#type': fieldset
+  '#title': 'Background information'
+  i_am_an_u_s_citizen_or_otherwise_authorized_to_work_in_the_unite:
+    '#type': radios
+    '#title': 'I am an U.S. Citizen or otherwise authorized to work in the United States on an unrestricted basis'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+    '#required': true
+  please_list_your_visa_type_number_and_expiration:
+    '#type': textfield
+    '#title': 'Please list your visa type, number, and expiration'
+    '#states':
+      visible:
+        ':input[name="i_am_an_u_s_citizen_or_otherwise_authorized_to_work_in_the_unite"]':
+          value: 'Yes'
+  have_you_ever_been_convicted_of_a_felony:
+    '#type': radios
+    '#title': 'Have you ever been convicted of a felony'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+    '#required': true
+  please_explain_felony_:
+    '#type': textarea
+    '#title': 'Please explain felony:'
+    '#states':
+      visible:
+        ':input[name="have_you_ever_been_convicted_of_a_felony"]':
+          value: 'Yes'
+  have_you_ever_served_in_the_u_s_military_:
+    '#type': radios
+    '#title': 'Have you ever served in the U.S. Military?'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+    '#required': true
+  military_experience:
+    '#type': fieldset
+    '#title': 'Military experience'
+    '#states':
+      visible:
+        ':input[name="have_you_ever_served_in_the_u_s_military_"]':
+          value: 'Yes'
+    branch_of_service:
+      '#type': textfield
+      '#title': 'Branch of service'
+    rank_at_time_of_separation:
+      '#type': textfield
+      '#title': 'Rank at time of separation'
+    service_start_date:
+      '#type': textfield
+      '#title': 'Service start date'
+    service_end_date:
+      '#type': textfield
+      '#title': 'Service end date'
+    special_honors:
+      '#type': textarea
+      '#title': 'Special honors'
+employment_history:
+  '#type': fieldset
+  '#title': 'Employment history'
+  present_or_most_recent_employer:
+    '#type': fieldset
+    '#title': 'Present or most recent employer'
+    recent_employer:
+      '#type': textfield
+      '#title': Employer
+    recent_employer_address:
+      '#type': textfield
+      '#title': Address
+    recent_employer_your_position:
+      '#type': textfield
+      '#title': 'Your position'
+    recent_employer_salary:
+      '#type': textfield
+      '#title': Salary
+    recent_employer_duties:
+      '#type': textarea
+      '#title': Duties
+    recent_employer_employment_start_date:
+      '#type': textfield
+      '#title': 'Employment Start Date'
+    recent_employer_employment_end_date:
+      '#type': textfield
+      '#title': 'Employment End Date'
+    recent_employer_supervisor_name:
+      '#type': textfield
+      '#title': 'Supervisor name'
+    recent_employer_supervisor_title:
+      '#type': textfield
+      '#title': 'Supervisor title'
+    recent_employer_may_we_contact_:
+      '#type': radios
+      '#title': 'May we contact?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    recent_employer_reason_for_leaving_:
+      '#type': textarea
+      '#title': 'Reason for leaving:'
+  prior_employer_one:
+    '#type': fieldset
+    '#title': 'Prior Employer'
+    prior_one_employer:
+      '#type': textfield
+      '#title': Employer
+    prior_one_employer_address:
+      '#type': textfield
+      '#title': Address
+    prior_one_employer_your_position:
+      '#type': textfield
+      '#title': 'Your position'
+    prior_one_employer_salary:
+      '#type': textfield
+      '#title': Salary
+    prior_one_employer_duties:
+      '#type': textarea
+      '#title': Duties
+    prior_one_employer_employment_start_date:
+      '#type': textfield
+      '#title': 'Employment Start Date'
+    prior_one_employer_employment_end_date:
+      '#type': textfield
+      '#title': 'Employment End Date'
+    prior_one_employer_supervisor_name:
+      '#type': textfield
+      '#title': 'Supervisor name'
+    prior_one_employer_supervisor_title:
+      '#type': textfield
+      '#title': 'Supervisor title'
+    prior_one_employer_may_we_contact_:
+      '#type': radios
+      '#title': 'May we contact?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    prior_one_employer_reason_for_leaving_:
+      '#type': textarea
+      '#title': 'Reason for leaving:'
+  prior_employer_two:
+    '#type': fieldset
+    '#title': 'Prior Employer'
+    prior_two_employer:
+      '#type': textfield
+      '#title': Employer
+    prior_two_employer_address:
+      '#type': textfield
+      '#title': Address
+    prior_two_employer_your_position:
+      '#type': textfield
+      '#title': 'Your position'
+    prior_two_employer_salary:
+      '#type': textfield
+      '#title': Salary
+    prior_two_employer_duties:
+      '#type': textarea
+      '#title': Duties
+    prior_two_employer_employment_start_date:
+      '#type': textfield
+      '#title': 'Employment Start Date'
+    prior_two_employer_employment_end_date:
+      '#type': textfield
+      '#title': 'Employment End Date'
+    prior_two_employer_supervisor_name:
+      '#type': textfield
+      '#title': 'Supervisor name'
+    prior_two_employer_supervisor_title:
+      '#type': textfield
+      '#title': 'Supervisor title'
+    prior_two_employer_may_we_contact_:
+      '#type': radios
+      '#title': 'May we contact?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    prior_two_employer_reason_for_leaving_:
+      '#type': textarea
+      '#title': 'Reason for leaving:'
+education_information:
+  '#type': fieldset
+  '#title': 'Education information'
+  high_school:
+    '#type': fieldset
+    '#title': 'High school'
+    hs_name:
+      '#type': textfield
+      '#title': Name
+    hs_location:
+      '#type': textfield
+      '#title': Location
+    hs_education_start_date:
+      '#type': textfield
+      '#title': 'Education Start Date'
+    hs_education_end_date:
+      '#type': textfield
+      '#title': 'Education End Date'
+    hs_did_you_graduate_:
+      '#type': radios
+      '#title': 'Did you graduate?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    hs_degree:
+      '#type': textfield
+      '#title': Degree
+    hs_major:
+      '#type': textfield
+      '#title': Major
+    hs_special_honors_or_awards:
+      '#type': textarea
+      '#title': 'Special honors or awards'
+  technical_or_vocational_school:
+    '#type': fieldset
+    '#title': 'Technical or Vocational School'
+    tech_or_voc_name:
+      '#type': textfield
+      '#title': Name
+    tech_or_voc_location:
+      '#type': textfield
+      '#title': Location
+    tech_or_voc_education_start_date:
+      '#type': textfield
+      '#title': 'Education Start Date'
+    tech_or_voc_education_end_date:
+      '#type': textfield
+      '#title': 'Education End Date'
+    tech_or_voc_did_you_graduate_:
+      '#type': radios
+      '#title': 'Did you graduate?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    tech_or_voc_degree:
+      '#type': textfield
+      '#title': Degree
+    tech_or_voc_major:
+      '#type': textfield
+      '#title': Major
+    tech_or_voc_special_honors_or_awards:
+      '#type': textarea
+      '#title': 'Special honors or awards'
+  college_or_uni_one:
+    '#type': fieldset
+    '#title': 'College or University'
+    college_or_uni_one_name:
+      '#type': textfield
+      '#title': Name
+    college_or_uni_one_location:
+      '#type': textfield
+      '#title': Location
+    college_or_uni_one_education_start_date:
+      '#type': textfield
+      '#title': 'Education Start Date'
+    college_or_uni_one_education_end_date:
+      '#type': textfield
+      '#title': 'Education End Date'
+    college_or_uni_one_did_you_graduate_:
+      '#type': radios
+      '#title': 'Did you graduate?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    college_or_uni_one_degree:
+      '#type': textfield
+      '#title': Degree
+    college_or_uni_one_major:
+      '#type': textfield
+      '#title': Major
+    college_or_uni_one_special_honors_or_awards:
+      '#type': textarea
+      '#title': 'Special honors or awards'
+  college_or_uni_two:
+    '#type': fieldset
+    '#title': 'College or University'
+    college_or_uni_two_name:
+      '#type': textfield
+      '#title': Name
+    college_or_uni_two_location:
+      '#type': textfield
+      '#title': Location
+    college_or_uni_two_education_start_date:
+      '#type': textfield
+      '#title': 'Education Start Date'
+    college_or_uni_two_education_end_date:
+      '#type': textfield
+      '#title': 'Education End Date'
+    college_or_uni_two_did_you_graduate_:
+      '#type': radios
+      '#title': 'Did you graduate?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    college_or_uni_two_degree:
+      '#type': textfield
+      '#title': Degree
+    college_or_uni_two_major:
+      '#type': textfield
+      '#title': Major
+    college_or_uni_two_special_honors_or_awards:
+      '#type': textarea
+      '#title': 'Special honors or awards'
+position_specifics:
+  '#type': fieldset
+  '#title': 'Position specifics'
+  how_did_you_hear_about_this_job:
+    '#type': textfield
+    '#title': 'How did you hear about this job'
+    '#required': true
+  what_hours_are_you_willing_to_work:
+    '#type': textfield
+    '#title': 'What hours are you willing to work'
+    '#required': true
+  will_you_be_willing_to_work_weekends:
+    '#type': radios
+    '#title': 'Will you be willing to work weekends'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+    '#required': true
+  are_you_willing_to_travel_for_the_job:
+    '#type': radios
+    '#title': 'Are you willing to travel for the job'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+    '#required': true
+  desired_salary:
+    '#type': textfield
+    '#title': 'Desired salary'
+    '#required': true
+  salary_term:
+    '#type': textfield
+    '#title': 'Salary Term'
+    '#placeholder': Months/Weeks/Year
+    '#required': true
+skills:
+  '#type': fieldset
+  '#title': Skills
+  computer:
+    '#type': textarea
+    '#title': Computer
+  languages_spoken_other_than_english_:
+    '#type': textarea
+    '#title': 'Languages spoken (other than English)'
+  other_skills:
+    '#type': textarea
+    '#title': 'Other skills'
+i_agree:
+  '#type': checkbox
+  '#title': 'I agree'
+  '#description': |
+    <p>By checking the box below, I hereby certify that my answers and assertions set forth in this application are true and complete to the best of my knowledge. If I am employed, I understand that any false statements on this application shall be considered sufficient cause for my dismissal. I hereby authorize this company to investigate any aspect of my prior educational and employment history.</p>
+    
+    <p>Furthermore I understand that if I am hired, employment with Bethel College is <q>at will,</q> which means that either Bethel College or I can terminate my employment for any reason not prohibited by state or federal law.</p>
+  '#description_display': before
+  '#required': true

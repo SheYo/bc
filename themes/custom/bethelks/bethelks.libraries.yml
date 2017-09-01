@@ -1,0 +1,69 @@
+### DEPENDENCIES START ###
+tether-js:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js: { type: external, minified: true }
+  dependencies:
+    - core/jquery
+
+popper-js:
+  header: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js: { type: external, minified: true }
+
+parallax-js:
+  header: true
+  js:
+    js/parallax/parallax.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+
+isotope-js:
+  header: true
+  js:
+    js/isotope.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+### DEPENDENCIES END ###
+
+### GLOBAL LIBS START ###
+bootstrap-css:
+  css:
+    theme:
+      bootstrap/css/bootstrap.min.css: { minified: true }
+
+bootstrap-js:
+  header: true
+  js:
+    bootstrap/js/bootstrap.min.js: { minified: true }
+  dependencies:
+    - core/jquery
+    - bethelks/tether-js
+    - bethelks/popper-js
+
+font-awesome-css:
+  css:
+    theme:
+      font-awesome/css/font-awesome.min.css: { minified: true }
+
+global-css:
+  css:
+    theme:
+      css/global.css: {}
+
+global-js:
+  js:
+    js/global.js: {}
+  dependencies:
+    - core/jquery
+    - bethelks/parallax-js
+### GLOBAL LIBS END ###
+
+### HOMEPAGE LIBS START ###
+homepage-js:
+  js:
+    js/home_page.js: {}
+  dependencies:
+    - core/jquery
+    - bethelks/isotope-js
+### HOMEPAGE LIBS END ###

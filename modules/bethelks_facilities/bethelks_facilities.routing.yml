@@ -1,0 +1,44 @@
+# User
+facility_list.Controller:
+  path: '/facility'
+  defaults: 
+    _controller: '\Drupal\bethelks_facilities\Controller\FacilitiesController::getList' 
+  requirements:
+    _permission: 'access content'
+
+facility_view.Controller:
+  path: '/facility/{id}'
+  defaults: 
+    _controller: '\Drupal\bethelks_facilities\Controller\FacilitiesController::getView' 
+  requirements:
+    _permission: 'access content'
+
+# Admin:
+facility_list_admin.Controller:
+  path: '/admin/content/facility'
+  defaults: 
+    _controller: '\Drupal\bethelks_facilities\Controller\FacilitiesController::getListAdmin' 
+  requirements:
+    _permission: 'administer staff'
+
+facility_view_admin.Controller:
+  path: '/admin/content/facility/{id}'
+  defaults: 
+    _controller: '\Drupal\bethelks_facilities\Controller\FacilitiesController::getViewAdmin' 
+  requirements:
+    _permission: 'administer staff'
+
+facility_addEdit.form:
+  path: '/admin/content/facility/{id}/ae'
+  defaults:
+    _form: '\Drupal\bethelks_facilities\Form\FacilitiesFormAddEdit'
+    _title: 'Add or Edit Facility'
+  requirements:
+    _permission: 'administer staff'
+
+facility_delete_admin.Controller:
+  path: '/admin/content/facility/{id}/d'
+  defaults: 
+    _controller: '\Drupal\bethelks_facilities\Controller\FacilitiesController::setDelete' 
+  requirements:
+    _permission: 'administer staff'

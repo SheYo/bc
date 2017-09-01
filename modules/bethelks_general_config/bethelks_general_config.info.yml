@@ -1,0 +1,5 @@
+name: BethelKS General Configuration
+description: Module that enables defining and updating of general site configuration
+type: module
+core: 8.x
+package: Bethel KS

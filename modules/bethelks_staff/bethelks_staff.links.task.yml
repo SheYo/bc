@@ -1,0 +1,27 @@
+# BethelKS Staff tab in "Content" Page
+bethelks_staff.adminList:
+  title: 'BethelKS Staff'
+  base_route: '/faculty/0' #system.admin_content
+  route_name: bethelks_staff.adminList
+
+# Edit Staff
+bethelks_staff.adminList.edit.route:
+  title: 'Edit'
+  route_name: bethelks_staff.adminList.edit
+  base_route: bethelks_staff.adminList.edit
+bethelks_staff.adminList.edit:
+  title: 'Edit'
+  route_name: bethelks_staff.adminList.edit
+  parent_id: bethelks_staff.adminList.edit.route
+bethelks_staff.faculty.view:
+  title: 'View'
+  route_name: bethelks_staff.faculty.view
+  parent_id: bethelks_staff.adminList.edit.route
+  base_route: bethelks_staff.adminList.edit.route
+  weight: 20
+bethelks_staff.adminList.edit.delete:
+  title: 'Delete'
+  route_name: bethelks_staff.adminList.edit.delete
+  parent_id: bethelks_staff.adminList.edit.route
+  base_route: bethelks_staff.adminList.edit.route
+  weight: 30

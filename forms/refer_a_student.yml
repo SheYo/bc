@@ -1,0 +1,129 @@
+your_information:
+  '#type': fieldset
+  '#title': 'Your information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#placeholder': 'Bob or Jane'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#placeholder': Smith
+    '#required': true
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle name'
+    '#required': true
+  e_mail:
+    '#type': email
+    '#title': E-mail
+    '#placeholder': bsmith@example.com
+    '#required': true
+  bethel_student_id:
+    '#type': number
+    '#title': 'Bethel Student ID'
+    '#placeholder': '0'
+    '#required': true
+    '#min': '0'
+    '#step': '1'
+prospective_student_information:
+  '#type': fieldset
+  '#title': 'Prospective student information'
+  academic_information:
+    '#type': fieldset
+    '#title': 'Academic information'
+    enrollment_type:
+      '#type': radios
+      '#title': 'Enrollment Type'
+      '#options':
+        'First-Year Student': 'First-Year Student'
+        'Transfer Student': 'Transfer Student'
+      '#required': true
+    expected_term:
+      '#type': radios
+      '#title': 'Expected Term'
+      '#description': Fall
+      '#options':
+        Fall: Fall
+        Interterm: Interterm
+        Spring: Spring
+      '#required': true
+    expected_year:
+      '#type': textfield
+      '#title': 'Expected year'
+      '#placeholder': 'e.g.:2023'
+  personal_information:
+    '#type': fieldset
+    '#title': 'Personal information'
+    first_name_pi:
+      '#type': textfield
+      '#title': 'First name'
+      '#required': true
+    last_name_pi:
+      '#type': textfield
+      '#title': 'Last name'
+      '#required': true
+    middle_name_pi:
+      '#type': textfield
+      '#title': 'Middle name'
+      '#required': true
+    preferred_name_pi:
+      '#type': textfield
+      '#title': 'Preferred name'
+    gender_pi:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+      '#required': true
+  address_information:
+    '#type': fieldset
+    '#title': 'Address information'
+    address:
+      '#type': textfield
+      '#title': Address
+      '#placeholder': 'line 1'
+      '#required': true
+    city:
+      '#type': textfield
+      '#title': City
+      '#required': true
+    state_province:
+      '#type': textfield
+      '#title': State/province
+      '#required': true
+    zip_postal_code:
+      '#type': textfield
+      '#title': 'ZIP/Postal code'
+      '#required': true
+    country:
+      '#type': textfield
+      '#title': Country
+      '#required': true
+    home_phone:
+      '#type': textfield
+      '#title': 'Home phone'
+      '#placeholder': 555-555-1887
+      '#required': true
+    cell_phone:
+      '#type': textfield
+      '#title': 'Cell phone'
+      '#placeholder': 555-555-1887
+    e_mail_p:
+      '#type': email
+      '#title': E-mail
+      '#required': true
+  academic_information_p:
+    '#type': fieldset
+    '#title': 'Academic information'
+    high_school:
+      '#type': textfield
+      '#title': 'High school'
+      '#required': true
+    year_of_graduation:
+      '#type': textfield
+      '#title': 'Year of graduation'
+      '#placeholder': 'e.g.:2015'
+      '#required': true

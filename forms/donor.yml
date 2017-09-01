@@ -1,0 +1,99 @@
+donor_information:
+  '#type': fieldset
+  '#title': 'Donor information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  spouse_s_name:
+    '#type': textfield
+    '#title': 'Spouse''s name'
+contact_information:
+  '#type': fieldset
+  '#title': 'Contact information'
+  address:
+    '#type': textfield
+    '#title': Address
+    '#required': true
+  city:
+    '#type': textfield
+    '#title': City
+    '#required': true
+  state_province:
+    '#type': textfield
+    '#title': State/Province
+    '#description': 'Two-character state/province code'
+    '#placeholder': 'e.g.: KS'
+    '#input_mask': AA
+  zip_postal_code:
+    '#type': textfield
+    '#title': 'Zip/Postal Code'
+    '#input_mask': '99999[-9999]'
+    '#required': true
+  country:
+    '#type': select
+    '#title': Country
+    '#description': '<strong><em>*NOTE:</em></strong> <em>Canadian donors must specify their addresses according to the <a href="http://www.canadapost.ca/tools/pg/manual/PGaddress-e.asp#1417752" target="_blank">Canadian Post</a> for addresses to be validated correctly. Please do not add spaces between the unit number, hypen, and civic number or validation will fail</em>'
+    '#options': country_names
+    '#required': true
+  this_is_a_new_address:
+    '#type': radios
+    '#title': 'This is a new address'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+  phone:
+    '#type': tel
+    '#title': Phone
+    '#required': true
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+    '#required': true
+please_specify_how_much_you_would_like_to_give:
+  '#type': fieldset
+  '#title': 'Please specify how much you would like to give'
+  amount_usd_:
+    '#type': number
+    '#title': 'Amount (USD)'
+    '#description': 'Gifts are in US dollars; minimum credit card gift $10; do not enter &quot;$&quot; or &quot;,&quot; in the amount'
+    '#min': '10'
+    '#required': true
+  a_matching_gift_will_be_made_by_my_or_my_spouses_employer:
+    '#type': textfield
+    '#title': 'A matching gift will be made by my or my spouses employer'
+    '#description': |
+      If applicable please mail a matching fit form from the company to:<br />
+      Bethel College<br />
+      Development Office<br />
+      300 E. 27th St.<br />
+      North Newton, KS&nbsp; 67117
+  this_gift_is_in_response_to_the_phonathon:
+    '#type': radios
+    '#title': 'This gift is in response to the phonathon'
+    '#options':
+      'Yes': 'Yes'
+      'No': 'No'
+gift_destination_:
+  '#type': fieldset
+  '#title': 'Gift destination'
+  gift_destination_select:
+    '#type': select
+    '#title': gift_destination
+    '#options':
+      'Bethel College Fund (Current Fund)': 'Bethel College Fund (Current Fund)'
+      Other: Other
+  other_gift_destination:
+    '#type': textfield
+    '#title': 'Other gift destination'
+    '#states':
+      visible:
+        ':input[name="gift_destination_select"]':
+          value: Other
+credit_card_information:
+  '#type': fieldset
+  '#title': 'Credit card information'

@@ -1,0 +1,1034 @@
+classification:
+  '#type': radios
+  '#title': Classification
+  '#options':
+    first_year: 'New to College'
+    transfer: 'Transfer Student'
+    international: 'International Student'
+    former_bethel: 'Former Bethel Student'
+    teacher_certification: 'Teacher Certification Only'
+    pre_licensure_program: 'Pre-licensure Program'
+    rn_to_bsn_program: 'RN-to-BSN Program'
+start_term:
+  '#type': radios
+  '#title': 'When do you plan to begin at Bethel College?'
+  '#options':
+    fall: Fall
+    spring: Spring
+    interterm: Interterm
+year:
+  '#type': number
+  '#title': 'Year of Graduation'
+enrollment_type:
+  '#type': radios
+  '#title': 'I Plan to Enroll'
+  '#options':
+    full_time: 'Full Time (12-16 hours per semester)'
+    part_time: 'Part Time (6-11 hours per semester)'
+    less_than_part_time: '5 hours or less per semester'
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        '!value': international
+international_enrollment_type:
+  '#type': radios
+  '#title': 'I Plan to Enroll'
+  '#options':
+    full_time: 'Full-time (12-16 hours per semester)'
+    part_time: 'Part-time (6-12 hours per semester)'
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        value: international
+personal_data:
+  '#type': fieldset
+  '#title': 'Personal Data'
+  name:
+    '#type': fieldset
+    '#title': Name
+    last_name:
+      '#type': textfield
+      '#title': 'Last Name'
+    first_name:
+      '#type': textfield
+      '#title': 'First Name'
+    middle_name:
+      '#type': textfield
+      '#title': 'Middle Name'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    preferred_or_nickname:
+      '#type': textfield
+      '#title': Preferred/Nickname
+  mailing_address:
+    '#type': fieldset
+    '#title': 'Mailing Address'
+    street_or_p_o_box:
+      '#type': textfield
+      '#title': 'Street or P.O. Box'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    international_address:
+      '#type': textfield
+      '#title': Address
+    city:
+      '#type': textfield
+      '#title': City
+    state:
+      '#type': textfield
+      '#title': State
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    state_province:
+      '#type': textfield
+      '#title': State/Province
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    international_postal_code:
+      '#type': textfield
+      '#title': 'Postal Code'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    international_country:
+      '#type': textfield
+      '#title': Country
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+  phone_and_e_mail:
+    '#type': fieldset
+    '#title': Phone/E-mail
+    home_phone:
+      '#type': tel
+      '#title': 'Home Phone'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    cell_phone:
+      '#type': tel
+      '#title': 'Cell Phone'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    e_mail:
+      '#type': email
+      '#title': E-mail
+    international_phone:
+      '#type': tel
+      '#title': Phone
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    international_permanent_addres:
+      '#type': textfield
+      '#title': 'Permanent Address (transfer students only)'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    international_permanent_phone:
+      '#type': tel
+      '#title': 'Permanent Phone (transfer students only)'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+  contact_preference:
+    '#type': fieldset
+    '#title': 'Contact Preference'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+    languages:
+      '#type': checkboxes_other
+      '#title': Languages
+      '#options':
+        english: 'I speak English'
+      '#other__option_label': 'I speak another language'
+    best_way_to_contact_me:
+      '#type': radios
+      '#title': 'Best way to contact me'
+      '#options':
+        home_phone: 'Home Phone'
+        cell_phone: 'Cell Phone'
+        email: E-mail
+    contact_consent:
+      '#type': checkbox
+      '#title': 'I give bethel Admissions staff permission to text me for business purposes'
+  employment_status:
+    '#type': fieldset
+    '#title': 'Employment Status'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+    employment_question:
+      '#type': radios
+      '#title': 'Are you employed?'
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+    employer_phone_number:
+      '#type': tel
+      '#title': 'Employer''s Phone Number'
+      '#states':
+        visible:
+          ':input[name="employment_question"]':
+            value: 'yes'
+  citizenship:
+    '#type': fieldset
+    '#title': Citizenship
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+    citizen:
+      '#type': radios
+      '#title': citizenship
+      '#title_display': invisible
+      '#options':
+        us: U.S.
+        non_us: Non-U.S.
+    are_permanent_resident:
+      '#type': radios
+      '#title': 'Are you a permanent resident of the United States?'
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+      '#states':
+        visible:
+          ':input[name="citizen"]':
+            value: non_us
+    name_of_country:
+      '#type': textfield
+      '#title': 'Name of Country'
+      '#states':
+        visible:
+          ':input[name="citizen"]':
+            value: non_us
+    country_of_birth:
+      '#type': textfield
+      '#title': 'Country of Birth'
+      '#states':
+        visible:
+          ':input[name="citizen"]':
+            value: non_us
+  other_info:
+    '#type': fieldset
+    '#title': 'Other Information'
+    gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        male: Male
+        female: Female
+    birth_date:
+      '#type': date
+      '#title': 'Birth Date (YYYY/MM/DD)'
+    social_security_number:
+      '#type': textfield
+      '#title': 'Social Security Number'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    international_country_of_birth:
+      '#type': textfield
+      '#title': 'Country of Birth'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    international_citizenship:
+      '#type': textfield
+      '#title': Citizenship
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+    international_race:
+      '#type': textfield
+      '#title': Race
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            value: international
+  marital_status:
+    '#type': fieldset
+    '#title': 'Marital Status'
+    marital_conditional:
+      '#type': radios
+      '#title': 'Marital Status'
+      '#title_display': inline
+      '#options':
+        single: Single
+        married: Married
+        other: Other
+    spouse_name:
+      '#type': textfield
+      '#title': 'Spouse''s Name'
+      '#states':
+        visible:
+          - ':input[name="marital_conditional"]':
+              value: married
+          - or
+          - ':input[name="marital_conditional"]':
+              value: other
+      '#format_items': comma
+  church_info:
+    '#type': fieldset
+    '#title': 'Church Information'
+    church_name:
+      '#type': textfield
+      '#title': Name
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    church_denomination:
+      '#type': textfield
+      '#title': Denomination
+    church_address:
+      '#type': textfield
+      '#title': Address
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    church_city:
+      '#type': textfield
+      '#title': City
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    church_state:
+      '#type': textfield
+      '#title': State
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+    church_zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+      '#states':
+        visible:
+          ':input[name="classification"]':
+            '!value': international
+      '#format_items': comma
+  criminal_history:
+    '#type': fieldset
+    '#title': 'Criminal History'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+    have_disciplinary_violation:
+      '#type': radios
+      '#title': 'Have you ever been found responsible for a disciplinary violation at an educational institution you have attended from the 9th grade forward (or the international equivalent), whether related to academic misconduct or behavioral misconduct, that resulted in your probation, suspension, removal, dismissal, or expulsion from the institution?'
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+    have_misdemeanor_or_felony_conditional:
+      '#type': radios
+      '#title': 'Have you ever been convicted of a misdemeanor, felony, or other crime?'
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+    have_misdemeanor_or_felony:
+      '#type': checkboxes
+      '#title': 'Please check all that apply'
+      '#options':
+        felony: Felony
+        misdemeanor: Misdemeanor
+        other: Other
+      '#states':
+        visible:
+          ':input[name="have_misdemeanor_or_felony_conditional"]':
+            value: 'yes'
+voluntary_section:
+  '#type': fieldset
+  '#title': 'Voluntary Section'
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        '!value': international
+  voluntary_disclaimer:
+    '#type': markup
+    '#markup': |
+      These questions are voluntary and do not in any way influence your acceptance to Bethel.<br />
+      This voluntary information will be used in a nondiscriminatory manner, consistent with applicable civil rights laws.
+  wish_to_be_identified_hispanic_latino_or_spanish:
+    '#type': radios
+    '#title': 'I wish to be identified as Hispanic, Latino or of Spanish origin.'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  identify_other_race:
+    '#type': checkboxes
+    '#title': 'I wish to be identified as one or more of the following racial categories'
+    '#options':
+      american_indian_or_alaskan_native: 'American Indian or Alaskan Native'
+      asian: Asian
+      black_or_african_american: 'Black or African American'
+      native_hawaiian_or_other_pacific_islander: 'Native Hawaiian or other Pacific Islander'
+      white: White
+family_data:
+  '#type': fieldset
+  '#title': 'Family Data'
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        '!value': international
+  is_a_dependent:
+    '#type': radios
+    '#title': 'Are you claimed as a dependent?'
+    '#options': yes_no
+  fathers_name:
+    '#type': textfield
+    '#title': 'Father''s Name'
+  father_occupation_employer:
+    '#type': textfield
+    '#title': Occupation/Employer
+  mothers_name:
+    '#type': textfield
+    '#title': 'Mother''s Name'
+  mother_occupation_employer:
+    '#type': textfield
+    '#title': Occupation/Employer
+  parent_contact_info:
+    '#type': fieldset
+    '#title': 'Parent Contact Information'
+    parent_contact_email:
+      '#type': email
+      '#title': E-mail
+    parent_contact_cell_phone:
+      '#type': tel
+      '#title': 'Cell Phone'
+  parents_marital_status:
+    '#type': radios
+    '#title': 'Parent''s Marital Status'
+    '#options':
+      married: Married
+      separated: Separated
+      divorced: Divorced
+      widowed: Widowed
+  living_situation:
+    '#type': radios
+    '#title': 'Do you live with'
+    '#options':
+      both_parents: 'Both Parents'
+      mother: Mother
+      step_mother: 'Step Mother'
+      father: Father
+      step_father: 'Step Father'
+      other_living_situation: 'Other Living Situation'
+  parents_or_guardians_address:
+    '#type': fieldset
+    '#title': 'Parent''s or Guardian''s address (if different from your own)'
+    parent_street_or_po_box:
+      '#type': textfield
+      '#title': 'Street or P.O. Box'
+    parent_city:
+      '#type': textfield
+      '#title': City
+    parent_state:
+      '#type': textfield
+      '#title': State
+    parent_zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+  other_family_members:
+    '#type': fieldset
+    '#title': 'Other Family Members'
+    other_family_name_1:
+      '#type': textfield
+      '#title': Name
+    other_family_relationship_1:
+      '#type': textfield
+      '#title': Relationship
+    other_family_date_of_birth_1:
+      '#type': date
+      '#title': 'Date of Birth'
+      '#date_date_format': m/d/Y
+    other_family_grade_in_school_1:
+      '#type': textfield
+      '#title': 'Grade in School'
+    other_family_hs_grad_year_1:
+      '#type': number
+      '#title': 'HS Grad Year'
+    other_family_name_2:
+      '#type': textfield
+      '#title': Name
+    other_family_relationship_2:
+      '#type': textfield
+      '#title': Relationship
+    other_family_date_of_birth_2:
+      '#type': date
+      '#title': 'Date of Birth'
+      '#date_date_format': m/d/Y
+    other_family_grade_in_school_2:
+      '#type': textfield
+      '#title': 'Grade in School'
+    other_family_hs_grad_year_2:
+      '#type': number
+      '#title': 'HS Grad Year'
+    other_family_name_3:
+      '#type': textfield
+      '#title': Name
+    other_family_relationship_3:
+      '#type': textfield
+      '#title': Relationship
+    other_family_date_of_birth_3:
+      '#type': date
+      '#title': 'Date of Birth'
+      '#date_date_format': m/d/Y
+    other_family_grade_in_school_3:
+      '#type': textfield
+      '#title': 'Grade in School'
+    other_family_hs_grad_year_3:
+      '#type': number
+      '#title': 'HS Grad Year'
+education_info:
+  '#type': fieldset
+  '#title': 'Education Information'
+  all_schools_attended:
+    '#type': fieldset
+    '#title': 'List all high schools and colleges attended'
+    school_name_1:
+      '#type': textfield
+      '#title': Name
+    school_type_1:
+      '#type': radios
+      '#title': 'School Type'
+      '#title_display': invisible
+      '#options':
+        h_s: H.S.
+        college: College
+    school_city_and_state_1:
+      '#type': textfield
+      '#title': City/State
+    school_dates_attended_1:
+      '#type': textfield
+      '#title': 'Dates Attended'
+    school_name_2:
+      '#type': textfield
+      '#title': Name
+    school_type_2:
+      '#type': radios
+      '#title': 'School Type'
+      '#title_display': invisible
+      '#options':
+        h_s: H.S.
+        college: College
+    school_city_and_state_2:
+      '#type': textfield
+      '#title': City/State
+    school_dates_attended_2:
+      '#type': textfield
+      '#title': 'Dates Attended'
+    school_name_3:
+      '#type': textfield
+      '#title': Name
+    school_type_3:
+      '#type': radios
+      '#title': 'School Type'
+      '#title_display': invisible
+      '#options':
+        h_s: H.S.
+        college: College
+    school_city_and_state_3:
+      '#type': textfield
+      '#title': City/State
+    school_dates_attended_3:
+      '#type': textfield
+      '#title': 'Dates Attended'
+    school_name_4:
+      '#type': textfield
+      '#title': Name
+    school_type_4:
+      '#type': radios
+      '#title': 'School Type'
+      '#title_display': invisible
+      '#options':
+        h_s: H.S.
+        college: College
+    school_city_and_state_4:
+      '#type': textfield
+      '#title': City/State
+    school_dates_attended_4:
+      '#type': textfield
+      '#title': 'Dates Attended'
+    school_name_5:
+      '#type': textfield
+      '#title': Name
+    school_type_5:
+      '#type': radios
+      '#title': 'School Type'
+      '#title_display': invisible
+      '#options':
+        h_s: H.S.
+        college: College
+    school_city_and_state_5:
+      '#type': textfield
+      '#title': City/State
+    school_dates_attended_5:
+      '#type': textfield
+      '#title': 'Dates Attended'
+  currently_attending_college:
+    '#type': radios
+    '#title': 'Are you currently attending college?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+  current_college_name:
+    '#type': textfield
+    '#title': Name
+    '#states':
+      visible:
+        ':input[name="currently_attending_college"]':
+          value: 'yes'
+  current_college_city_and_state:
+    '#type': textfield
+    '#title': City/State
+    '#states':
+      visible:
+        ':input[name="currently_attending_college"]':
+          value: 'yes'
+  current_college_gpa:
+    '#type': number
+    '#title': GPA
+    '#states':
+      visible:
+        ':input[name="currently_attending_college"]':
+          value: 'yes'
+    '#step': '0.1'
+  current_college_courses:
+    '#type': textarea
+    '#title': 'Course(s) currently enrolled in'
+    '#states':
+      visible:
+        ':input[name="currently_attending_college"]':
+          value: 'yes'
+  current_college_heading:
+    '#type': markup
+    '#states':
+      visible:
+        ':input[name="currently_attending_college"]':
+          value: 'yes'
+    '#markup': 'Please specify the college, the courses you are taking, and your cumulative GPA'
+  previously_enrolled_in_nursing_program:
+    '#type': radios
+    '#title': 'Have you previously been enrolled in a professional or practical nursing program?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#states':
+      visible:
+        - ':input[name="classification"]':
+            value: pre_licensure_program
+        - or
+        - ':input[name="classification"]':
+            value: rn_to_bsn_program
+  previous_nursing_program:
+    '#type': textfield
+    '#title': Program
+    '#states':
+      visible:
+        ':input[name="previously_enrolled_in_nursing_program"]':
+          value: 'yes'
+    '#format_items': comma
+  previous_nursing_program_school:
+    '#type': textfield
+    '#title': School
+    '#states':
+      visible:
+        ':input[name="previously_enrolled_in_nursing_program"]':
+          value: 'yes'
+    '#format_items': comma
+  previous_nursing_program_city_and_state:
+    '#type': textfield
+    '#title': City/State
+    '#states':
+      visible:
+        ':input[name="previously_enrolled_in_nursing_program"]':
+          value: 'yes'
+    '#format_items': comma
+  previous_nursing_program_dates_attended:
+    '#type': textfield
+    '#title': 'Dates Attended'
+    '#states':
+      visible:
+        ':input[name="previously_enrolled_in_nursing_program"]':
+          value: 'yes'
+    '#format_items': comma
+  previous_nursing_program_reason_for_leaving:
+    '#type': textarea
+    '#title': 'Reason for Leaving'
+    '#states':
+      visible:
+        ':input[name="previously_enrolled_in_nursing_program"]':
+          value: 'yes'
+    '#format_items': comma
+work_experience:
+  '#type': fieldset
+  '#title': 'Work Experience'
+  '#states':
+    visible:
+      - ':input[name="classification"]':
+          value: pre_licensure_program
+      - or
+      - ':input[name="classification"]':
+          value: rn_to_bsn_program
+  experience_employer_1:
+    '#type': fieldset
+    '#title': 'Employer 1'
+    experience_employer_1_employer:
+      '#type': textfield
+      '#title': Employer
+    experience_employer_1_dates_of_employment:
+      '#type': textfield
+      '#title': 'Dates of Employment'
+    experience_employer_1_work_performed:
+      '#type': textfield
+      '#title': 'Work Performed'
+  experience_employer_2:
+    '#type': fieldset
+    '#title': 'Employer 2'
+    experience_employer_2_employer:
+      '#type': textfield
+      '#title': Employer
+    experience_employer_2_dates_of_employment:
+      '#type': textfield
+      '#title': 'Dates of Employment'
+    experience_employer_2_work_performed:
+      '#type': textfield
+      '#title': 'Work Performed'
+  experience_employer_3:
+    '#type': fieldset
+    '#title': 'Employer 3'
+    experience_employer_3_employer:
+      '#type': textfield
+      '#title': Employer
+    experience_employer_3_dates_of_employment:
+      '#type': textfield
+      '#title': 'Dates of Employment'
+    experience_employer_3_work_performed:
+      '#type': textfield
+      '#title': 'Work Performed'
+  nursing_licensure:
+    '#type': checkboxes
+    '#title': 'I am licensed as an'
+    '#options':
+      lpn: LPN
+      lmht: LMHT
+      rn: RN
+      other: Other
+      not_licensed: 'I am not a licensed health-care worker'
+  nursing_license_1:
+    '#type': fieldset
+    '#title': 'License 1'
+    license_1_state:
+      '#type': textfield
+      '#title': 'I am licensed in the state of'
+    license_1_no:
+      '#type': textfield
+      '#title': 'License No.'
+  nursing_license_2:
+    '#type': fieldset
+    '#title': 'License 2'
+    license_2_state:
+      '#type': textfield
+      '#title': 'I am licensed in the state of'
+    license_2_no:
+      '#type': textfield
+      '#title': 'License No.'
+act_and_or_sat:
+  '#type': fieldset
+  '#title': ACT/SAT
+  act:
+    '#type': radios
+    '#title': ACT
+    '#options':
+      has_taken_act: 'I have taken the ACT'
+      plans_to_take_act: 'I plan to take the ACT'
+    '#states':
+      visible:
+        ':input[name="not_taken_tests"]':
+          unchecked: true
+  act_date:
+    '#type': date
+    '#title': Date
+    '#states':
+      visible:
+        - ':input[name="act"]':
+            value: has_taken_act
+        - or
+        - ':input[name="act"]':
+            value: plans_to_take_act
+      invisible:
+        ':input[name="not_taken_tests"]':
+          checked: true
+    '#format_items': comma
+  act_score:
+    '#type': number
+    '#title': Score
+    '#states':
+      visible:
+        ':input[name="act"]':
+          value: has_taken_act
+        ':input[name="not_taken_tests"]':
+          unchecked: true
+    '#format_items': comma
+  sat:
+    '#type': radios
+    '#title': SAT
+    '#options':
+      has_taken_sat: 'I have taken the SAT'
+      plans_to_take_sat: 'I plan to take the SAT'
+    '#states':
+      visible:
+        ':input[name="not_taken_tests"]':
+          unchecked: true
+  sat_date:
+    '#type': date
+    '#title': Date
+    '#states':
+      visible:
+        - ':input[name="sat"]':
+            value: has_taken_sat
+        - or
+        - ':input[name="sat"]':
+            value: plans_to_take_sat
+      invisible:
+        ':input[name="not_taken_tests"]':
+          checked: true
+    '#format_items': comma
+  sat_score:
+    '#type': number
+    '#title': Score
+    '#states':
+      visible:
+        ':input[name="sat"]':
+          value: has_taken_sat
+        ':input[name="not_taken_tests"]':
+          unchecked: true
+    '#format_items': comma
+  not_taken_tests:
+    '#type': checkbox
+    '#title': 'I have not taken the ACT test/SAT test/TOEFL test'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          value: international
+interest_info:
+  '#type': fieldset
+  '#title': 'Interest Information'
+  decided_on_educational_major:
+    '#type': radios
+    '#title': 'Have you tentatively decided on an educational major'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  what_areas:
+    '#type': textfield
+    '#title': 'What area(s)'
+    '#states':
+      visible:
+        ':input[name="decided_on_educational_major"]':
+          value: 'yes'
+  what_academic_areas_interest_you:
+    '#type': textfield
+    '#title': 'What academic area(s) are of interest to you now?'
+    '#states':
+      visible:
+        ':input[name="decided_on_educational_major"]':
+          value: non_us
+    '#format_items': comma
+  achievements_and_activities:
+    '#type': textarea
+    '#title': 'List high school achievements and activities'
+  college_activities_you_plan_to_participate_in:
+    '#type': textarea
+    '#title': 'List any college activities in which you plan to participate (athletics, music, drama, forensics, etc.)'
+  why_bethel:
+    '#type': textarea
+    '#title': 'Reason for wanting to attend Bethel'
+  where_did_you_learn_about_bethel:
+    '#type': textarea
+    '#title': 'From what source(s) did you learn about Bethel?'
+  applying_to_other_colleges_and_universities:
+    '#type': textarea
+    '#title': 'I have applied or plan to apply for admission to the following other colleges and universities'
+  hometown_newspaper:
+    '#type': fieldset
+    '#title': 'Hometown newspaper that prints local news'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          '!value': international
+    home_newspaper_name:
+      '#type': textfield
+      '#title': Name
+    home_newspaper_city:
+      '#type': textfield
+      '#title': City
+      '#format_items': comma
+    home_newspaper_state:
+      '#type': textfield
+      '#title': State
+    home_newspaper_zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+    can_bethel_release_news_about_you:
+      '#type': radios
+      '#title': 'I give Bethel permission to release news about me'
+      '#options':
+        'yes': 'Yes'
+        'no': 'No'
+references:
+  '#type': fieldset
+  '#title': References
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        '!value': international
+  employer_reference:
+    '#type': fieldset
+    '#title': Employer
+    employer_reference_name:
+      '#type': textfield
+      '#title': Name
+    employer_reference_title:
+      '#type': textfield
+      '#title': Title
+    employer_reference_phone:
+      '#type': tel
+      '#title': 'Daytime Phone'
+    employer_reference_address:
+      '#type': textfield
+      '#title': Address
+    employer_reference_city:
+      '#type': textfield
+      '#title': City
+    employer_reference_state:
+      '#type': textfield
+      '#title': State
+    employer_reference_zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+  personal_reference:
+    '#type': fieldset
+    '#title': 'Personal (employer, pastor, or health professional'
+    personal_reference_name:
+      '#type': textfield
+      '#title': Name
+    personal_reference_title:
+      '#type': textfield
+      '#title': Title
+    personal_reference_phone:
+      '#type': tel
+      '#title': 'Daytime Phone'
+    personal_reference_address:
+      '#type': textfield
+      '#title': Address
+    personal_reference_city:
+      '#type': textfield
+      '#title': City
+    personal_reference_state:
+      '#type': textfield
+      '#title': State
+    personal_reference_zip_code:
+      '#type': number
+      '#title': 'ZIP Code'
+  nursing_essay:
+    '#type': textarea
+    '#title': 'Write a minimum 500-word essay on your interest in nursing and what goals you have as a member of the nursing profession'
+    '#states':
+      visible:
+        ':input[name="classification"]':
+          value: rn_to_bsn_program
+release_of_high_school_records:
+  '#type': fieldset
+  '#title': 'Signature and Authorization for Release of High School Records'
+  '#states':
+    visible:
+      ':input[name="classification"]':
+        '!value': international
+  release_of_high_school_records_heading:
+    '#type': markup
+    '#markup': |
+      <h3>Request for Records</h3>
+      In order to complete the application process, we will need a few more pieces of information.<br />
+      <br />
+      <strong>First-time students:</strong> Please send to the address below your official high school transcripts from ALL of the high schools you have attended and your ACT or SAT score.<br />
+      <br />
+      Transcripts should include your
+      <ul>
+      	<li>Cumulative GPA (on a 4.0 scale)</li>
+      	<li>ACT or SAT score, if taken</li>
+      	<li>Class rank, if available</li>
+      </ul>
+      <strong>Transfer and pre-college students:</strong> Please send to the address below your official transcripts from each college or university attended in addition to your high school transcript(s).
+      
+      <blockquote>
+      <p>Admissions<br />
+      Bethel College<br />
+      300 E. 27th St<br />
+      North Newton, KS 67117</p>
+      </blockquote>
+      
+      <h3>Signature</h3>
+      
+      <p>My signature below certifies that the information provided is complete and accurate to the best of my knowledge.</p>
+  release_signature:
+    '#type': textfield
+    '#title': 'Printed Signature'
+    '#placeholder': 'Your Name'
+  release_and_info_verification:
+    '#type': checkbox
+    '#title': 'I certify that the above information is complete and accurate to the best of my knowledge.'
+  release_and_info_verification_date:
+    '#type': date
+    '#title': Date
+    '#default_value': today
+    '#format_items': comma
+    '#date_date_format': m/d/Y

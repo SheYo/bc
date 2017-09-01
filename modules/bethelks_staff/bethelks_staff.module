@@ -1,0 +1,21 @@
+<?php
+function bethelks_staff_theme($existing, $type, $theme, $path) {
+  return[
+    'admin_list_template' => [
+      'variables' => ['staff' => NULL]
+    ],
+    'delete_staff_template' => [
+      'variables' => ['staff' => NULL]
+    ],
+    'view_staff_full_template' => [
+      'variables' => ['staff' => NULL]
+    ],
+    'view_staff_template' => [
+      'variables' => ['staff' => NULL]
+    ],
+    'user_list_template' => [
+      'variables' => ['staff' => NULL]
+    ],
+  ];
+}
+?>

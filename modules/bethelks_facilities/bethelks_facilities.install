@@ -1,0 +1,18 @@
+<?php
+// Database Creation of 'bethelks_facilities':id, mapid, title, description, image
+function bethelks_facilities_schema() {
+  $schema['bethelks_facilities'] = array(
+    'description' => 'The base table for bethel staff (works in conjuction with bethelks_staff_education)',
+    'fields' => array(
+      'id'          => array('type' => 'serial', 'unsigned' => true, 'not null' => true),
+      'mapid'       => array('type' => 'int', 'not null' => true),
+      'title'       => array('type' => 'varchar', 'length' => 255, 'not null' => true, 'default' => ''),
+      'description' => array('type' => 'text', 'description' => 'Content of the facility'),
+      'image'       => array('type' => 'varchar', 'length' => 255, 'not null' => true, 'default' => '', 'description' => 'path'),
+    ),
+    'primary key' => array('id')
+  );
+  return $schema;
+}
+
+?>

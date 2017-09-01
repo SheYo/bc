@@ -1,0 +1,161 @@
+joining_info:
+  '#type': fieldset
+  '#title': 'Yes, I will be joining you on'
+  date:
+    '#type': datetime
+    '#title': Date
+    '#date_date_element': datetime-local
+    '#required': true
+  arriving_at:
+    '#type': select
+    '#title': 'Arriving At'
+    '#options':
+      '09:00 am': '09:00 am'
+      '09:30 am': '09:30 am'
+      '10:00 am': '10:00 am'
+      '10:30 am': '10:30 am'
+      '11:00 am': '11:00 am'
+      '11:30 am': '11:30 am'
+      '12:00 pm': '12:00 pm'
+      '12:30 pm': '12:30 pm'
+      '1:00 pm': '1:00 pm'
+      '1:30 pm': '1:30 pm'
+      '2:00 pm': '2:00 pm'
+      '2:30 pm': '2:30 pm'
+    '#empty_option': '--Please select a time--'
+    '#empty_value': empty
+  number_attending:
+    '#type': number
+    '#title': 'Number Attending'
+    '#required': true
+personal_info:
+  '#type': fieldset
+  '#title': 'Personal Information'
+  first_name:
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle Name'
+    '#required': true
+  gender:
+    '#type': radios
+    '#title': Gender
+    '#options':
+      male: Male
+      female: Female
+contact_info:
+  '#type': fieldset
+  '#title': 'Contact Information'
+  address:
+    '#type': textfield
+    '#title': Address
+    '#required': true
+  city:
+    '#type': textfield
+    '#title': City
+    '#required': true
+  state:
+    '#type': textfield
+    '#title': State
+    '#required': true
+  zip_code:
+    '#type': number
+    '#title': 'ZIP Code'
+    '#required': true
+  home_phone:
+    '#type': tel
+    '#title': 'Home Phone'
+    '#required': true
+  cell_phone:
+    '#type': tel
+    '#title': 'Cell Phone'
+  e_mail:
+    '#type': email
+    '#title': E-mail
+    '#required': true
+academic_info:
+  '#type': fieldset
+  '#title': 'Academic Information'
+  high_school:
+    '#type': textfield
+    '#title': 'High School'
+    '#required': true
+  year_of_graduation:
+    '#type': number
+    '#title': 'Year of Graduation'
+    '#required': true
+  gpa:
+    '#type': number
+    '#title': GPA
+  act_composite:
+    '#type': number
+    '#title': 'ACT Composite'
+  sat_cr:
+    '#type': number
+    '#title': SAT-CR
+  sat_m:
+    '#type': number
+    '#title': SAT-M
+  intended_major:
+    '#type': select_other
+    '#title': 'Intended Major'
+    '#options':
+      account: Accounting
+      architecture: Architecture
+      art: Art
+      athletic_training: 'Athletic Training'
+      aviation: Aviation
+      'bible_and_religion''': 'Bible & Religion'
+      biology: Biology
+      business_administration: 'Business Administration'
+      chemistry: Chemistry
+      coaching: Coaching
+      communication_arts: 'Communication Arts'
+      computer_science: 'Computer Science'
+      conflict_resolution_certificate: 'Conflict Resolution Certificate'
+      counseling: Counseling
+      criminal_justice: 'Criminal Justice'
+      criminal/restorative_Justice: 'Criminal/Restorative Justice'
+      economics: Economics
+      education: Education
+      elementary_education: 'Elementary Education'
+      environmental_science: 'Environmental Science'
+      finance: Finance
+      french: French
+      german: German
+      graphic_design: 'Graphic Design'
+      health_sciences: 'Health Sciences'
+      history: History
+      human_services: 'Human Services'
+      interior_design: 'Interior Design'
+      journalism: Journalism
+      literary_studies: 'Literary Studies'
+      management: Management
+      marketing: Marketing
+      mathematical_sciences: 'Mathematical Sciences'
+      music: Music
+      natural_sciences: 'Natural Sciences'
+      neuroscience_certificate: 'Neuroscience Certificate'
+      nursing: Nursing
+      occupational_therapy: 'Occupational Therapy'
+      philosophy: Philosophy
+      physical_therapy: 'Physical Therapy'
+      physical/health_education: 'Physical/Health Education'
+      physics: Physics
+      undecided: Undecided
+interest_info:
+  '#type': fieldset
+  '#title': 'Interest Information'
+  academic_interests:
+    '#type': textarea
+    '#title': 'Academic Interests'
+  extracurricular_interests:
+    '#type': textarea
+    '#title': 'Extracurricular Interests'
+    '#placeholder': 'Athletics, music, drama, forensics, etc.'

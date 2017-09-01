@@ -1,0 +1,5 @@
+name: BethelKS Facilities map
+description: Map image & CRUD for facility map
+type: module
+core: 8.x
+package: Bethel KS

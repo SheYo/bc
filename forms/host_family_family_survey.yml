@@ -1,0 +1,372 @@
+husband_and_wife_information:
+  '#type': fieldset
+  '#title': 'Husband and wife information'
+  address:
+    '#type': textfield
+    '#title': Address
+  home_phone:
+    '#type': tel
+    '#title': 'Home phone'
+  husband:
+    '#type': fieldset
+    '#title': Husband
+    husband_name:
+      '#type': textfield
+      '#title': Name
+    husband_work_phone:
+      '#type': textfield
+      '#title': 'Work phone'
+    husband_may_we_call_you_at_work_:
+      '#type': radios
+      '#title': 'May we call you at work?'
+      '#options': yes_no
+    husband_place_of_work:
+      '#type': textfield
+      '#title': 'Place of work'
+    husband_type_of_work:
+      '#type': textfield
+      '#title': 'Type of work'
+    husband_religious_denomination:
+      '#type': textfield
+      '#title': 'Religious denomination'
+    husband_church_attending:
+      '#type': textfield
+      '#title': 'Church attending'
+    husband_college_you_attended:
+      '#type': textfield
+      '#title': 'College you attended'
+    husband_year_graduated:
+      '#type': textfield
+      '#title': 'Year graduated'
+    husband_degree:
+      '#type': textfield
+      '#title': Degree
+    husband_major:
+      '#type': textfield
+      '#title': Major
+    husband_travel_experiences:
+      '#type': textarea
+      '#title': 'Travel Experiences'
+    husband_hobbies:
+      '#type': textarea
+      '#title': Hobbies
+    husband_clubs_or_organizations_you_belong_to:
+      '#type': textarea
+      '#title': 'Clubs or organizations you belong to'
+    husband_sports_interest:
+      '#type': fieldset
+      '#title': 'Sports interest'
+      '#description': 'Indicate sports interest by ranking the following sports numerically with &quot;1&quot; being the highest interest'
+      husband_football_interest:
+        '#type': number
+        '#title': Football
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_track_interest:
+        '#type': number
+        '#title': Track
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_tennis_interest:
+        '#type': number
+        '#title': Tennis
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_baseball_interest:
+        '#type': number
+        '#title': Baseball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_basketball_interest:
+        '#type': number
+        '#title': Basketball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_volleyball_interest:
+        '#type': number
+        '#title': Volleyball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_soccer_interest:
+        '#type': number
+        '#title': Soccer
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_water_skiing_interest:
+        '#type': number
+        '#title': 'Water Skiing'
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_other_interest:
+        '#type': number
+        '#title': Other
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      husband_other_sport_name_interest:
+        '#type': textfield
+        '#title': 'Other sport name'
+        '#states':
+          visible:
+            ':input[name="husband_other_interest"]':
+              filled: true
+    husband_other_activities_you_participate_in:
+      '#type': textarea
+      '#title': 'Other activities you participate in'
+    husband_what_type_of_music_do_you_prefer_:
+      '#type': textarea
+      '#title': 'What type of music do you prefer?'
+    husband_what_are_your_favorite_tv_shows_:
+      '#type': textarea
+      '#title': 'What are your favorite TV Shows?'
+    husband_what_events_do_you_attend_at_bethel_:
+      '#type': checkboxes
+      '#title': 'What events do you attend at Bethel?'
+      '#options':
+        husband_Football_attend: Football
+        husband_Basketball_attend: Basketball
+        husband_Soccer_attend: Soccer
+        husband_Volleyball_attend: Volleyball
+        husband_Concerts_attend: Concerts
+        husband_Drama_attend: Drama
+        husband_Opera_attend: Opera
+        husband_Lectures_attend: Lectures
+        husband_Fall_Fest_attend: 'Fall Fest'
+        husband_Alumni_Banquet_attend: 'Alumni Banquet'
+  wife:
+    '#type': fieldset
+    '#title': Wife
+    wife_name:
+      '#type': textfield
+      '#title': Name
+    wife_work_phone:
+      '#type': textfield
+      '#title': 'Work phone'
+    wife_may_we_call_you_at_work_:
+      '#type': radios
+      '#title': 'May we call you at work?'
+      '#options': yes_no
+    wife_place_of_work:
+      '#type': textfield
+      '#title': 'Place of work'
+    wife_type_of_work:
+      '#type': textfield
+      '#title': 'Type of work'
+    wife_religious_denomination:
+      '#type': textfield
+      '#title': 'Religious denomination'
+    wife_church_attending:
+      '#type': textfield
+      '#title': 'Church attending'
+    wife_college_you_attended:
+      '#type': textfield
+      '#title': 'College you attended'
+    wife_year_graduated:
+      '#type': textfield
+      '#title': 'Year graduated'
+    wife_degree:
+      '#type': textfield
+      '#title': Degree
+    wife_major:
+      '#type': textfield
+      '#title': Major
+    wife_travel_experiences:
+      '#type': textarea
+      '#title': 'Travel Experiences'
+    wife_hobbies:
+      '#type': textarea
+      '#title': Hobbies
+    wife_clubs_or_organizations_you_belong_to:
+      '#type': textarea
+      '#title': 'Clubs or organizations you belong to'
+    wife_sports_interest:
+      '#type': fieldset
+      '#title': 'Sports interest'
+      '#description': 'Indicate sports interest by ranking the following sports numerically with &quot;1&quot; being the highest interest'
+      wife_football_interest:
+        '#type': number
+        '#title': Football
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_track_interest:
+        '#type': number
+        '#title': Track
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_tennis_interest:
+        '#type': number
+        '#title': Tennis
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_baseball_interest:
+        '#type': number
+        '#title': Baseball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_basketball_interest:
+        '#type': number
+        '#title': Basketball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_volleyball_interest:
+        '#type': number
+        '#title': Volleyball
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_soccer_interest:
+        '#type': number
+        '#title': Soccer
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_water_skiing_interest:
+        '#type': number
+        '#title': 'Water Skiing'
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_other_interest:
+        '#type': number
+        '#title': Other
+        '#min': '1'
+        '#max': '9'
+        '#step': '1'
+      wife_other_sport_name_interest:
+        '#type': textfield
+        '#title': 'Other sport name'
+        '#states':
+          visible:
+            ':input[name="wife_other_interest"]':
+              filled: true
+    wife_other_activities_you_participate_in:
+      '#type': textarea
+      '#title': 'Other activities you participate in'
+    wife_what_type_of_music_do_you_prefer_:
+      '#type': textarea
+      '#title': 'What type of music do you prefer?'
+    wife_what_are_your_favorite_tv_shows_:
+      '#type': textarea
+      '#title': 'What are your favorite TV Shows?'
+    wife_what_events_do_you_attend_at_bethel_:
+      '#type': checkboxes
+      '#title': 'What events do you attend at Bethel?'
+      '#options':
+        wife_Football_attend: Football
+        wife_Basketball_attend: Basketball
+        wife_Soccer_attend: Soccer
+        wife_Volleyball_attend: Volleyball
+        wife_Concerts_attend: Concerts
+        wife_Drama_attend: Drama
+        wife_Opera_attend: Opera
+        wife_Lectures_attend: Lectures
+        wife_Fall_Fest_attend: 'Fall Fest'
+        wife_Alumni_Banquet_attend: 'Alumni Banquet'
+children_of_the_home:
+  '#type': fieldset
+  '#title': 'Children of the home'
+  first_child:
+    '#type': fieldset
+    '#title': '1'
+    first_child_name:
+      '#type': textfield
+      '#title': Name
+    first_child_age:
+      '#type': textfield
+      '#title': Age
+    first_child_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  second_child:
+    '#type': fieldset
+    '#title': '2'
+    second_child_name:
+      '#type': textfield
+      '#title': Name
+    second_child_age:
+      '#type': textfield
+      '#title': Age
+    second_child_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  third_child:
+    '#type': fieldset
+    '#title': '3'
+    third_child_name:
+      '#type': textfield
+      '#title': Name
+    third_child_age:
+      '#type': textfield
+      '#title': Age
+    third_child_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  fourth_child:
+    '#type': fieldset
+    '#title': '4'
+    fourth_child_name:
+      '#type': textfield
+      '#title': Name
+    fourth_child_age:
+      '#type': textfield
+      '#title': Age
+    fourth_child_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  how_many_bedrooms_do_you_have_avaliable_for_guests_:
+    '#type': number
+    '#title': 'How many bedrooms do you have avaliable for guests?'
+    '#min': '1'
+    '#step': '1'
+  twin_beds:
+    '#type': number
+    '#title': 'Twin beds'
+    '#min': '1'
+    '#step': '1'
+  double_beds:
+    '#type': number
+    '#title': 'Double beds'
+    '#min': '1'
+    '#step': '1'
+  do_you_have_a_preference_of_student_gender_:
+    '#type': radios_other
+    '#title': 'Do you have a preference of student gender?'
+    '#options':
+      Male: Male
+      Female: Female
+      'No preference': 'No preference'
+  preference_of_student_demographics:
+    '#type': checkboxes
+    '#title': 'Preference of student demographics'
+    '#options':
+      '500+ miles from home': '500+ miles from home'
+      International: International
+      Multicultural: Multicultural
+  will_you_be_able_to_host_a_student_over_vacations:
+    '#type': fieldset
+    '#title': 'Will you be able to host a student over vacations?'
+    thanksgiving:
+      '#type': radios
+      '#title': Thanksgiving
+      '#options': yes_no
+    spring_break:
+      '#type': radios
+      '#title': 'Spring Break'
+      '#options': yes_no
+    easter:
+      '#type': radios
+      '#title': Easter
+      '#options': yes_no

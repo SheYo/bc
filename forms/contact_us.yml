@@ -1,0 +1,15 @@
+your_information:
+  '#type': fieldset
+  '#title': 'Your information'
+  name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+    '#required': true
+  comments:
+    '#type': textarea
+    '#title': Comments
+    '#required': true

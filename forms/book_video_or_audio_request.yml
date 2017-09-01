@@ -1,0 +1,54 @@
+your_information:
+  '#type': fieldset
+  '#title': 'Your information'
+  name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+  email:
+    '#type': textfield
+    '#title': Email
+    '#required': true
+  campus_box:
+    '#type': textfield
+    '#title': 'Campus box'
+  cost_limit:
+    '#type': select
+    '#title': 'Cost limit'
+    '#description': 'Most Kansas libraries send periodical articles for free. However, many hospital libraries and/or libraries out-of-state charge for periodical interlibrary loans.'
+    '#options':
+      $0: $0
+      '$5 or less': '$5 or less'
+      $5-10: $5-10
+      $10-20: $10-20
+      $20: $20
+      'No limit': 'No limit'
+    '#required': true
+  stop_trying_after:
+    '#type': date
+    '#title': 'Stop trying after'
+    '#description': 'Date at which you can no longer use this material'
+    '#datepicker': true
+requested_book_video_or_audio_information:
+  '#type': fieldset
+  '#title': 'Requested book, video or audio information'
+  author_s_name:
+    '#type': textfield
+    '#title': 'Author''s name'
+    '#required': true
+  title_of_book_video_audio:
+    '#type': textfield
+    '#title': 'Title of book/video/audio'
+    '#required': true
+  publisher_and_date:
+    '#type': textfield
+    '#title': 'Publisher and date'
+  format:
+    '#type': textfield
+    '#title': Format
+    '#description': 'If requesting audio or video, please list format(s) you can use, such as DVD, VHS, audiocassette or audio CD'
+    '#placeholder': 'e.g.: VHS, DVD, etc.'
+  additional_comments:
+    '#type': textarea
+    '#title': 'Additional comments'
+    '#description': 'Or citation pasted from a bibliographic database. Please submit only one citation per form'

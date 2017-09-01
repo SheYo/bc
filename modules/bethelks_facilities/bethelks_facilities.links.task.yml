@@ -1,0 +1,5 @@
+# BethelKS Staff tab in "Content" Page
+bethelks_link.adminList:
+  title: 'BethelKS Facilities'
+  base_route: system.admin_content
+  route_name: facility_list_admin.Controller

@@ -1,0 +1,69 @@
+# Admin Staff List
+bethelks_staff.adminList:
+  path: '/admin/content/bethelks_staff'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaff'
+    _title: 'BethelKS Staff'
+  requirements:
+    _permission: 'administer staff'
+
+# Staff List
+bethelks_staff.faculty:
+  path: '/faculty/{page}'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaffPaginated'
+    _title: 'BethelKS Staff'
+    page: 0
+  requirements:
+    _permission: 'administer staff'
+
+# Add Staff
+bethelks_staff.adminList.add:
+  path: '/admin/content/bethelks_staff/add'
+  defaults:
+    _form: '\Drupal\bethelks_staff\Form\AddStaffForm'
+    _title: 'Add Staff'
+  requirements:
+    _permission: 'administer staff'
+
+# View Staff
+# bethelks_staff.faculty1:
+#   path: '/faculty'
+#   defaults:
+#     _controller: '\Drupal\bethelks_staff\Controller\StaffController::viewStaffFull'
+#     _title: 'Bethel College Faculty'
+#   requirements:
+#     _permission: 'access content'
+
+bethelks_staff.faculty.view:
+  path: '/faculty/view/{sid}'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::viewStaff'
+    _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::viewStaffTitle'
+  requirements:
+    _permission: 'access content'
+
+# Edit Page Routing
+bethelks_staff.adminList.edit:
+  path: '/admin/content/bethelks_staff/edit/{sid}'
+  defaults:
+    _form: '\Drupal\bethelks_staff\Form\EditStaffForm'
+    _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::editStaffTitle'
+  requirements:
+    _permission: 'administer staff'
+bethelks_staff.adminList.edit.delete:
+  path: '/admin/content/bethelks_staff/delete/{sid}'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::deleteStaff'
+    _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::deleteStaffTitle'
+    sid: null
+  requirements:
+    _permission: 'administer staff'
+bethelks_staff.adminList.edit.delete.confirmDelete:
+  path: '/admin/content/bethelks_staff/delete/confirmDelete/{sid}'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::confirmDeleteStaff'
+    _title: 'Deleting Staff Member'
+    sid: null
+  requirements:
+    _permission: 'administer staff'

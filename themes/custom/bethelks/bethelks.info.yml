@@ -1,0 +1,22 @@
+name: 'Bethel KS Custom Theme'
+type: theme
+description: 'A custom theme for Bethel College developed by Ennovar. Implements Bootstrap 4.0 (beta) and jQuery.'
+core: 8.x
+libraries-override:
+  classy/base: false
+libraries:
+  - bethelks/bootstrap-css
+  - bethelks/font-awesome-css
+  - bethelks/global-css
+  - bethelks/bootstrap-js
+  - bethelks/parallax-js
+  - bethelks/isotope-js
+  - bethelks/global-js
+  - bethelks/homepage-js
+regions:
+  header: 'Header'
+  postHeader: 'Post Header'
+  content: 'Content'
+  rightSidebar: 'Right Sidebar'
+  preFooter: 'Pre Footer'
+  footer: 'Footer'

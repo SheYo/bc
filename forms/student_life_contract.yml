@@ -1,0 +1,393 @@
+individual_info:
+  '#type': fieldset
+  '#title': 'Individual Information'
+  full_name:
+    '#type': fieldset
+    '#title': 'Full Name'
+    last_name:
+      '#type': textfield
+      '#title': Last
+    first_name:
+      '#type': textfield
+      '#title': First
+    middle_name:
+      '#type': textfield
+      '#title': Middle
+    preferred_name:
+      '#type': textfield
+      '#title': 'If your first name is not your preferred name, please indicate your preferred name'
+  address:
+    '#type': fieldset
+    '#title': Address
+    street:
+      '#type': textfield
+      '#title': Street
+    city:
+      '#type': textfield
+      '#title': City
+    state:
+      '#type': textfield
+      '#title': State
+    zip_code:
+      '#type': textfield
+      '#title': 'Zip Code'
+  phone_and_email:
+    '#type': fieldset
+    '#title': Phone/Email
+    home_phone:
+      '#type': tel
+      '#title': 'Home Phone'
+    cell_phone:
+      '#type': tel
+      '#title': 'Cell Phone'
+    email:
+      '#type': email
+      '#title': E-mail
+  other_info:
+    '#type': fieldset
+    '#title': 'Other Information'
+    birth_date:
+      '#type': date
+      '#title': 'Birth Date (MM/DD/YYYY)'
+      '#date_date_format': m/d/Y
+    gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        male: Male
+        female: Female
+    height:
+      '#type': textfield
+      '#title': Height
+student_info:
+  '#type': fieldset
+  '#title': 'Student Information'
+  expected_start_date:
+    '#type': fieldset
+    '#title': 'I plan to begin classes'
+    expected_term:
+      '#type': radios
+      '#title': 'Expected Term'
+      '#options':
+        fall: Fall
+        interterm: Interterm
+        spring: Spring
+    expected_year:
+      '#type': number
+      '#title': 'Expected Year'
+  student_status:
+    '#type': fieldset
+    '#title': 'Student Status'
+    current_student_status:
+      '#type': radios
+      '#title': 'Current Status'
+      '#options':
+        first-year: 'First-year Student'
+        transfer: 'Transfer Student'
+        special: 'Special (non-degree seeking/audit/pre-college)'
+    student_classification:
+      '#type': radios_other
+      '#title': Classification
+      '#options':
+        freshman: FR
+        sophomore: SO
+        junior: JR
+        senior: SR
+        fifth_year: 5th-year
+community_standards:
+  '#type': fieldset
+  '#title': 'Community Standards'
+  has_disciplinary_violation:
+    '#type': radios
+    '#title': 'Have you ever been found responsible for a disciplinary violation at an educational institution as a result of academic misconduct or behavioral misconduct, that resulted in your probation, suspension, removal, dismissal, or expulsion?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  has_disciplinary_violation_explanation:
+    '#type': textarea
+    '#title': 'Please Explain'
+    '#states':
+      visible:
+        ':input[name="has_disciplinary_violation"]':
+          value: 'yes'
+  has_criminal_conviction:
+    '#type': radios
+    '#title': 'Have you ever been convicted of a misdemeanor, felony, or other crime?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  has_criminal_conviction_explanation:
+    '#type': textarea
+    '#title': 'Please explain the circumstances of your conviction'
+    '#states':
+      visible:
+        ':input[name="has_criminal_conviction"]':
+          value: 'yes'
+housing_policy:
+  '#type': fieldset
+  '#title': 'Housing Policy'
+  i_plan_to_live:
+    '#type': radios
+    '#title': 'I plan to live'
+    '#options':
+      on_campus: 'On Campus'
+      off_campus: 'Off Campus'
+  will_be_part_time_student:
+    '#type': checkbox
+    '#title': 'I will be a part-time student (taking fewer than 12 credit hours)'
+  is_married:
+    '#type': checkbox
+    '#title': 'I am married'
+  is_23_or_older:
+    '#type': checkbox
+    '#title': 'I am 23 years of age or older'
+  is_single_parent_with_child_in_home:
+    '#type': checkbox
+    '#title': 'I am a single parent with a child in my home'
+  will_be_commuting:
+    '#type': checkbox
+    '#title': 'I will be commuting and living with my parents/guardians for the entire academic year*'
+  high_school:
+    '#type': textfield
+    '#title': 'High School'
+  gpa:
+    '#type': number
+    '#title': GPA
+    '#step': '14.1'
+  act:
+    '#type': number
+    '#title': ACT/SAT
+    '#title_display': before
+    '#min': '1'
+    '#max': '36'
+    '#step': '1'
+  hometown_population:
+    '#type': number
+    '#title': 'Hometown Population'
+  religious_affiliation:
+    '#type': textfield
+    '#title': 'Religious Affiliation (optional)'
+areas_of_interest_and_activities:
+  '#type': fieldset
+  '#title': 'Areas of Interest/Activity'
+  academic_major:
+    '#type': textfield
+    '#title': 'Academic Major'
+  high_school_activities:
+    '#type': textarea
+    '#title': 'High School Activities'
+  anticipated_college_activities:
+    '#type': textarea
+    '#title': 'Anticipated College Activities (e.g. athletics, music, clubs)'
+personal_preferences:
+  '#type': fieldset
+  '#title': 'Personal Preferences (only for students living on campus)—Please be as honest as possible.'
+  goes_to_bed_before_midnight:
+    '#type': buttons
+    '#title': 'I go to bed before midnight'
+    '#options':
+      always: Always
+      frequent: Frequent
+      sometimes: Sometimes
+      never: Never
+      indifferent: Indifferent
+  morning_or_night_person:
+    '#type': buttons
+    '#title': 'Do you consider yourself a morning person or a night person?'
+    '#options':
+      morning: Morning
+      night: Night
+  studies_with_music_or_tv_on:
+    '#type': buttons
+    '#title': 'I study with music/TV on'
+    '#options':
+      always: Always
+      frequent: Frequent
+      sometimes: Sometimes
+      never: Never
+      indifferent: Indifferent
+  describe_study_habits:
+    '#type': textarea
+    '#title': 'How would you describe your study habits'
+  keeps_room_clean_and_organized:
+    '#type': buttons
+    '#title': 'I keep my room clean and organized'
+    '#options':
+      always: Always
+      frequent: Frequent
+      sometimes: Sometimes
+      never: Never
+      indifferent: Indifferent
+  how_do_you_prefer_room_be_kept:
+    '#type': textarea
+    '#title': 'Describe how you prefer your room to be kept'
+  sees_room_as_gathering_place:
+    '#type': buttons
+    '#title': 'I see my room as a gathering place'
+    '#options':
+      always: Always
+      frequent: Frequent
+      sometimes: Sometimes
+      never: Never
+      indifferent: Indifferent
+  music_style_preferences:
+    '#type': textarea
+    '#title': 'Music Style Preferences'
+  are_there_any_physical_conditions_or_special_concerns_of_which_w:
+    '#type': radios
+    '#title': 'Are there any physical conditions or special concerns of which we should be aware when making your housing assignment?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  please_exlain_special_concerns:
+    '#type': textarea
+    '#title': 'Please explain'
+    '#states':
+      visible:
+        ':input[name="are_there_any_physical_conditions_or_special_concerns_of_which_w"]':
+          value: 'yes'
+  would_like_to_room_with:
+    '#type': textfield
+    '#title': 'I would like to room with (Roommate request must be mutual)'
+  interested_in_rooming_with_international_student:
+    '#type': radios
+    '#title': 'Would you be interest in rooming with an international student?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+  personal_appliances_and_electronics:
+    '#type': textfield
+    '#title': 'What personal appliances and electronics do you plan to bring? '
+  other_housing_considerations:
+    '#type': textarea
+    '#title': 'What other information would you like us to consider in pairing you with a roommate?'
+housing_preferences:
+  '#type': fieldset
+  '#title': 'Housing Preferences'
+  housing_preferences_heading:
+    '#type': markup
+    '#markup': 'All first-year students will live in Haury Hall. Transfer students may choose to live in either Warkentin Court or Voth Hall. Please rank your preference with &ldquo;1&rdquo; being your top choice. To find or review housing options, please visit the &ldquo;Campus Life&rdquo; link under &ldquo;Student Life&rdquo; on our website. Please note that housing requests are not gurantees.'
+  housing_haury_hall:
+    '#type': number
+    '#title': 'Haury Hall room'
+  housing_haury_hall_diagrams:
+    '#type': processed_text
+    '#text': |
+      <p><img alt="Haury Hall North Diagram" data-align="left" data-entity-type="file" data-entity-uuid="01da0e73-9e82-4047-862e-84fc1ee046f7" src="/sites/bethelks.dd/files/inline-images/haury_north.jpg" /></p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p><img alt="Haury Hall South Diagram" data-align="left" data-entity-type="file" data-entity-uuid="7a83ed0c-24d1-4c17-85d0-9bc9f545b01a" src="/sites/bethelks.dd/files/inline-images/haury_south.jpg" /></p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+    '#format': full_html
+  warkentin_court_mod:
+    '#type': number
+    '#title': 'Warkentin Court Mod (not available to freshmen)'
+    '#format_items': comma
+  housing_warkentin_court_mod_diagram:
+    '#type': processed_text
+    '#text': |
+      <p><img alt="Warkentin Court Mod Diagram" data-align="left" data-entity-type="file" data-entity-uuid="c2b18c42-9f9a-4556-b0d8-88204cf65bfb" src="/sites/bethelks.dd/files/inline-images/warkentin_court.jpg" /></p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+      
+      <p>&nbsp;</p>
+    '#format': full_html
+  housing_voth_hall_suite:
+    '#type': number
+    '#title': 'Voth Hall Suite (not available to freshmen)'
+  housing_voth_hall_suites_diagrams:
+    '#type': processed_text
+    '#text': |
+      <p><img alt="Voth Hall Suites Diagram" data-align="left" data-entity-type="file" data-entity-uuid="ad2d244d-1f4a-45d9-837e-89ccf530c8f3" src="/sites/bethelks.dd/files/inline-images/voth_hall_diagram.jpg" /></p>
+    '#format': basic_html
+t_shirt_size:
+  '#type': fieldset
+  '#title': 'T-Shirt Size'
+  shirt_size:
+    '#type': radios
+    '#title': 'Shirt Size'
+    '#options':
+      small: S
+      medium: M
+      large: L
+      extra-large: XL
+      extra-extra-large: XXL
+emergency_info:
+  '#type': fieldset
+  '#title': 'Emergency Information'
+  emergency_info_name:
+    '#type': textfield
+    '#title': 'In case of emergency, notify'
+  emergency_info_relation_to_student:
+    '#type': textfield
+    '#title': 'Relationship to Student'
+  emergency_info_phone:
+    '#type': tel
+    '#title': 'Emergency Phone'
+  emergency_info_email:
+    '#type': email
+    '#title': 'Emergency e-mail address'

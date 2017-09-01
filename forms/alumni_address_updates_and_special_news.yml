@@ -1,0 +1,357 @@
+personal_information:
+  '#type': fieldset
+  '#title': 'Personal information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle name'
+  maiden_name:
+    '#type': textfield
+    '#title': 'Maiden name'
+bethel_college_information:
+  '#type': fieldset
+  '#title': 'Bethel college information'
+  year_s_at_bethel_college:
+    '#type': textfield
+    '#title': 'Year(s) at Bethel College'
+  class_with_which_you_prefer_to_associate:
+    '#type': textfield
+    '#title': 'Class with which you prefer to associate'
+    '#description': 'Can be different from your graduation year'
+contact_information:
+  '#type': fieldset
+  '#title': 'Contact information'
+  address:
+    '#type': textfield
+    '#title': Address
+  city:
+    '#type': textfield
+    '#title': City
+  state_province:
+    '#type': textfield
+    '#title': State/province
+  zip_postal_code:
+    '#type': textfield
+    '#title': 'Zip/Postal code'
+    '#input_mask': '99999[-9999]'
+  country:
+    '#type': select
+    '#title': Country
+    '#options': country_names
+  this_is_a_new_address:
+    '#type': radios
+    '#title': 'This is a new address'
+    '#options': yes_no
+  home_phone:
+    '#type': tel
+    '#title': 'Home phone'
+  cell_phone:
+    '#type': tel
+    '#title': 'Cell phone'
+  spouse_s_cell_phone:
+    '#type': tel
+    '#title': 'Spouse''s cell phone'
+  this_includes_a_phone_number_change:
+    '#type': radios
+    '#title': 'This includes a phone number change'
+    '#options': yes_no
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+  this_is_a_new_e_mail_address:
+    '#type': radios
+    '#title': 'This is a new e-mail address'
+    '#options': yes_no
+education_or_professional_training_beyond_bethel:
+  '#type': fieldset
+  '#title': 'Education or professional training beyond Bethel'
+  '#description': 'Please add any additional degrees that don&#39;t fit into the given fields in the &quot;Additional comments&quot; section at the end of this form'
+  instiution_one_information:
+    '#type': fieldset
+    '#title': 'Instiution Information'
+    further_education_one_name:
+      '#type': textfield
+      '#title': Name
+    further_education_one_location:
+      '#type': textfield
+      '#title': Location
+    further_education_one_degree:
+      '#type': textfield
+      '#title': Degree
+    further_education_one_area_of_study:
+      '#type': textfield
+      '#title': 'Area of study'
+    further_education_one_year_month_of_completion:
+      '#type': textfield
+      '#title': 'Year/Month of Completion'
+  instiution_two_information:
+    '#type': fieldset
+    '#title': 'Instiution Information'
+    further_education_two_name:
+      '#type': textfield
+      '#title': Name
+    further_education_two_location:
+      '#type': textfield
+      '#title': Location
+    further_education_two_degree:
+      '#type': textfield
+      '#title': Degree
+    further_education_two_area_of_study:
+      '#type': textfield
+      '#title': 'Area of study'
+    further_education_two_year_month_of_completion:
+      '#type': textfield
+      '#title': 'Year/Month of Completion'
+  instiution_three_information:
+    '#type': fieldset
+    '#title': 'Instiution Information'
+    further_education_three_name:
+      '#type': textfield
+      '#title': Name
+    further_education_three_location:
+      '#type': textfield
+      '#title': Location
+    further_education_three_degree:
+      '#type': textfield
+      '#title': Degree
+    further_education_three_area_of_study:
+      '#type': textfield
+      '#title': 'Area of study'
+    further_education_three_year_month_of_completion:
+      '#type': textfield
+      '#title': 'Year/Month of Completion'
+  instiution_four_information:
+    '#type': fieldset
+    '#title': 'Instiution Information'
+    further_education_four_name:
+      '#type': textfield
+      '#title': Name
+    further_education_four_location:
+      '#type': textfield
+      '#title': Location
+    further_education_four_degree:
+      '#type': textfield
+      '#title': Degree
+    further_education_four_area_of_study:
+      '#type': textfield
+      '#title': 'Area of study'
+    further_education_four_year_month_of_completion:
+      '#type': textfield
+      '#title': 'Year/Month of Completion'
+  instiution_five_information:
+    '#type': fieldset
+    '#title': 'Instiution Information'
+    further_education_five_name:
+      '#type': textfield
+      '#title': Name
+    further_education_five_location:
+      '#type': textfield
+      '#title': Location
+    further_education_five_degree:
+      '#type': textfield
+      '#title': Degree
+    further_education_five_area_of_study:
+      '#type': textfield
+      '#title': 'Area of study'
+    further_education_five_year_month_of_completion:
+      '#type': textfield
+      '#title': 'Year/Month of Completion'
+current_job_or_professional_information:
+  '#type': fieldset
+  '#title': 'Current job or professional information'
+  i_am_currently:
+    '#type': radios
+    '#title': 'I am currently'
+    '#options':
+      'Retired from:': 'Retired from:'
+      'Employed at:': 'Employed at:'
+  employer:
+    '#type': textfield
+    '#title': Employer
+  location:
+    '#type': textfield
+    '#title': Location
+  job_title:
+    '#type': textfield
+    '#title': 'Job title'
+  work_phone:
+    '#type': tel
+    '#title': 'Work phone'
+  would_you_like_us_to_share_this_information_except_for_phone_in_:
+    '#type': radios
+    '#title': 'Would you like us to share this information (except for phone) in "Class Notes" in the next issue of Bethel''s alumni magazine?'
+    '#options': yes_no
+  are_you_interested_in_information_about_being_an_alumni_mentor_t:
+    '#type': radios
+    '#title': 'Are you interested in information about being an alumni mentor to a Bethel College student?'
+    '#options': yes_no
+church_information:
+  '#type': fieldset
+  '#title': 'Church information'
+  denomination:
+    '#type': textfield
+    '#title': Denomination
+marriage_information:
+  '#type': fieldset
+  '#title': 'Marriage information'
+  '#description': 'Recent marriage will be included in &quot;Class Notes&quot; in alumni magazine'
+  spouse_s_name:
+    '#type': textfield
+    '#title': 'Spouse''s name'
+  date_of_marriage:
+    '#type': textfield
+    '#title': 'Date of marriage'
+  spouse_s_maiden_name:
+    '#type': textfield
+    '#title': 'Spouse''s maiden name'
+children:
+  '#type': fieldset
+  '#title': Children
+  child_one:
+    '#type': fieldset
+    '#title': '1'
+    child_one_name:
+      '#type': textfield
+      '#title': Name
+    child_one_gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+    child_one_date_of_birth:
+      '#type': textfield
+      '#title': 'Date of birth'
+    child_one_adoption_date_if_applicable_:
+      '#type': textfield
+      '#title': 'Adoption date (if applicable)'
+    child_one_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  child_two:
+    '#type': fieldset
+    '#title': '2'
+    child_two_name:
+      '#type': textfield
+      '#title': Name
+    child_two_gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+    child_two_date_of_birth:
+      '#type': textfield
+      '#title': 'Date of birth'
+    child_two_adoption_date_if_applicable_:
+      '#type': textfield
+      '#title': 'Adoption date (if applicable)'
+    child_two_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  child_three:
+    '#type': fieldset
+    '#title': '3'
+    child_three_name:
+      '#type': textfield
+      '#title': Name
+    child_three_gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+    child_three_date_of_birth:
+      '#type': textfield
+      '#title': 'Date of birth'
+    child_three_adoption_date_if_applicable_:
+      '#type': textfield
+      '#title': 'Adoption date (if applicable)'
+    child_three_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  child_four:
+    '#type': fieldset
+    '#title': '4'
+    child_four_name:
+      '#type': textfield
+      '#title': Name
+    child_four_gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+    child_four_date_of_birth:
+      '#type': textfield
+      '#title': 'Date of birth'
+    child_four_adoption_date_if_applicable_:
+      '#type': textfield
+      '#title': 'Adoption date (if applicable)'
+    child_four_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+  child_five:
+    '#type': fieldset
+    '#title': '5'
+    child_five_name:
+      '#type': textfield
+      '#title': Name
+    child_five_gender:
+      '#type': radios
+      '#title': Gender
+      '#options':
+        Male: Male
+        Female: Female
+    child_five_date_of_birth:
+      '#type': textfield
+      '#title': 'Date of birth'
+    child_five_adoption_date_if_applicable_:
+      '#type': textfield
+      '#title': 'Adoption date (if applicable)'
+    child_five_grade_in_school:
+      '#type': textfield
+      '#title': 'Grade in school'
+additional_information:
+  '#type': fieldset
+  '#title': 'Additional information'
+  updates_to_be_included_in_class_notes_in_bethel_s_alumni_magazin:
+    '#type': textarea
+    '#title': 'Updates (to be included in "Class Notes" in Bethel''s alumni magazine)'
+  please_also_share_my_contact_employment_education_and_or_other_n:
+    '#type': textarea
+    '#title': 'Please also share my contact, employment, education and/or other new information with the following faculty or department(s)'
+  hobbies_life_highlights_bethel_memories_comments_to_share_at_my_:
+    '#type': textarea
+    '#title': 'Hobbies, life highlights, Bethel memories, comments to share at my upcoming class reunion'
+  additional_comments_will_not_be_included_in_alumni_magazine_:
+    '#type': textarea
+    '#title': 'Additional comments (will not be included in alumni magazine)'
+reunion_information:
+  '#type': fieldset
+  '#title': 'Reunion information'
+  i_will_be_attending_the_reunion:
+    '#type': radios
+    '#title': 'I will be attending the reunion'
+    '#description': 'Reunion class members&rsquo; information will be shared with hosts and placed in a notebook for others to see at the reunion. Copies may also be sent to classmates upon request unless you indicate otherwise below.'
+    '#title_display': before
+    '#description_display': after
+    '#options': yes_no
+permission_information:
+  '#type': fieldset
+  '#title': 'Permission information'
+  permission_checkboxes:
+    '#type': checkboxes
+    '#title': 'Permission Checkboxes'
+    '#description': '<em>Unless you indicate below that you do not want them posted, your postal address and preferred e-mail address will be included with your name and class year in the Bethel College online Alumni Directory. Telephone and other information will not be posted. If no response is given below, the information will be included in the online directory and you will receive Thresher E-View, the monthly e-mail newsletter to alumni. (Note: It is not possible to post only a postal address or only an e-mail address.)</em>'
+    '#title_display': invisible
+    '#description_display': before
+    '#options':
+      'no copy of reunion information shared further': 'I do NOT want a copy of my reunion information shared further'
+      'no postal or e-mail address included in alumni directory or web': 'I do NOT want my postal or e-mail address included in the Bewthel alumni directory on the web'
+      'no Thresher E-View': 'I do NOT want to receive Thresher E-View'

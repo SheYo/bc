@@ -1,0 +1,8 @@
+<?php
+function bethelks_facilities_theme($existing, $type, $theme, $path) {
+  return[
+    'facility_list_admin_template' => ['variables' => ['items' => NULL]],
+    'facility_item_admin_template' => ['variables' => ['items' => NULL]],
+  ];
+}
+?>

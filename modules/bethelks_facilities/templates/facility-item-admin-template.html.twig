@@ -1,0 +1,12 @@
+<h1>{{ items.title }} {{ items.data.title }}</h1>
+{% if items.data is empty %}
+
+{% else %}
+  <div>Id: {{ items.data.id }}</div>
+  <div>Title: {{ items.data.title | replace({'_':' '}) | title }}</div>
+  <div>mapid: {{ items.data.mapid }}</div>
+  <div>description: {{ items.data.description | title }}</div>
+  {% if items.imguri is not null %}
+    <img src="{{ file_url(items.imguri) }}"></div>
+  {% endif %}
+{% endif %}

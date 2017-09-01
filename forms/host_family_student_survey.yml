@@ -1,0 +1,332 @@
+personal_information:
+  '#type': fieldset
+  '#title': 'Personal information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle name'
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+  nickname:
+    '#type': textfield
+    '#title': Nickname
+  host_family_placement:
+    '#type': radios
+    '#title': 'Host Family Placement'
+    '#options':
+      'I want to be placed with a host family': 'YES, I am interested in being placed with a host family'
+      'I do not want to be placed with a host family': 'NO, I am not interested in being placed with a host family'
+  address:
+    '#type': textfield
+    '#title': Address
+  home_phone:
+    '#type': tel
+    '#title': 'Home phone'
+  date_of_birth:
+    '#type': textfield
+    '#title': 'Date of birth'
+  gender:
+    '#type': radios
+    '#title': Gender
+    '#options':
+      Male: Male
+      Female: Female
+  do_you_have_relatives_in_the_newton_area_:
+    '#type': radios
+    '#title': 'Do you have relatives in the Newton area?'
+    '#options': yes_no
+  list_name_and_address_of_relatives_in_newton:
+    '#type': textarea
+    '#title': 'List name and address of relatives in newton'
+    '#states':
+      visible:
+        ':input[name="do_you_have_relatives_in_the_newton_area_"]':
+          value: 'Yes'
+  area_in_which_you_want_to_major:
+    '#type': textfield
+    '#title': 'Area in which you want to major'
+  list_sports_clubs_and_activities_you_plan_to_participate_in_at_b:
+    '#type': textarea
+    '#title': 'List sports, clubs, and activities you plan to participate in at Bethel College'
+  music_interests:
+    '#type': textarea
+    '#title': 'Music interests'
+  hobbies:
+    '#type': textarea
+    '#title': Hobbies
+  food_preferences:
+    '#type': fieldset
+    '#title': 'Food preferences'
+    '#description': 'What are your favorite foods in the following categories (You may list more than one)?'
+    meat:
+      '#type': textfield
+      '#title': Meat
+    potatoes:
+      '#type': textfield
+      '#title': Potatoes
+    breads:
+      '#type': textfield
+      '#title': Breads
+    vegetables:
+      '#type': textfield
+      '#title': Vegetables
+    fruits:
+      '#type': textfield
+      '#title': Fruits
+    desserts:
+      '#type': textfield
+      '#title': Desserts
+    snack_foods:
+      '#type': textfield
+      '#title': 'Snack foods'
+    list_any_foods_that_you_do_not_like:
+      '#type': textfield
+      '#title': 'List any foods that you DO NOT like'
+  church:
+    '#type': fieldset
+    '#title': Church
+    do_you_wish_to_attend_a_church_while_attending_college_:
+      '#type': radios
+      '#title': 'Do you wish to attend a church while attending college?'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+        Undecided: Undecided
+    what_denominational_church_would_you_wish_to_attend_:
+      '#type': checkboxes
+      '#title': 'What denominational church would you wish to attend?'
+      '#options':
+        Methodist: Methodist
+        Catholic: Catholic
+        Mennonite: Mennonite
+        Lutheran: Lutheran
+        Baptist: Baptist
+        Other: Other
+    other_denomination_name:
+      '#type': textfield
+      '#title': 'Other denomination name'
+      '#states':
+        visible:
+          ':input[name="what_denominational_church_would_you_wish_to_attend_[Other]"]':
+            checked: true
+  accessability:
+    '#type': fieldset
+    '#title': Accessability
+    do_you_have_a_car:
+      '#type': radios
+      '#title': 'Do you have a car'
+      '#options': yes_no
+    would_you_like_help_with_maintenance_care_of_your_car_from_your_:
+      '#type': radios
+      '#title': 'Would you like help with maintenance/care of your car from your host family?'
+      '#options': yes_no
+    would_you_list_your_host_family_to_attend_your_activites_and_par:
+      '#type': radios
+      '#title': 'Would you list your host family to attend your activites and parent activities during the college year?'
+      '#options': yes_no
+    what_other_kinds_of_assistance_would_you_like_to_see_your_host_f:
+      '#type': textarea
+      '#title': 'What other kinds of assistance would you like to see your host family help you with?'
+    do_you_have_special_medical_needs_the_host_family_should_be_awar:
+      '#type': radios
+      '#title': 'Do you have special medical needs the host family should be aware of and/or give support?'
+      '#options': yes_no
+    please_explain_special_medical_needs:
+      '#type': textarea
+      '#title': 'Please explain special medical needs'
+      '#states':
+        visible:
+          ':input[name="do_you_have_special_medical_needs_the_host_family_should_be_awar"]':
+            value: 'Yes'
+    what_specifically_do_you_need_from_a_host_family_:
+      '#type': textarea
+      '#title': 'What specifically do you need from a host family?'
+  other_personal_information:
+    '#type': fieldset
+    '#title': 'Other personal information'
+    are_you_an_international_or_u_s_citizen:
+      '#type': radios
+      '#title': 'Are you an international or U.S. Citizen'
+      '#options':
+        International: International
+        'U.S. Citizen': 'U.S. Citizen'
+    what_country_are_you_coming_from_:
+      '#type': textfield
+      '#title': 'What country are you coming from?'
+      '#states':
+        visible:
+          ':input[name="are_you_an_international_or_u_s_citizen"]':
+            value: International
+    do_you_prefer_a_host_family_with_a_similiar_cultural_background:
+      '#type': radios
+      '#title': 'Do you prefer a host family with a similiar cultural background?'
+      '#options': yes_no
+    which_culture_do_you_prefer:
+      '#type': textfield
+      '#title': 'Which culture do you prefer'
+      '#states':
+        visible:
+          ':input[name="do_you_prefer_a_host_family_with_a_similiar_cultural_background"]':
+            value: 'Yes'
+    do_you_have_brother_s_:
+      '#type': radios
+      '#title': 'Do you have brother(s)'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    number_of_brothers:
+      '#type': number
+      '#title': 'Number of brothers'
+      '#states':
+        visible:
+          ':input[name="do_you_have_brother_s_"]':
+            value: 'Yes'
+      '#min': '1'
+      '#step': '1'
+    brother_name_s_and_age_s_:
+      '#type': textarea
+      '#title': 'Brother name(s) and age(s)'
+      '#states':
+        visible:
+          ':input[name="do_you_have_brother_s_"]':
+            value: 'Yes'
+    do_you_have_sister_s_:
+      '#type': radios
+      '#title': 'Do you have sister(s)'
+      '#options':
+        'Yes': 'Yes'
+        'No': 'No'
+    number_of_sisters:
+      '#type': number
+      '#title': 'Number of sisters'
+      '#states':
+        visible:
+          ':input[name="do_you_have_sister_s_"]':
+            value: 'Yes'
+      '#min': '1'
+      '#step': '1'
+    sister_name_s_and_age_s_:
+      '#type': textarea
+      '#title': 'Sister name(s) and age(s)'
+      '#states':
+        visible:
+          ':input[name="do_you_have_sister_s_"]':
+            value: 'Yes'
+parents:
+  '#type': fieldset
+  '#title': Parents
+  mother:
+    '#type': fieldset
+    '#title': Mother
+    mother_name:
+      '#type': textfield
+      '#title': Name
+    mother_address_if_different_from_above_:
+      '#type': textfield
+      '#title': 'Address (if different from above)'
+    mother_home_phone_if_different_from_above_:
+      '#type': tel
+      '#title': 'Home phone (if different from above)'
+    mother_work_phone:
+      '#type': tel
+      '#title': 'Work phone'
+    mother_place_of_work:
+      '#type': textfield
+      '#title': 'Place of work'
+    mother_e_mail:
+      '#type': textfield
+      '#title': E-mail
+  father:
+    '#type': fieldset
+    '#title': Father
+    father_name:
+      '#type': textfield
+      '#title': Name
+    father_address_if_different_from_above_:
+      '#type': textfield
+      '#title': 'Address (if different from above)'
+    father_home_phone_if_different_from_above_:
+      '#type': tel
+      '#title': 'Home phone (if different from above)'
+    father_work_phone:
+      '#type': tel
+      '#title': 'Work phone'
+    father_place_of_work:
+      '#type': textfield
+      '#title': 'Place of work'
+    father_e_mail:
+      '#type': textfield
+      '#title': E-mail
+high_school:
+  '#type': fieldset
+  '#title': 'High School'
+  high_school_graduated_from:
+    '#type': textfield
+    '#title': 'High school graduated from'
+  state:
+    '#type': textfield
+    '#title': State
+  graduating_class_size:
+    '#type': number
+    '#title': 'Graduating class size'
+    '#min': '1'
+    '#step': '1'
+  extracurricular_activities:
+    '#type': fieldset
+    '#title': 'Extracurricular activities'
+    '#description': 'Mark all activities you participated in during High School'
+    sports:
+      '#type': checkboxes
+      '#title': Sports
+      '#options':
+        Football: Football
+        Baseball: Baseball
+        Basketball: Basketball
+        Cheer/Pom: Cheer/Pom
+        Golf: Golf
+        Swim: Swim
+        Gymnastics: Gymnastics
+        Tennis: Tennis
+        Soccer: Soccer
+        Track: Track
+        Volleyball: Volleyball
+    arts:
+      '#type': checkboxes
+      '#title': Arts
+      '#options':
+        Chior: Chior
+        Band: Band
+        Orchestra: Orchestra
+        'Pep Band': 'Pep Band'
+        'Jazz Band': 'Jazz Band'
+        Dance: Dance
+        Drama: Drama
+        Debate: Debate
+    clubs:
+      '#type': checkboxes
+      '#title': Clubs
+      '#options':
+        'Pep Club': 'Pep Club'
+        'Student Council': 'Student Council'
+        FCA: FCA
+        'Church Youth Group': 'Church Youth Group'
+        Other: Other
+    other_club_name:
+      '#type': textfield
+      '#title': 'Other club name'
+      '#states':
+        visible:
+          ':input[name="clubs[Other]"]':
+            checked: true
+  high_school_honors_received_e_g_all_league_salutatorian_:
+    '#type': textarea
+    '#title': 'High school honors received (e.g. All League, salutatorian)'
+  leadership_roles_e_g_officer_of_club_church_group_team_captian_:
+    '#type': textarea
+    '#title': 'Leadership Roles (e.g. officer of club/church group, team captian)'
+  work_history_while_in_high_school_list_where_you_worked_and_what:
+    '#type': textarea
+    '#title': 'Work history while in High School (list where you worked and what you did)'

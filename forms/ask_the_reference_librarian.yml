@@ -1,0 +1,19 @@
+your_information:
+  '#type': fieldset
+  '#title': 'Your information'
+  name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+  phone:
+    '#type': tel
+    '#title': Phone
+    '#required': true
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+    '#required': true
+  your_question:
+    '#type': textarea
+    '#title': 'Your question'
+    '#required': true

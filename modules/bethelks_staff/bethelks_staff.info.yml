@@ -1,0 +1,5 @@
+name: BethelKS Staff
+description: Create, read, update, and delete staff
+type: module
+core: 8.x
+package: Bethel KS

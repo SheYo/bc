@@ -1,0 +1,39 @@
+<?php
+function bethelks_general_config_schema() {
+  $schema['bethelks_site_config'] = array(
+    'description' => 'Table for site configuration values.',
+    'fields' => array(
+      'id' => array(
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true
+      ),
+      'config_key' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => ''
+      ),
+      'config_value' => array(
+        'type' => 'text',
+        'not null' => true
+      )
+    ),
+    'primary key' => array('id')
+  );
+
+  return $schema;
+}
+
+function bethelks_general_config_install() {
+  db_insert('bethelks_site_config')->fields(array(
+    'config_key' => 'home_video',
+    'config_value' => 'www.youtube.com'
+  ))->execute();
+
+  db_insert('bethelks_site_config')->fields(array(
+    'config_key' => 'price_per_credit',
+    'config_value' => '0.00'
+  ))->execute();
+}
+?>

@@ -1,0 +1,33 @@
+<a href="{{items.link}}/0/ae"><button style="margin-bottom:10px;" class="button button-action button--primary">Add facility</button></a>
+<h1>{{ items.title }}</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Mapid</th>
+      <th>title</th>
+      <th>description</th>
+      <th>image</th>
+      <th>action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if items.data is empty %}
+      <tr>
+        <td colspan="8">There are no data in the database.</td>
+      </tr>
+    {% else %}
+      {% for item in items.data %}
+        <tr>
+          <td>{{ item.id }}</td>
+          <td><a href="{{items.link}}/{{item.id}}">{{ item.title | replace({'_':' '}) | title }}</a></td>
+          <td>{{ item.mapid }}</td>
+          <td>{{ item.description | title }}</td>
+          <td>{{ item.image }}</td>
+          <td><a href="{{items.link}}/{{ item.id }}/ae"><button style="margin-bottom:10px;" class="button button-default">Edit</button></a>
+           <a href="{{items.link}}/{{ item.id }}/d"><button style="margin-bottom:10px;" class="button">Delete</button></a></td>
+        </tr>
+      {% endfor %}
+    {% endif %}
+  </tbody>
+</table>

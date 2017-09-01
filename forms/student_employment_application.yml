@@ -1,0 +1,256 @@
+position:
+  '#type': fieldset
+  '#title': Position
+  position_applying_for:
+    '#type': textfield
+    '#title': 'I am applying for the following position (leave blank if unknown or applying for any position)'
+personal_info:
+  '#type': fieldset
+  '#title': 'Personal Information'
+  first_name:
+    '#type': textfield
+    '#title': 'First Name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last Name'
+    '#required': true
+  middle_name:
+    '#type': textfield
+    '#title': 'Middle Name'
+contact_info:
+  '#type': fieldset
+  '#title': 'Contact Information'
+  contact_home_phone:
+    '#type': tel
+    '#title': 'Home Phone'
+    '#required': true
+  contact_cell_phone:
+    '#type': tel
+    '#title': 'Cell Phone'
+  e_mail:
+    '#type': email
+    '#title': E-mail
+    '#required': true
+  contact_campus_address:
+    '#type': textfield
+    '#title': 'Campus Address'
+    '#required': true
+home_address:
+  '#type': fieldset
+  '#title': 'Home Address'
+  address:
+    '#type': textfield
+    '#title': Address
+    '#required': true
+  city:
+    '#type': textfield
+    '#title': City
+    '#required': true
+  state:
+    '#type': textfield
+    '#title': State
+    '#required': true
+  zip_code:
+    '#type': number
+    '#title': 'ZIP Code'
+    '#required': true
+background_info:
+  '#type': fieldset
+  '#title': 'Background Information'
+  hours_per_week:
+    '#type': number
+    '#title': 'How many hours per week do you want to work?'
+  start_date:
+    '#type': textfield
+    '#title': 'When are you available to start?'
+  work_study_eligiblility:
+    '#type': radios
+    '#title': 'Are you work-study eligible?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#required': true
+  classification:
+    '#type': radios
+    '#title': Classification
+    '#options':
+      freshman: Freshman
+      sophomore: Sophomore
+      junior: Junior
+      senior: Senior
+      other: Other
+    '#required': true
+  college_major:
+    '#type': textfield
+    '#title': 'College Major'
+  areas_of_academic_interest:
+    '#type': textfield
+    '#title': 'If undecided, indicate area(s) of academic interest'
+  extracurricular_campus_activities:
+    '#type': textarea
+    '#title': 'Extracurricular campus activities'
+  describe_yourself:
+    '#type': textarea
+    '#title': 'Use 5 adjectives to describe yourself'
+    '#required': true
+  strengths:
+    '#type': textarea
+    '#title': 'What do you consider to be your strengths?'
+    '#required': true
+  able_to_perform_job_functions:
+    '#type': radios
+    '#title': 'Are you able to perform essential job functions with/without reasonable accommodations?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#required': true
+  able_to_perform_job_functions_explanation:
+    '#type': textarea
+    '#title': 'If you answered "No" above, please explain'
+  first_job:
+    '#type': radios
+    '#title': 'Will this be your "first" job?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#required': true
+  what_type_of_work_do_you_enjoy:
+    '#type': textarea
+    '#title': 'What type of work do you enjoy?'
+    '#required': true
+  library_work_experience:
+    '#type': radios
+    '#title': 'Do you have any library work experience'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#required': true
+  responsibilities_at_the_library:
+    '#type': textarea
+    '#title': 'If "Yes" what kind of responsibilities did you have at the library'
+  had_campus_job:
+    '#type': radios
+    '#title': 'Have you ever held a campus job before?'
+    '#options':
+      'yes': 'Yes'
+      'no': 'No'
+    '#required': true
+  had_campus_job_location:
+    '#type': textfield
+    '#title': 'If "Yes", where?'
+  had_campus_job_timeframe:
+    '#type': textfield
+    '#title': 'When?'
+  had_campus_job_tasks_and_duties:
+    '#type': textarea
+    '#title': 'What were your job related tasks/duties?'
+  other_work_experiences:
+    '#type': textarea
+    '#title': 'List other work related experience and responsibilities, as well as leadership roles (Include voluntary service, church work, summer camp, etc.)'
+skill_info:
+  '#type': fieldset
+  '#title': 'Skill Information'
+  other_languages:
+    '#type': textarea
+    '#title': 'List any languages you speak (other than English)'
+  computer_skills:
+    '#type': checkboxes
+    '#title': 'Computer Skills'
+    '#options':
+      ms_word: 'Microsoft Word'
+      ms_excel: 'MS Excel'
+      ms_access: 'MS Access'
+      ms_powerpoint: 'MS PowerPoint'
+      adobe_indesign: 'Adobe InDesign'
+  business_and_office_skills:
+    '#type': checkboxes
+    '#title': 'Business/Office Skills'
+    '#options':
+      typing: Typing
+      bookkeeping: Bookkeeping
+      receptionist: Receptionist
+      filing: Filing
+      telemarketing: Telemarketing
+  occupational_skills:
+    '#type': checkboxes
+    '#title': 'Occupational Skills'
+    '#options':
+      healthcare: Healthcare
+      sales: Sales
+      recreational/resort: Recreational/Resort
+      retail_business: 'Retail business'
+      agriculture: Agriculture
+      writing/journalism: Writing/Journalism
+  hands_on_experience_in:
+    '#type': checkboxes
+    '#title': 'Hands-on experience in the following areas'
+    '#options':
+      painting: Painting
+      carpentry: Carpentry
+      plumbing: Plumbing
+      electrical: Electrical
+      mechanical: Mechanical
+      audio/visual: Audio/Visual
+      electronics: Electronics
+      landscaping: Landscaping
+      food_service: 'Food Service'
+      auto_repair: 'Auto Repair'
+  other_skills:
+    '#type': textarea
+    '#title': 'Other skills'
+reference_info:
+  '#type': fieldset
+  '#title': 'Reference Information'
+  campus_references:
+    '#type': fieldset
+    '#title': 'Campus References (advisors, instructors, coaches, administrators, employers, etc.)'
+    campus_reference_name_1:
+      '#type': textfield
+      '#title': Name
+      '#required': true
+    campus_reference_phone_1:
+      '#type': tel
+      '#title': Phone
+      '#required': true
+    campus_reference_name_2:
+      '#type': textfield
+      '#title': Name
+      '#required': true
+    campus_reference_phone_2:
+      '#type': tel
+      '#title': Phone
+      '#required': true
+  personal_references:
+    '#type': fieldset
+    '#title': 'Off-campus personal references'
+    off_campus_reference_name_1:
+      '#type': textfield
+      '#title': Name
+      '#required': true
+    off_campus_reference_address_1:
+      '#type': textfield
+      '#title': Address
+      '#required': true
+    off_campus_reference_phone_1:
+      '#type': tel
+      '#title': Phone
+      '#required': true
+    off_campus_reference_name_2:
+      '#type': textfield
+      '#title': Name
+      '#required': true
+    off_campus_reference_address_2:
+      '#type': textfield
+      '#title': Address
+      '#required': true
+    off_campus_reference_phone_2:
+      '#type': tel
+      '#title': Phone
+      '#required': true
+  accuracy_verificiation:
+    '#type': markup
+    '#markup': 'By checking the box below, I hereby certify that my answers and assertions set forth in this application are true and complete to the best of my knowledge.'
+  verify_info:
+    '#type': checkbox
+    '#title': 'I agree'

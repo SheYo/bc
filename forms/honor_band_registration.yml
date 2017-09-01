@@ -1,0 +1,89 @@
+student_s_information:
+  '#type': fieldset
+  '#title': 'Student''s information'
+  first_name:
+    '#type': textfield
+    '#title': 'First name'
+    '#required': true
+  last_name:
+    '#type': textfield
+    '#title': 'Last name'
+    '#required': true
+  school:
+    '#type': textfield
+    '#title': School
+    '#required': true
+  instrument:
+    '#type': textfield
+    '#title': Instrument
+    '#required': true
+  grade_in_school:
+    '#type': textfield
+    '#title': 'Grade in school'
+    '#required': true
+  e_mail:
+    '#type': textfield
+    '#title': E-mail
+    '#required': true
+  high_school_band_teacher_s_name:
+    '#type': textfield
+    '#title': 'High school band teacher''s name'
+    '#required': true
+  private_lesson_teacher_s_name:
+    '#type': textfield
+    '#title': 'Private lesson teacher''s name'
+    '#required': true
+  please_list_any_honor_ensembles_you_have_participated_in:
+    '#type': textarea
+    '#title': 'Please list any honor ensembles you have participated in'
+    '#required': true
+  if_you_have_performed_at_solo_festival_what_piece_did_you_play_a:
+    '#type': textarea
+    '#title': 'If you have performed at Solo Festival, what piece did you play, and what rating did you achieve?'
+    '#required': true
+  please_list_any_other_musical_or_scholarly_accolades_you_have_ac:
+    '#type': textarea
+    '#title': 'Please list any other musical or scholarly accolades you have achieved'
+    '#required': true
+  t_shirt_size:
+    '#type': select
+    '#title': 'T-shirt size'
+    '#options':
+      S: S
+      M: M
+      L: L
+      XL: XL
+      XXL: XXL
+      XXXL: XXXL
+      Other: Other
+    '#empty_option': '- Select one -'
+    '#required': true
+  other_t_shirt_size:
+    '#type': textfield
+    '#title': 'Other t-shirt size'
+    '#states':
+      visible:
+        ':input[name="t_shirt_size"]':
+          value: Other
+parent_guardian_information:
+  '#type': fieldset
+  '#title': 'Parent/Guardian information'
+  parent_name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+  guardian_phone:
+    '#type': tel
+    '#title': 'Guardian phone'
+    '#required': true
+emergency_contact_information:
+  '#type': fieldset
+  '#title': 'Emergency contact information'
+  name:
+    '#type': textfield
+    '#title': Name
+    '#required': true
+  emergency_phone:
+    '#type': tel
+    '#title': 'Emergency phone'
+    '#required': true

@@ -1,0 +1,96 @@
+{#
+/**
+ * @file
+ * Theme override for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain one or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <link rel="icon" type="image/png" href="themes/custom/bethelks/favicon.png">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+
+    {{ attach_library('bethelks/bootstrap-css') }}
+    {{ attach_library('bethelks/font-awesome-css') }}
+    {{ attach_library('bethelks/global-css') }}
+
+    {{ attach_library('bethelks/bootstrap-js') }}
+    {{ attach_library('bethelks/parallax-js') }}
+    {{ attach_library('bethelks/isotope-js') }}
+    {{ attach_library('bethelks/global-js') }}
+    {{ attach_library('bethelks/homepage-js') }}
+  </head>
+  <body{{ attributes }}>
+    {{ page_top }}
+
+    <a class="js-scroll-to-top" href="#toTop">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    {% if page.header is empty %}
+      <div class="alert alert-danger container" role="alert">
+        <p><strong>Error!</strong> No data found within the page header. Please contact the site administrator.</p>
+      </div>
+    {% else %}
+      {{ page.header }}
+    {% endif %}
+
+    {% if page.content is empty %}
+      <div class="alert alert-danger container" role="alert">
+        <p><strong>Error!</strong> No data found within the page content. Please contact the site administrator.</p>
+      </div>
+    {% else %}
+      {{ page.content }}
+    {% endif %}
+
+    <div class="container-fluid preFooterFull homePreFooter">
+      <div class="container d-flex justify-content-center align-items-center">
+        {% if page.preFooter is empty %}
+          <div class="alert alert-danger" role="alert">
+            <p><strong>Error!</strong> No data found within the page pre-footer. Please contact the site administrator.</p>
+          </div>
+        {% else %}
+          {{ page.preFooter }}
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="container-fluid footerFull">
+      <div class="container">
+        {% if page.footer is empty %}
+          <div class="alert alert-danger container" role="alert">
+            <p><strong>Error!</strong> No data found within the page footer. Please contact the site administrator.</p>
+          </div>
+        {% else %}
+          {{ page.footer }}
+        {% endif %}
+      </div>
+    </div>
+
+    {{page_bottom}}
+
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>
