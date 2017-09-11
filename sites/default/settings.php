@@ -764,12 +764,12 @@ $settings['file_scan_ignore_directories'] = [
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 $databases['default']['default'] = array (
-  'database' => 'bctest5_drupal',
-  'username' => 'bctest5_sql',
-  'password' => '.HNyt7KDF',
+  'database' => 'bethelks_db',
+  'username' => 'root',
+  'password' => 'root',
   'prefix' => '',
   'host' => 'localhost',
-  'port' => '3306',
+  'port' => '3307',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
 );
