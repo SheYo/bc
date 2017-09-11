@@ -1,12 +1,12 @@
 <?php
-// define("MYSQL_USER", "bctest5");
-// define("MYSQL_PASS", ".HNyt7KDF");
-// define("MYSQL_DB", "bctest5_drupal");
-// define("DOMAIN", "https://www.bethelks.edu");
-define("MYSQL_USER", "root");
-define("MYSQL_PASS", "root");
-define("MYSQL_DB", "bethelks_db");
-define("DOMAIN", "/bethelks");
+define("MYSQL_USER", "bctest5");
+define("MYSQL_PASS", ".HNyt7KDF");
+define("MYSQL_DB", "bctest5_drupal");
+define("DOMAIN", "https://www.bethelks.edu");
+// define("MYSQL_USER", "root");
+// define("MYSQL_PASS", "root");
+// define("MYSQL_DB", "bethelks_db");
+// define("DOMAIN", "/bethelks");
 
 function sluggify($url) {
   $url = strtolower($url);
@@ -36,6 +36,7 @@ $fp = fopen("migrateLogFile.txt", "w"); //URLs that weren't dealt with
 $fpFileLog = fopen("fileMigrateLog.txt", "w"); //File URLs
 $fpNewsLog = fopen("newsMigrateLog.txt", "w"); //News URLs
 $fpMapLog = fopen("mapMigrateLog.txt", "w"); //Map URLs
+$fpPageLog = fopen("pageMigrateLog.txt", "w"); //Page URLs
 
 $postsWithLinks = "SELECT `entity_id`, `body_value`
 FROM `node__body`
@@ -72,10 +73,13 @@ foreach($dbh->query($postsWithLinks) as $post) {
         FROM `old_new_page`
         WHERE `oid` = ?
         LIMIT 1');
-        $oldNewsInfo->bindParam(1, preg_replace("/[^0-9]/", "", $url), PDO::PARAM_INT);
-        $oldNewsInfo = $oldNewsInfo->fetch(PDO::FETCH_ASSOC);
 
-        $newUrl = DOMAIN . '\/article\/' . sluggify($oldNewsInfo['title']);
+        $oid = preg_replace("/[^0-9]/", "", $url);
+        $oldNewsInfo->bindParam(1, $oid, PDO::PARAM_INT);
+        $oldNewsInfo->execute();
+        $oldNewsInfo = $oldNewsInfo->fetch();
+
+        $newUrl = DOMAIN . '/article/' . sluggify($oldNewsInfo['title']);
         $post['body_value'] = str_replace($url, $newUrl, $post['body_value']);
 
         fwrite($fpNewsLog, $post['entity_id'] . "," . $url . "," . $newUrl . "\n");
@@ -92,10 +96,24 @@ foreach($dbh->query($postsWithLinks) as $post) {
         $queryStruct->execute(array($post['body_value'], $post['entity_id']));
       }
       else {
-        //deal with basic page URLs
+        $parseRelativeURL = array_filter(explode("/", $url));
+        $findInternalURL = $dbh->prepare('SELECT `nid`, `title`
+        FROM `old_new_page`
+        WHERE `url` = ?
+        LIMIT 1');
+        $findInternalURL->bindParam(1, end($parseRelativeURL));
+        $findInternalURL->execute();
+        $findInternalURL = $findInternalURL->fetch();
 
-        //or
-        fwrite($fp, $post['entity_id'] . "," . $url . ",\n");
+        if(!empty($findInternalURL)) {
+          $newUrl = DOMAIN . '/page/' . sluggify($findInternalURL['title']);
+          $post['body_value'] = str_replace($url, $newUrl, $post['body_value']);
+          $queryStruct->execute(array($post['body_value'], $post['entity_id']));
+          fwrite($fpPageLog, $post['entity_id'] . "," . $url . "," . $newUrl . "\n");
+        }
+        else {
+          fwrite($fp, $post['entity_id'] . "," . $url . ",\n");
+        }
       }
     }
 
@@ -124,10 +142,13 @@ foreach($dbh->query($postsWithLinks) as $post) {
         FROM `old_new_page`
         WHERE `oid` = ?
         LIMIT 1');
-        $oldNewsInfo->bindParam(1, preg_replace("/[^0-9]/", "", $url), PDO::PARAM_INT);
-        $oldNewsInfo = $oldNewsInfo->fetch(PDO::FETCH_ASSOC);
 
-        $newUrl = DOMAIN . '\/article\/' . sluggify($oldNewsInfo['title']);
+        $oid = preg_replace("/[^0-9]/", "", $url);
+        $oldNewsInfo->bindParam(1, $oid, PDO::PARAM_INT);
+        $oldNewsInfo->execute();
+        $oldNewsInfo = $oldNewsInfo->fetch();
+
+        $newUrl = DOMAIN . '/article/' . sluggify($oldNewsInfo['title']);
         $post['body_value'] = str_replace($url, $newUrl, $post['body_value']);
 
         fwrite($fpNewsLog, $post['entity_id'] . "," . $url . "," . $newUrl . "\n");
@@ -144,10 +165,24 @@ foreach($dbh->query($postsWithLinks) as $post) {
         $queryStruct->execute(array($post['body_value'], $post['entity_id']));
       }
       else {
-        //deal with basic page URLs
+        $parseRelativeURL = array_filter(explode("/", $url));
+        $findInternalURL = $dbh->prepare('SELECT `nid`, `title`
+        FROM `old_new_page`
+        WHERE `url` = ?
+        LIMIT 1');
+        $findInternalURL->bindParam(1, end($parseRelativeURL));
+        $findInternalURL->execute();
+        $findInternalURL = $findInternalURL->fetch();
 
-        //or
-        fwrite($fp, $post['entity_id'] . "," . $url . ",\n");
+        if(!empty($findInternalURL)) {
+          $newUrl = DOMAIN . '/page/' . sluggify($findInternalURL['title']);
+          $post['body_value'] = str_replace($url, $newUrl, $post['body_value']);
+          $queryStruct->execute(array($post['body_value'], $post['entity_id']));
+          fwrite($fpPageLog, $post['entity_id'] . "," . $url . "," . $newUrl . "\n");
+        }
+        else {
+          fwrite($fp, $post['entity_id'] . "," . $url . ",\n");
+        }
       }
     }
 
@@ -160,6 +195,7 @@ fclose($fp);
 fclose($fpFileLog);
 fclose($fpNewsLog);
 fclose($fpMapLog);
+fclose($fpPageLog);
 
 echo 'Done - (Node Count: ' . $postCount . ')';
 ?>
