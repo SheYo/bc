@@ -1,7 +1,7 @@
 # BethelKS Staff tab in "Content" Page
 bethelks_staff.adminList:
   title: 'BethelKS Staff'
-  base_route: '/faculty/0' #system.admin_content
+  base_route: system.admin_content
   route_name: bethelks_staff.adminList
 
 # Edit Staff
