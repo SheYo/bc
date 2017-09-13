@@ -47,7 +47,7 @@ jQuery(document).on('ready', function(){
 
   /* Header Eyecatcher Responsive Homepage Start */
   function checkAndChangeHeaderEyecatcher() {
-    if(jQuery(window).width() <= 991 && document.URL == "http://bks.ennovardev.com/") {
+    if(jQuery(window).width() <= 991 && document.URL == "http://localhost/bethelks/") {
       var headerEyecatcher = jQuery('.header-eyecatcher');
       headerEyecatcher.addClass('header-eyecatcher-image');
       headerEyecatcher.html('<div class="container"><div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center"><div class="row"><div class="col-12"><h2>Connect to Purpose</h2></div><div class="col-12"><a href="#">Explore</a></div></div></div></div>');
@@ -60,15 +60,15 @@ jQuery(document).on('ready', function(){
   });
 
   if(jQuery('.header-eyecatcher').find('video').length) {
-    setTimeout(function(){
-      jQuery('.header-eyecatcher-video-overlay').fadeOut();
-    }, 5000);
-
-    jQuery('.header-eyecatcher').hover(function(){
-      jQuery('.header-eyecatcher-video-overlay').fadeIn();
-    }, function(){
-      jQuery('.header-eyecatcher-video-overlay').fadeOut();
-    });
+    // setTimeout(function(){
+    //   jQuery('.header-eyecatcher-video-overlay').fadeOut();
+    // }, 5000);
+    //
+    // jQuery('.header-eyecatcher').hover(function(){
+    //   jQuery('.header-eyecatcher-video-overlay').fadeIn();
+    // }, function(){
+    //   jQuery('.header-eyecatcher-video-overlay').fadeOut();
+    // });
 
     jQuery('.header-eyecatcher').find('video').on('click', function(e){
       e.preventDefault();

@@ -1,30 +1,36 @@
-bethelks.xs:
-  label: xs
-  mediaQuery: '(max-width: 575px)'
-  weight: 0
-  multipliers:
-    - 1x
-bethelks.sm:
-  label: sm
-  mediaQuery: '(min-width: 576px) and (max-width: 767px)'
+bethelks.screen-xs-max:
+  label: screen-xs-max
+  mediaQuery: 'all and (max-width: 767px)'
   weight: 1
   multipliers:
     - 1x
-bethelks.md:
-  label: md
-  mediaQuery: '(min-width: 768px) and (max-width: 991px)'
-  weight: 2
+bethelks.screen-sm-min:
+  label: screen-sm-min
+  mediaQuery: 'all and (min-width: 768px)'
+  weight: 1
   multipliers:
     - 1x
-bethelks.lg:
-  label: lg
-  mediaQuery: '(min-width: 992px) and (max-width: 1199px)'
-  weight: 3
+bethelks.screen-sm-max:
+  label: screen-sm-max
+  mediaQuery: 'all and (max-width: 991px)'
+  weight: 1
   multipliers:
     - 1x
-bethelks.xl:
-  label: xl
-  mediaQuery: '(min-width: 1200px)'
-  weight: 4
+bethelks.screen-md-min:
+  label: screen-md-min
+  mediaQuery: 'all and (min-width: 992px)'
+  weight: 1
+  multipliers:
+    - 1x
+bethelks.screen-md-max:
+  label: screen-md-max
+  mediaQuery: 'all and (max-width: 1199px)'
+  weight: 1
+  multipliers:
+    - 1x
+bethelks.screen-lg-min:
+  label: screen-lg-min
+  mediaQuery: 'all and (min-width: 1200px)'
+  weight: 1
   multipliers:
     - 1x

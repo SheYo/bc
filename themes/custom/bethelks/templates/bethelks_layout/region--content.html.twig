@@ -13,7 +13,13 @@
  */
 #}
 {% if content %}
-  <div{{ attributes.addClass('row') }}>
-    {{ content }}
-  </div>
+  {% if not is_front %}
+    <div{{ attributes.addClass('row articleOrPageContent') }}>
+      {{ content }}
+    </div>
+  {% else %}
+    <div{{ attributes.addClass('row') }}>
+      {{ content }}
+    </div>
+  {% endif %}
 {% endif %}

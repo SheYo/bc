@@ -204,4 +204,14 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('p').html(icon);
   });
   /* Classy Student Steps End */
+
+  //init isotope
+  grid.isotope({
+    filter: '.ab-filter-financial-aid',
+    animationOptions: {
+      duration: 750,
+      easing: "linear",
+      queue: false
+    }
+  });
 });
