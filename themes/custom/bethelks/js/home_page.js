@@ -91,7 +91,7 @@ jQuery(document).on('ready', function(){
         jQuery(controls).addClass('all-aboard-video-controls').html('<li data="' + currentVideoId + '" class="all-aboard-video-controls-view"><i class="fa fa-eye" aria-hidden="true"></i></li>');
         jQuery(controls).append('<li class="all-aboard-video-controls-link"><a target="_blank" href="https://www.youtube.com/watch?v=' + currentVideoId + '"><i class="fa fa-link" aria-hidden="true"></i></a></li>');
         jQuery(colWrapper).addClass('col-12 col-md-6 col-lg-4 col-xl-3 all-aboard-video').addClass('ab-filter-' + currentCategory).html(thumbnail).append(controls);
-        jQuery(grid).append(colWrapper);
+        grid.append(colWrapper).isotope('appended', colWrapper);
       }
     }
 
@@ -206,6 +206,5 @@ jQuery(document).on('ready', function(){
   /* Classy Student Steps End */
 
   //init isotope
-  grid.isotope({filter: '.ab-filter-financial-aid'});
   grid.isotope({filter: '.ab-filter-financial-aid'});
 });
