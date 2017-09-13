@@ -206,12 +206,6 @@ jQuery(document).on('ready', function(){
   /* Classy Student Steps End */
 
   //init isotope
-  grid.isotope({
-    filter: '.ab-filter-financial-aid',
-    animationOptions: {
-      duration: 750,
-      easing: "linear",
-      queue: false
-    }
-  });
+  grid.isotope({filter: '.ab-filter-financial-aid'});
+  grid.isotope({filter: '.ab-filter-financial-aid'});
 });
