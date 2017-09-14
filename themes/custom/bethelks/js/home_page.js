@@ -78,6 +78,11 @@ jQuery(document).on('ready', function(){
   if(jQuery('.all-aboard-content').length) {
     var grid = jQuery('.all-aboard-content > div');
 
+    grid.isotope({
+      itemSelector:'.all-aboard-video',
+      layoutMode:'fitRows'
+    });
+
     for(var i = 0; i < videos.length; i++) {
       var currentCategory = videos[i][0];
       for(var x = 0; x < videos[i][1].length; x++) {
@@ -94,6 +99,8 @@ jQuery(document).on('ready', function(){
         grid.append(colWrapper).isotope('appended', colWrapper);
       }
     }
+
+    grid.isotope({ filter: '.ab-filter-financial-aid' });
 
     jQuery('.all-aboard-video').hover(function(){
       jQuery(this).find('.all-aboard-video-controls').fadeIn();
@@ -207,5 +214,5 @@ jQuery(document).on('ready', function(){
   /* Classy Student Steps End */
 
   //init isotope
-  grid.isotope({filter: '.ab-filter-financial-aid'});
+  //grid.isotope({filter: '.ab-filter-financial-aid'});
 });
