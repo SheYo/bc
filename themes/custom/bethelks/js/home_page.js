@@ -136,6 +136,14 @@ jQuery(document).on('ready', function(){
   }
   /* All Aboard Bethel End */
 
+  /* Event Carousel Start */
+  jQuery('.owl-carousel').owlCarousel({
+    items: 5,
+    loop: true,
+    nav: true
+  });
+  /* Event Carousel End */
+
   /* Homepage Recent News Start */
   jQuery('.js-home-recent-news').each(function(index){
     var newsListItems = jQuery(this).find('ul > li');

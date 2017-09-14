@@ -66,4 +66,18 @@ homepage-js:
   dependencies:
     - core/jquery
     - bethelks/isotope-js
+
+owlCarousel-css:
+  css:
+    theme:
+      owlCarousel/assets/owl.theme.default.min.css: { minified: true }
+    layout:
+      owlCarousel/assets/owl.carousel.min.css: { minified: true }
+
+owlCarousel-js:
+  header: true
+  js:
+    owlCarousel/owl.carousel.min.js: { minified: true }
+  dependencies:
+    - core/jquery
 ### HOMEPAGE LIBS END ###

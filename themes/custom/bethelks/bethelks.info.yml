@@ -13,6 +13,8 @@ libraries:
   - bethelks/isotope-js
   - bethelks/global-js
   - bethelks/homepage-js
+  - bethelks/owlCarousel-css
+  - bethelks/owlCarousel-js
 regions:
   header: 'Header'
   postHeader: 'Post Header'
