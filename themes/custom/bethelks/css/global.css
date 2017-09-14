@@ -148,6 +148,11 @@ html {
   background-color:#eeb111;
 }
 
+.js-location-map > div {
+  padding:0 !important;
+  padding-bottom:30px !important;
+}
+
 .js-location-map h2, .js-location-map i {
   margin:0;
   font-size:40px;

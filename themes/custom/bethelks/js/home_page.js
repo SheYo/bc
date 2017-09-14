@@ -158,8 +158,9 @@ jQuery(document).on('ready', function(){
 
     jQuery(this).find('h2').parent().on('click', function(){
       if(active) {
-        imgDiv.fadeOut();
-        jQuery(this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down').hide();
+        imgDiv.fadeOut(400, function(){
+          jQuery(this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down').hide();
+        });
       }
       else {
         imgDiv.fadeIn();
