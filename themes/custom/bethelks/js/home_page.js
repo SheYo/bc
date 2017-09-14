@@ -213,6 +213,8 @@ jQuery(document).on('ready', function(){
   });
   /* Classy Student Steps End */
 
-  //init isotope
-  //grid.isotope({filter: '.ab-filter-financial-aid'});
+  //layout
+  setTimeout(function(){
+    grid.isotope({filter: '.ab-filter-financial-aid'});
+  }, 2000);
 });
