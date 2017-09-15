@@ -143,25 +143,26 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 
 {# Prints div with classes, and content without Width and Background. #}
 <div class="container eventCarousel owl-carousel owl-theme">
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
-  <div>Your Content</div>
+  {% for i in 1..31 %}
+    <div class="eventCard">
+      <div class="dateSpan">
+        <div class="startDate">
+          <h2>30</h2>
+          <p>May</p>
+        </div>
+        <div class="dateDivider">
+          <p>&#45;</p>
+        </div>
+        <div class="endDate">
+          <h5>3</h5>
+          <p>Jun</p>
+        </div>
+      </div>
+      <div class="eventInformation">
+        <h3 class="eventInformation-title">Event That Spans Across Multiple Months</h3>
+        <p class="eventInformation-time"><i class="fa fa-clock-o" aria-hidden="true"></i> 1:00 am - (June 3) 8:00 pm</p>
+        <p class="eventInformation-location"><i class="fa fa-map-marker" aria-hidden="true"></i> 300 E 27th St, North Newton, KS 67117</p>
+      </div>
+    </div>
+  {% endfor %}
 </div>

@@ -47,6 +47,51 @@ html {
 }
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
+/* EVENT CAROUSEL START */
+.eventCarousel div.eventCard {
+  padding:10px;
+  background-color:#eeb111;
+  color:#ffffff;
+  border-radius:2px;
+}
+
+.eventCarousel div.eventCard h2, .eventCarousel div.eventCard h5, .eventCarousel div.eventCard h3 {
+  font-family:'Raleway', sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+  opacity:.9;
+}
+
+.eventCarousel div.eventCard p {
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
+  margin:0;
+  padding:0;
+  opacity:.9;
+}
+
+.eventCarousel div.eventCard .dateSpan p {
+  text-transform:uppercase;
+  text-align:center;
+}
+.eventCarousel div.eventCard .dateSpan {
+  overflow:auto;
+  margin-bottom:10px;
+}
+
+.eventCarousel div.eventCard .dateSpan .startDate { float:left; }
+.eventCarousel div.eventCard .dateSpan .dateDivider {
+  float:left;
+  margin:20px 15px;
+}
+.eventCarousel div.eventCard .dateSpan .dateDivider p { font-weight:900; }
+.eventCarousel div.eventCard .dateSpan .endDate { float:left; }
+
+.eventCarousel div.eventCard .eventInformation p {
+  font-size:.85em;
+}
+/* EVENT CAROUSEL END */
+
 /* CLASSY PARAGRAPHS STYLES START */
 .simple_cards p {
   font-family:'Roboto', sans-serif;

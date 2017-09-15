@@ -138,9 +138,27 @@ jQuery(document).on('ready', function(){
 
   /* Event Carousel Start */
   jQuery('.owl-carousel').owlCarousel({
-    items: 5,
+    items: 4,
     loop: true,
-    nav: true
+    nav: true,
+    margin: 15,
+    responsive: {
+      0: {
+        items: 1,
+        nav: false,
+        margin: 0
+      },
+      767: {
+        items: 2,
+        nav: false
+      },
+      991: {
+        items: 3
+      },
+      1199: {
+        items: 4
+      }
+    }
   });
   /* Event Carousel End */
 
