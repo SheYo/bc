@@ -86,6 +86,7 @@ html {
 }
 .eventCarousel div.eventCard .dateSpan .dateDivider p { font-weight:900; }
 .eventCarousel div.eventCard .dateSpan .endDate { float:left; }
+.eventCarousel div.eventCard .dateSpan .endDate p { font-size:.8em; }
 
 .eventCarousel div.eventCard .eventInformation p {
   font-size:.85em;
