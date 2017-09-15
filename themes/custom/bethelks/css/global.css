@@ -962,6 +962,12 @@ html {
   content:"\00a0";
 }
 
+@media (max-width: 991px) {
+  .row .postHeader-breadcrumbs {
+    display:none !important;
+  }
+}
+
 .menu-local-tasks-list {
   list-style-type:none;
   padding:0;
@@ -974,6 +980,10 @@ html {
   background-color:#eeb111;
   color:#ffffff;
   transition:all .25s;
+}
+
+.menu-local-tasks-list > li a {
+  color:#ffffff !important;
 }
 
 .menu-local-tasks-list > li:hover {
