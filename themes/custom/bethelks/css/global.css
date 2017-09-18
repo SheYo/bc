@@ -48,11 +48,17 @@ html {
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
 /* EVENT CAROUSEL START */
+.eventCarousel {
+  background-color:#882233;
+  padding-top:15px;
+  padding-bottom:15px;
+}
+
 .eventCarousel div.eventCard {
   padding:10px;
   background-color:#eeb111;
   color:#ffffff;
-  border-radius:2px;
+  border-radius:3px;
 }
 
 .eventCarousel div.eventCard h2, .eventCarousel div.eventCard h5, .eventCarousel div.eventCard h3 {
@@ -90,6 +96,10 @@ html {
 
 .eventCarousel div.eventCard .eventInformation p {
   font-size:.85em;
+}
+
+.owl-nav div {
+  background-color:#eeb111 !important;
 }
 /* EVENT CAROUSEL END */
 

@@ -142,9 +142,9 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 {% endif %}
 
 {# Prints div with classes, and content without Width and Background. #}
-<div class="container eventCarousel owl-carousel owl-theme">
+<div class="container-fluid eventCarousel owl-carousel owl-theme">
   {% for i in 1..31 %}
-    <div class="eventCard">
+    <div class="eventCard" style="background-color:#{{ random(['eeb111', '9b9740', 'de413a', '3c8e96', '7a7a7a']) }}">
       <div class="dateSpan">
         <div class="startDate">
           <h2>30</h2>
