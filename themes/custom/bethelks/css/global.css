@@ -50,8 +50,8 @@ html {
 /* EVENT CAROUSEL START */
 .eventCarousel {
   background-color:#882233;
-  padding-top:15px;
-  padding-bottom:15px;
+  padding-top:30px;
+  padding-bottom:30px;
 }
 
 .eventCarousel div.eventCard {
@@ -100,7 +100,10 @@ html {
 
 .owl-nav div {
   background-color:#eeb111 !important;
+  opacity:.5;
+  transition:all .25s;
 }
+.owl-nav div:hover { opacity:1; }
 /* EVENT CAROUSEL END */
 
 /* CLASSY PARAGRAPHS STYLES START */
