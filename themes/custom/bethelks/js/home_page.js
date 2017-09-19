@@ -222,6 +222,12 @@ jQuery(document).on('ready', function(){
     var icon = document.createElement("i");
     jQuery(iconSpan).html(jQuery(icon).addClass('fa fa-angle-right')).addClass('view-icon-span');
     jQuery(this).find('.views-field-view-node a').prepend(iconSpan);
+
+
+    /* Add Images */
+    jQuery(this).children('li:eq(0)').after('<li class="img-test">test img 1</li>');
+    jQuery(this).children('li:eq(2)').after('<li class="img-test">test img 1</li>');
+    jQuery(this).children('li:last-child').after('<li class="img-test">test img 1</li>');
   });
   /* Homepage Latest News End */
 

@@ -492,7 +492,6 @@ html {
   margin:0;
   padding:0;
   background-color:#C0C0C0;
-  height:550px;
 }
 
 .recent-content-view-list-wrapper li {
@@ -500,11 +499,8 @@ html {
   width:33.33%;
   width:calc(100% / 3);
   background-color:#EEEEEE;
+  height:400px;
   padding:20px;
-}
-
-.recent-content-view-list-wrapper li:nth-child(2) {
-  margin-top:200px;
 }
 
 .recent-content-view-list-wrapper .views-field-title a {
@@ -570,11 +566,19 @@ html {
   text-decoration:none;
 }
 
+.img-test {
+  background-color:#eeb111 !important;
+}
+
 @media (max-width: 991px) {
   .recent-content-view-list-wrapper li {
     clear:both;
     width:100%;
     margin-top:0 !important;
+  }
+
+  .img-test {
+    display:none;
   }
 }
 /* VIEWS CSS RULES END */
