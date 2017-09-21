@@ -347,6 +347,24 @@ html {
   background-color:#eeb111;
   color:#ffffff;
 }
+
+.all-aboard-title-desc-overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  color:#ffffff;
+  opacity:.8;
+}
+
+.all-aboard-title-desc-overlay h3 {
+  font-family:'Roboto', sans-serif;
+  font-weight:900;
+  padding:0;
+  margin:0;
+  text-align:center;
+}
 /* CLASSY PARAGRAPHS STYLES END */
 
 /* WEBFORM CSS RULES START */

@@ -91,11 +91,29 @@ jQuery(document).on('ready', function(){
         var colWrapper = document.createElement('div');
         var thumbnail = document.createElement('img');
         var controls = document.createElement('ul');
+        var titleDescOverlay = document.createElement('div');
 
-        jQuery(thumbnail).addClass('img-fluid').attr('src', 'https://img.youtube.com/vi/' + currentVideoId + '/maxresdefault.jpg');
+        var overlayColors = ['#eeb111', '#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
+
+        jQuery.ajax({
+          'async': false,
+          'global': false,
+          'url': 'https://www.googleapis.com/youtube/v3/videos?id=' + currentVideoId + '&key=AIzaSyCPquSRxqsHEuRpI9-mYMYfQcv_dpM2_0E&part=snippet',
+          'dataType': "json",
+          'success': function(data) {
+            jQuery(titleDescOverlay).html('<h3>' + data.items[0].snippet.title + '</h3>');
+            jQuery(thumbnail).attr('src', data.items[0].snippet.thumbnails.maxres.url);
+          },
+          'error': function(err) {
+            jQuery(titleDescOverlay).html('<h3>Error</h3>');
+          }
+        });
+
+        jQuery(thumbnail).addClass('all-aboard-img img-fluid');
+        jQuery(titleDescOverlay).addClass('all-aboard-title-desc-overlay d-flex justify-content-center align-items-center').css('background-color', overlayColors[Math.floor(Math.random()*overlayColors.length)]);
         jQuery(controls).addClass('all-aboard-video-controls').html('<li data="' + currentVideoId + '" class="all-aboard-video-controls-view"><i class="fa fa-eye" aria-hidden="true"></i></li>');
         jQuery(controls).append('<li class="all-aboard-video-controls-link"><a target="_blank" href="https://www.youtube.com/watch?v=' + currentVideoId + '"><i class="fa fa-link" aria-hidden="true"></i></a></li>');
-        jQuery(colWrapper).addClass('col-12 col-md-6 col-lg-4 col-xl-3 all-aboard-video').addClass('ab-filter-' + currentCategory).html(thumbnail).append(controls);
+        jQuery(colWrapper).addClass('col-12 col-md-6 col-lg-4 col-xl-3 all-aboard-video').addClass('ab-filter-' + currentCategory).html(thumbnail).append(controls).append(titleDescOverlay);
         grid.append(colWrapper).isotope('appended', colWrapper);
       }
     }
