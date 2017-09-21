@@ -49,7 +49,7 @@ html {
 
 /* EVENT CAROUSEL START */
 .eventCarousel {
-  background-color:#882233;
+  background-color:#333333;
   padding-top:15px;
   padding-bottom:30px;
 }
@@ -208,7 +208,7 @@ html {
 
 .js-location-map {
   text-align:center;
-  background-color:#eeb111;
+  background-color:#882233;
 }
 
 .js-location-map > div {
