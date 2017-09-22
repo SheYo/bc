@@ -586,6 +586,7 @@ html {
 
 .img-test {
   background-color:#eeb111 !important;
+  padding:0px !important;
 }
 
 @media (max-width: 991px) {

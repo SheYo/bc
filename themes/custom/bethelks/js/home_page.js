@@ -158,8 +158,10 @@ jQuery(document).on('ready', function(){
   jQuery('.owl-carousel').owlCarousel({
     items: 5,
     loop: true,
-    nav: true,
-    dots: false,
+    nav: false,
+    dots: true,
+    autoplay: true,
+    autoplayTimeout: 4000,
     navText: [
       '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
       '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
@@ -243,9 +245,9 @@ jQuery(document).on('ready', function(){
 
 
     /* Add Images */
-    jQuery(this).children('li:eq(0)').after('<li class="img-test">test img 1</li>');
-    jQuery(this).children('li:eq(2)').after('<li class="img-test">test img 1</li>');
-    jQuery(this).children('li:last-child').after('<li class="img-test">test img 1</li>');
+    jQuery(this).children('li:eq(0)').after('<li class="img-test"><img src="themes/custom/bethelks/placeholder.png"></li>');
+    jQuery(this).children('li:eq(2)').after('<li class="img-test"><img src="themes/custom/bethelks/placeholder.png"></li>');
+    jQuery(this).children('li:last-child').after('<li class="img-test"><img src="themes/custom/bethelks/placeholder.png"></li>');
   });
   /* Homepage Latest News End */
 
