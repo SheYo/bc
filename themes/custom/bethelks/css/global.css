@@ -58,7 +58,6 @@ html {
   padding:10px;
   background-color:#eeb111;
   color:#ffffff;
-  border-radius:3px;
 }
 
 .eventCarousel div.eventCard h2, .eventCarousel div.eventCard h5, .eventCarousel div.eventCard h3 {
@@ -687,6 +686,10 @@ html {
     -moz-column-count:1 !important;
     left:auto !important;
   }
+
+  .dropdown-toggle::after {
+    display:inline-block !important;
+  }
 }
 
 @media (max-width: 1090px) {
@@ -708,6 +711,7 @@ html {
   text-transform:uppercase;
   padding:5px;
   color:#ffffff;
+  font-style:italic;
 }
 .header-thresherConnectBar a:hover { color:#ffffff; }
 
@@ -746,6 +750,10 @@ html {
   border:none;
   padding:0px;
   border-top:2px solid #eeb111;
+}
+
+.dropdown-toggle::after {
+  display:none !important;
 }
 
 .separate_nav_cols {

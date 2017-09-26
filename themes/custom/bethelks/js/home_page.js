@@ -1,4 +1,13 @@
 jQuery(document).on('ready', function(){
+  /* Classy Student Steps Start */
+  jQuery('.js-student-step').each(function(index){
+    var iClass = jQuery(this).find('p').html();
+    var icon = document.createElement("i");
+    jQuery(icon).addClass(iClass);
+    jQuery(this).find('p').html(icon);
+  });
+  /* Classy Student Steps End */
+
   /* All Aboard Bethel Start */
   var categories = ["introduction", "admissions", "financial-aid", "student-experience", "careers"];
   var videos = [
@@ -103,6 +112,7 @@ jQuery(document).on('ready', function(){
           'success': function(data) {
             jQuery(titleDescOverlay).html('<h3>' + data.items[0].snippet.title + '</h3>');
             jQuery(thumbnail).attr('src', data.items[0].snippet.thumbnails.maxres.url);
+            jQuery(controls).attr('data', data.items[0].snippet.title);
           },
           'error': function(err) {
             jQuery(titleDescOverlay).html('<h3>Error</h3>');
@@ -128,8 +138,10 @@ jQuery(document).on('ready', function(){
 
     jQuery('.all-aboard-video-controls .all-aboard-video-controls-view').on('click', function(e){
       e.preventDefault();
+      var title = jQuery(this).parent().attr('data');
 
       jQuery('#all-aboard-viewbox').find('.modal-body').html('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + jQuery(this).attr('data') + '" allowfullscreen></iframe></div>');
+      jQuery('#all-aboard-viewbox').find('.modal-header h5').text(title);
       jQuery("#all-aboard-viewbox").modal();
     });
 
@@ -260,14 +272,7 @@ jQuery(document).on('ready', function(){
   });
   /* Homepage Prefooter Social Media Icons End */
 
-  /* Classy Student Steps Start */
-  jQuery('.js-student-step').each(function(index){
-    var iClass = jQuery(this).find('p').html();
-    var icon = document.createElement("i");
-    jQuery(icon).addClass(iClass);
-    jQuery(this).find('p').html(icon);
-  });
-  /* Classy Student Steps End */
+
 
   //layout
   setTimeout(function(){

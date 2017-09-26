@@ -144,11 +144,12 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 <div class="container-fluid eventCarousel">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <img src="{{ directory ~ '/threshers.jpg' }}" class="img-fluid">
+      <img src="{{ directory ~ '/whatshappening.jpg' }}" class="img-fluid">
     </div>
     <div class="owl-carousel owl-theme col-12">
+      {% set colors = ['eeb111', '9b9740', 'de413a', '3c8e96', '7a7a7a'] %}
       {% for i in 1..31 %}
-        <div class="eventCard" style="background-color:#{{ random(['eeb111', '9b9740', 'de413a', '3c8e96', '7a7a7a']) }}">
+        <div class="eventCard" style="background-color:#{{ colors[i % colors|length] }}">
           <div class="dateSpan">
             <div class="startDate">
               <h2>30</h2>
