@@ -141,13 +141,18 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-<div class="container-fluid eventCarousel">
+<div class="container-fluid eventCarouselHeading">
   <div class="row">
     <div class="col-12 d-flex justify-content-center">
-      <img src="{{ directory ~ '/whatshappening.jpg' }}" class="img-fluid">
+      <h2>What's Happening</h2>
     </div>
+  </div>
+</div>
+
+<div class="container-fluid eventCarousel">
+  <div class="row">
     <div class="owl-carousel owl-theme col-12">
-      {% set colors = ['eeb111', '9b9740', 'de413a', '3c8e96', '7a7a7a'] %}
+      {% set colors = ['eeb111', '882233', 'de413a', '3c8e96', '7a7a7a'] %}
       {% for i in 1..31 %}
         <div class="eventCard" style="background-color:#{{ colors[i % colors|length] }}">
           <div class="dateSpan">

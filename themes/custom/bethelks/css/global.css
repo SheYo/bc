@@ -49,8 +49,10 @@ html {
 
 /* EVENT CAROUSEL START */
 .eventCarousel {
-  background-color:#333333;
-  padding-top:15px;
+  background-image:url(https://files.slack.com/files-tmb/T04N8HMGK-F79CL9A49-0f1ea1221f/dscn0004_720.jpg);
+  background-size:cover;
+  background-position:center center;
+  padding-top:30px;
   padding-bottom:30px;
 }
 
@@ -160,7 +162,7 @@ html {
   border-bottom:2px solid #eaeaea;
 }
 
-.margin-top, .eventCarousel {
+.margin-top, .eventCarouselHeading {
   margin-top:120px;
 }
 
@@ -179,7 +181,7 @@ html {
   transition:all .25s;
 }
 
-.js-home-recent-news h2, .all-aboard-top h2 {
+.js-home-recent-news h2, .all-aboard-top h2, .eventCarouselHeading h2 {
   font-family:'Helvetica', sans-serif;
   font-weight:900;
   font-size:40px;
