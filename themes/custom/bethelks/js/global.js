@@ -16,6 +16,11 @@ jQuery(document).on('ready', function(){
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
     });
+
+    // Override jQuery/Bootstrap e.preventDefault on dropdowns
+    jQuery('.dropdown > .nav-link').on('click', function(e){
+      window.location = jQuery(this).attr('href');
+    });
   }
   else {
     jQuery('ul.navbar-nav li.dropdown a.nav-link').on('click', function(e){
