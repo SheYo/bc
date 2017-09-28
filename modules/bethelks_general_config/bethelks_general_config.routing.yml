@@ -1,8 +1,0 @@
-# Admin Staff List
-bethelks_general_config.adminPage:
-  path: '/admin/config/development/bethelks_general_config'
-  defaults:
-    _form: '\Drupal\bethelks_general_config\Form\BethelKSConfigForm'
-    _title: 'Bethel College Website General Configuration'
-  requirements:
-    _permission: 'administer configuration'

@@ -1,4 +1,0 @@
-administer configuration:
-  title: "Administer Configuration"
-  description: "Administer the configuration of the website based off of the 'BethelKS General Configuration' module."
-  restrict access: true

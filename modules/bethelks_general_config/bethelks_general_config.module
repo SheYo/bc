@@ -1,9 +1,0 @@
-<?php
-function bethelks_general_config_theme($existing, $type, $theme, $path) {
-  return[
-    'admin_configuration_template' => [
-      'variables' => ['staff' => NULL]
-    ]
-  ];
-}
-?>

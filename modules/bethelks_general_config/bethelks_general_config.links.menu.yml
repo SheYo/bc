@@ -1,6 +1,0 @@
-bethelks_general_config.adminMenuHook:
-  title: 'Bethel College Website General Configuration'
-  description: 'Set website configuration data for bethel college'
-  parent: system.admin_config_development
-  route_name: bethelks_general_config.adminPage
-  weight: 100
