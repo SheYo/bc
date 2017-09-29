@@ -49,9 +49,9 @@ html {
 
 /* EVENT CAROUSEL START */
 .eventCarousel {
-  background-image:url(https://files.slack.com/files-tmb/T04N8HMGK-F79CL9A49-0f1ea1221f/dscn0004_720.jpg);
+  background-image:url(../eventCarouselBackground.jpg);
   background-size:cover;
-  background-position:center center;
+  background-position:top center;
   padding-top:30px;
   padding-bottom:30px;
 }
@@ -60,6 +60,7 @@ html {
   padding:10px;
   background-color:#eeb111;
   color:#ffffff;
+  opacity:.85;
 }
 
 .eventCarousel div.eventCard h2, .eventCarousel div.eventCard h5, .eventCarousel div.eventCard h3 {
@@ -84,6 +85,11 @@ html {
 .eventCarousel div.eventCard .dateSpan {
   overflow:auto;
   margin-bottom:10px;
+}
+
+div.eventCard .eventInformation-title {
+  margin:0;
+  padding:25px 0px;
 }
 
 .eventCarousel div.eventCard .dateSpan .startDate { float:left; }
@@ -162,7 +168,7 @@ html {
   border-bottom:2px solid #eaeaea;
 }
 
-.margin-top, .eventCarouselHeading {
+.margin-top, .eventCarousel {
   margin-top:120px;
 }
 
@@ -396,7 +402,7 @@ html {
   line-height:50px;
   height:50px;
   border:1px solid #E5E5E5;
-  border-radius:3px;
+  /*border-radius:3px;*/
 }
 
 .bethelWebformSelector select option {
@@ -457,7 +463,7 @@ html {
 
 .bethelWebformSelector fieldset {
   background-color:#f9f9f9;
-  border-radius:5px;
+  /*border-radius:5px;*/
   margin:10px 0px;
   padding:0px 10px;
   padding-bottom:10px;
@@ -708,12 +714,11 @@ html {
 
 .header-thresherConnectBar a {
   font-family:'Raleway', sans-serif;
-  font-weight:400;
+  font-weight:600;
   font-size:12px;
   text-transform:uppercase;
   padding:5px;
   color:#ffffff;
-  font-style:italic;
 }
 .header-thresherConnectBar a:hover { color:#ffffff; }
 

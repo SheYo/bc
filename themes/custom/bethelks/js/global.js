@@ -36,7 +36,7 @@ jQuery(document).on('ready', function(){
   }
 
   jQuery('ul.navbar-nav li.dropdown ul.dropdown-menu').each(function(i){
-    var liCount = jQuery(this).find('li').length
+    var liCount = jQuery(this).find('li').length;
 
     if(!jQuery(this).find('li.dropdown-submenu').length && !jQuery(this).parent('li.dropdown-submenu').length && liCount > 6) {
       var colCount = Math.floor(liCount / 6);

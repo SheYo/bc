@@ -43,7 +43,7 @@
           </li>
         {% else %}
           <li class="dropdown-submenu">
-            <a href="{{ item.url }}" class="nav-link">{{ item.title }}&nbsp;&nbsp;<i class="fa fa-caret-right"></i></a>
+            <a href="{{ item.url }}" class="nav-link">{{ item.title }}<!--&nbsp;&nbsp;<i class="fa fa-caret-right"></i>--></a>
             {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
           </li>
         {% endif %}

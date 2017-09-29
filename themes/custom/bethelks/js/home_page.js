@@ -186,7 +186,8 @@ jQuery(document).on('ready', function(){
       },
       767: {
         items: 3,
-        nav: false
+        nav: true,
+        dots: false
       },
       991: {
         items: 4

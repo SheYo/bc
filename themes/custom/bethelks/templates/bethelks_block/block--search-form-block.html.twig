@@ -26,11 +26,11 @@
  */
 #}
 <div{{ attributes.addClass('rightSidebar-searchForm') }}>
-  {{ title_prefix }}
+  {# title_prefix #}
   {% if label %}
-    <p{{ title_attributes }}>{{ label }}</p>
+    <!-- <p{# title_attributes #}>{# label #}</p> -->
   {% endif %}
-  {{ title_suffix }}
+  {# title_suffix #}
   {% block content %}
     {{ content }}
   {% endblock %}
