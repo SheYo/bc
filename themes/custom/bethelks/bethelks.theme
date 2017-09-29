@@ -1,5 +1,6 @@
 <?php
 function bethelks_preprocess_region(&$variables) {
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['url'] = $_SERVER['REQUEST_URI'];
 }
 ?>

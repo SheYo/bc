@@ -32,14 +32,32 @@
     </div>
   </div>
 {% else %}
-  <div class="container-fluid header-eyecatcher header-eyecatcher-image">
-    <div class="container">
-      <div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center">
-        <div class="row">
-          <div class="col-12"><h2>Connect to Purpose</h2></div>
-          <!--<div class="col-12"><a href="#">Explore</a></div>-->
+  {% if '/article/' in url %}
+      <!-- Do nothing on article pages -->
+  {% else %}
+    {% if '/about/' in url %}
+      <p>About header</p>
+    {% elseif '/admissions/' in url %}
+      <p>Admissions header</p>
+    {% elseif '/academics/' in url %}
+      <p>Academics header</p>
+    {% elseif '/affordability/' in url %}
+      <p>Affordability header</p>
+    {% elseif '/student-life/' in url %}
+      <p>Student Life header</p>
+    {% elseif '/thresher-success/' in url %}
+      <p>Thresher success header</p>
+    {% else %}
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image">
+        <div class="container">
+          <div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center">
+            <div class="row">
+              <div class="col-12"><h2>Connect to Purpose</h2></div>
+              <!--<div class="col-12"><a href="#">Explore</a></div>-->
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+    {% endif %}
+  {% endif %}
 {% endif %}
