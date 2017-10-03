@@ -141,14 +141,17 @@ class EditStaffForm extends FormBase {
       '#default_value' => $staffMember['bio']
     );
 
+    $num_education = $form_state->get('num_education');
     // We have to ensure that there is at least one education field.
-    if(empty($staffMemberEducation)) {
-      $education_field = $form_state->set('num_education', 1);
-      $num_education = 1;
-    }
-    else {
-      $education_field = $form_state->set('num_education', count($staffMemberEducation));
-      $num_education = count($staffMemberEducation);
+    if($num_education === NULL) {
+      if(empty($staffMemberEducation)) {
+        $education_field = $form_state->set('num_education', 1);
+        $num_education = 1;
+      }
+      else {
+        $education_field = $form_state->set('num_education', count($staffMemberEducation));
+        $num_education = count($staffMemberEducation);
+      }
     }
 
     $form['#tree'] = TRUE;
@@ -257,44 +260,58 @@ class EditStaffForm extends FormBase {
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $connection = \Drupal::service('database');
-
-    if(empty($form_state->getValue('img'))) {
-      $fields = array(
-        'name' => $form_state->getValue('name'),
-        'staff_category' => $form_state->getValue('staff_category'),
-        'position' => $form_state->getValue('position'),
-        'extension' => $form_state->getValue('extension'),
-        'telephone' => $form_state->getValue('telephone'),
-        'campus_location' => $form_state->getValue('campus_location'),
-        'email' => $form_state->getValue('email'),
-        'bio' => $form_state->getValue('bio')
-      );
+    if($form_state->getValue('img') != null) {
+      $image = $form_state->getValue('img');
+      $file = \Drupal\file\Entity\File::load($image[0]);
+      $file->setPermanent();
+      $file->save();
+      $img = $image[0];
     }
     else {
-      if ($form_state->getValue('img')!=null) {
-        $image = $form_state->getValue('img');
-        $this->configuration['image'] = $image;
-        $file = \Drupal\file\Entity\File::load($image[0]);
-        $file->setPermanent();
-        $file->save();
-        $img = $image[0];
-      } else
-         $img = "";
-      $fields = array(
-        'name' => $form_state->getValue('name'),
-        'img' => $img,
-        'staff_category' => $form_state->getValue('staff_category'),
-        'position' => $form_state->getValue('position'),
-        'extension' => $form_state->getValue('extension'),
-        'telephone' => $form_state->getValue('telephone'),
-        'campus_location' => $form_state->getValue('campus_location'),
-        'email' => $form_state->getValue('email'),
-        'bio' => $form_state->getValue('bio')
-      );
+      $img = "";
     }
 
+    $fields = array(
+      'name' => $form_state->getValue('name'),
+      'img' => $img,
+      'position' => $form_state->getValue('position'),
+      'extension' => $form_state->getValue('extension'),
+      'telephone' => $form_state->getValue('telephone'),
+      'campus_location' => $form_state->getValue('campus_location'),
+      'email' => $form_state->getValue('email'),
+      'bio' => $form_state->getValue('bio')
+    );
+
+    $connection = \Drupal::service('database');
     $updateStaffMember = $connection->update('bethelks_staff')->fields($fields)->condition('sid', $form_state->getValue('sid'), '=')->execute();
+
+    $unsetEducation = $connection->delete('bethelks_staff_education')->condition('staff_id', $form_state->getValue('sid'))->execute();
+    $education_values = $form_state->getValue(['education_fieldset', 'education']);
+    if(!empty($education_values)) {
+      foreach($education_values as $education) {
+        if($education == null) continue;
+        $insertEducation = $connection->query(
+          "INSERT INTO `bethelks_staff_education` VALUES(NULL, :staff_id, :education)",
+          [
+            ':staff_id' => $form_state->getValue('sid'),
+            ':education' => $education
+          ]
+        );
+      }
+    }
+
+    $unsetCategories = $connection->delete('bethelks_staff_category')->condition('staff_id', $form_state->getValue('sid'))->execute();
+    $staff_category_values = $form_state->getValue('staff_category');
+    foreach($staff_category_values as $staff_category) {
+      if($staff_category == null) continue;
+      $insertCategory = $connection->query(
+        "INSERT INTO `bethelks_staff_category` VALUES(NULL, :staff_id, :category)",
+        [
+          ':staff_id' => $form_state->getValue('sid'),
+          ':category' => $staff_category
+        ]
+      );
+    }
 
     drupal_set_message($this->t('"@emp_name" has been successfully updated', array('@emp_name' => $form_state->getValue('name'))));
   }

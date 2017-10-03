@@ -11,38 +11,39 @@ class StaffController extends ControllerBase {
   public function listStaffPaginated(Request $request) {
     $connection = \Drupal::service('database');
     $total =  $connection->query('SELECT count(*) as number FROM `bethelks_staff`')->fetchAssoc()['number'];
+
     if ($total > 0) {
       //return new JsonResponse( $request);
       if ($request->get('page')!= null) {
-        if ($request->get('page')!='view')
-          $page = $request->get('page');
-        else
-          $page = 0;
-      } else
+        if ($request->get('page')!='view') $page = $request->get('page');
+        else $page = 0;
+      }
+      else {
         $page = 0;
+      }
 
-      $list_size =2;
-
+      $list_size = 5;
 
       $response['total'] = $total;
       $maxPage = (int)(round($total /$list_size)) -1;
       $response['maxPage'] = $maxPage;
       $response['list_size'] = $list_size;
 
-      if ($page > $maxPage)
-        $page = $maxPage;
+      if ($page > $maxPage) $page = $maxPage;
 
       // Pagination button
       if ($page != 0) {
-        $response['prev'] = $page-1;
-      }else {
+        $response['prev'] = $page - 1;
+      }
+      else {
         $response['prev'] = null;
       }
+
       $off = $page* $list_size;
-      if (($total - ($list_size * ($page+1))) > 0 )
-        $response['next'] = $page+1;
-      else
-        $response['next'] = null;
+
+      if (($total - ($list_size * ($page+1))) > 0) $response['next'] = $page+1;
+      else $response['next'] = null;
+
       $response['offset'] = $off;
       $staffArray = array();
       $data = array();
@@ -50,17 +51,28 @@ class StaffController extends ControllerBase {
 
       foreach ($retval as &$dt) {
         if ($dt->img != "") {
-          $file = \Drupal\file\Entity\File::load($dt->img);
-          $path = $file->getFileUri();
-        } else
+          if(strpos($dt->img, ".jpg") != false) { //imported users from old site
+            $path = 'sites/default/files/staff-pictures/' . $dt->img;
+          }
+          else {
+            $file = \Drupal\file\Entity\File::load($dt->img);
+            $path = $file->getFileUri();
+          }
+        }
+        else {
           $path = null;
+        }
 
         array_push($data, array('name'=>$dt->name, 'sid'=>$dt->sid, 'img'=>$dt->img, 'path'=>$path, 'staff_catagory'=>$dt->staff_category, 'position'=>$dt->position, 'email'=>$dt->email, 'telephone'=>$dt->telephone));
       }
+
       $response['data'] = $data;//$retval->fetchAllAssoc('sid');
       //return new JsonResponse($response);
-    } else
+    }
+    else {
       $response = null;
+    }
+
     return array(
       '#theme' => 'user_list_template',
       '#staff' => $response
@@ -100,12 +112,14 @@ class StaffController extends ControllerBase {
   }
 
   public function confirmDeleteStaff(Request $request) {
-    if ($request->get('sid')!= null)
-      $sid = $request->get('sid');
-    else
-      $sid = 1;
+    if ($request->get('sid')!= null) $sid = $request->get('sid');
+    else return $this->redirect("bethelks_staff.adminList");
+
     $connection = \Drupal::service('database');
     $deleteStaff = $connection->delete('bethelks_staff')->condition('sid', $sid, '=')->execute();
+    $deleteStaffCategories = $connection->delete('bethelks_staff_category')->condition('staff_id', $sid, '=')->execute();
+    $delteStaffEducation = $connection->delete('bethelks_staff_education')->condition('staff_id', $sid, '=')->execute();
+
     return $this->redirect("bethelks_staff.adminList");
   }
 
@@ -113,13 +127,36 @@ class StaffController extends ControllerBase {
     $connection = \Drupal::service('database');
     $staff_array = $connection->query('SELECT * FROM `bethelks_staff` WHERE sid = :sid LIMIT 1', array(':sid' => $sid))->fetchAssoc();
 
+    $staffMemberEducation = $connection->query('SELECT * FROM `bethelks_staff_education` WHERE `staff_id` = :sid', array(':sid' => $sid))->fetchAll();
+    $staffMemberCategories = $connection->query('SELECT * FROM `bethelks_staff_category` WHERE `staff_id` = :sid', array(':sid' => $sid))->fetchAll();
+
+    $categoryArray = array('categories' => array());
+    foreach($staffMemberCategories as $staff_category) {
+      array_push($categoryArray['categories'], $staff_category->category);
+    }
+
+    $educationArray = array('education' => array());
+    foreach($staffMemberEducation as $staff_education) {
+      array_push($educationArray['education'], $staff_education->education);
+    }
+
+    $staff_array = array_merge($staff_array, $categoryArray, $educationArray);
+
     if(!empty($staff_array)) {
       if ($staff_array['img'] != "") {
-        $file = \Drupal\file\Entity\File::load($staff_array['img']);
-        $path = $file->getFileUri();
-        $staff_array["imguri"] = $path;
-      } else
+        if(strpos($staff_array['img'], '.jpg') != false) {
+          $path = 'sites/default/files/staff-pictures/' . $staff_array['img'];
+          $staff_array["imguri"] = $path;
+        }
+        else {
+          $file = \Drupal\file\Entity\File::load($staff_array['img']);
+          $path = $file->getFileUri();
+          $staff_array["imguri"] = $path;
+        }
+      }
+      else {
         $staff_array["imguri"] = null;
+      }
       return array(
         '#theme' => 'view_staff_template',
         '#staff' => $staff_array
@@ -133,27 +170,12 @@ class StaffController extends ControllerBase {
     }
   }
 
-  public function viewStaffFull() {
-    return new\Symfony\Component\HttpFoundation\RedirectResponse('/faculty/0');
-   // return $this->redirect("/faculty/0");
- /*   $connection = \Drupal::service('database');
-
-    $staffArray = array();
-    $getStaff = $connection->query('SELECT * FROM `bethelks_staff`');
-    while($row = $getStaff->fetchAssoc()) {
-      array_push($staffArray, $row);
-    }
-
-    return array(
-      '#theme' => 'view_staff_full_template',
-      '#staff' => $staffArray
-    );*/
-  }
-
   public function viewStaffTitle($sid) {
     $connection = \Drupal::service('database');
     $getStaffName = $connection->query('SELECT `name` FROM `bethelks_staff` WHERE `sid` = :sid LIMIT 1', array(':sid' => $sid))->fetchAssoc();
-    return $getStaffName["name"];
+
+    if(!empty($getStaffName["name"])) return $getStaffName["name"];
+    else return "Error";
   }
 
   public function editStaffTitle($sid) {

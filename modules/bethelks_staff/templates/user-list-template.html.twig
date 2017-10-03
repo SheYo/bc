@@ -1,9 +1,7 @@
-
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Category</th>
       <th>Position</th>
       <th>Email</th>
       <th>Picture</th>
@@ -17,13 +15,15 @@
     {% else %}
       {% for member in staff.data %}
         <tr>
-          <td><a href="/faculty/view/{{ member.sid }}">{{ member.name | title }}</a></td>
-          <td>{{ member.staff_category | replace({'_':' '}) | title }}</td>
+          <td><a href="view/{{ member.sid }}">{{ member.name | title }}</a></td>
+          <!-- <td>{# member.staff_category | replace({'_':' '}) | title #}</td> -->
           <td>{{ member.position | title }}</td>
           <td>{{ member.email }}</td>
-          <td>   
+          <td>
               {% if member.path is not null %}
-              <img src="{{ file_url(member.path) }}">
+                <img src="{{ file_url(member.path) }}">
+              {% else %}
+                No picture provided.
               {% endif %}
           </td>
         </tr>
@@ -33,9 +33,9 @@
 </table>
 
 {% if staff.prev is not null %}
-<button type="button" onclick="window.location.href = '/staff/{{ staff.prev }}';">Previous</button>
+  <button type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
 {% endif %}
 
 {% if staff.next is not null %}
-<button type="button" onclick="window.location.href = '/staff/{{ staff.next }}';">Next</button>
+  <button type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
 {% endif %}

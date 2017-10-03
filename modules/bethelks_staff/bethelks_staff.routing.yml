@@ -26,15 +26,7 @@ bethelks_staff.adminList.add:
   requirements:
     _permission: 'administer staff'
 
-# View Staff
-# bethelks_staff.faculty1:
-#   path: '/faculty'
-#   defaults:
-#     _controller: '\Drupal\bethelks_staff\Controller\StaffController::viewStaffFull'
-#     _title: 'Bethel College Faculty'
-#   requirements:
-#     _permission: 'access content'
-
+# View Single Staff
 bethelks_staff.faculty.view:
   path: '/faculty/view/{sid}'
   defaults:
@@ -51,6 +43,8 @@ bethelks_staff.adminList.edit:
     _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::editStaffTitle'
   requirements:
     _permission: 'administer staff'
+
+# Delete Staff Routing
 bethelks_staff.adminList.edit.delete:
   path: '/admin/content/bethelks_staff/delete/{sid}'
   defaults:
