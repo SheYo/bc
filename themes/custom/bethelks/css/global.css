@@ -52,7 +52,7 @@ html {
   background-image:url(../eventCarouselBackground.jpg);
   background-size:cover;
   background-position:top center;
-  padding-top:30px;
+  padding-top:230px;
   padding-bottom:30px;
 }
 
@@ -89,7 +89,7 @@ html {
 
 div.eventCard .eventInformation-title {
   margin:0;
-  padding:25px 0px;
+  padding:10px 0px;
 }
 
 .eventCarousel div.eventCard .dateSpan .startDate { float:left; }
@@ -107,10 +107,17 @@ div.eventCard .eventInformation-title {
 
 .owl-nav div {
   background-color:#eeb111 !important;
-  opacity:.5;
-  transition:all .25s;
 }
-.owl-nav div:hover { opacity:1; }
+
+@media (max-width: 767px) {
+  .eventCarousel div.eventCard {
+    opacity:1 !important;
+  }
+
+  .eventCarousel {
+    padding-top:30px !important;
+  }
+}
 /* EVENT CAROUSEL END */
 
 /* CLASSY PARAGRAPHS STYLES START */

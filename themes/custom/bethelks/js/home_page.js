@@ -174,6 +174,7 @@ jQuery(document).on('ready', function(){
     dots: true,
     autoplay: true,
     autoplayTimeout: 4000,
+    autoplayHoverPause: true,
     navText: [
       '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
       '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
@@ -182,12 +183,16 @@ jQuery(document).on('ready', function(){
     responsive: {
       0: {
         items: 1,
-        margin: 0
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplayHoverPause: false
       },
       767: {
         items: 3,
         nav: true,
-        dots: false
+        dots: false,
+        autoplayHoverPause: false
       },
       991: {
         items: 4

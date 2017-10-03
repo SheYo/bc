@@ -21,12 +21,6 @@ function bethelks_staff_schema() {
         'not null' => true,
         'default' => '' //this should point to a default img provided by module
       ),
-      'staff_category' => array(
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => true,
-        'default' => ''
-      ),
       'position' => array(
         'type' => 'varchar',
         'length' => 255,
@@ -34,9 +28,10 @@ function bethelks_staff_schema() {
         'default' => ''
       ),
       'extension' => array(
-        'type' => 'int',
+        'type' => 'varchar',
+        'length' => 3,
         'not null' => true,
-        'default' => 0
+        'default' => ''
       ),
       'telephone' => array(
         'type' => 'varchar',
@@ -65,7 +60,7 @@ function bethelks_staff_schema() {
   );
 
   $schema['bethelks_staff_education'] = array(
-    'description' => 'The helper table for bethel staff (works in conjuction with bethelks_staff)',
+    'description' => 'The education helper table for bethel staff (works in conjuction with bethelks_staff and bethelks_staff_category)',
     'fields' => array(
       'eid' => array(
         'type' => 'serial',
@@ -77,26 +72,35 @@ function bethelks_staff_schema() {
         'not null' => true,
         'default' => 0
       ),
-      'education_degree' => array(
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => true,
-        'default' => ''
+      'education' => array(
+        'type' => 'text',
+        'not null' => true
+      )
+    ),
+    'primary key' => array('eid')
+  );
+
+  $schema['bethelks_staff_category'] = array(
+    'description' => 'The category helper table for bethel staff (works in conjuction with bethelks_staff and bethelks_staff_education)',
+    'fields' => array(
+      'cid' => array(
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true
       ),
-      'education_institution' => array(
-        'type' => 'varchar',
-        'length' => 255,
+      'staff_id' => array(
+        'type' => 'int',
         'not null' => true,
-        'default' => ''
+        'default' => 0
       ),
-      'education_year' => array(
+      'category' => array(
         'type' => 'varchar',
-        'length' => 10,
+        'length' => 32,
         'not null' => true,
         'default' => ''
       )
     ),
-    'primary key' => array('eid')
+    'primary key' => array('cid')
   );
 
   return $schema;
