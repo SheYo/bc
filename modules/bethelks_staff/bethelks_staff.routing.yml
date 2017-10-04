@@ -32,6 +32,8 @@ bethelks_staff.faculty.view:
   defaults:
     _controller: '\Drupal\bethelks_staff\Controller\StaffController::viewStaff'
     _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::viewStaffTitle'
+    sid: null
+    singleStaff: true
   requirements:
     _permission: 'access content'
 

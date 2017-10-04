@@ -124,6 +124,10 @@ class StaffController extends ControllerBase {
   }
 
   public function viewStaff($sid) {
+    if($sid == null) {
+      return $this->redirect("bethelks_staff.faculty");
+    }
+
     $connection = \Drupal::service('database');
     $staff_array = $connection->query('SELECT * FROM `bethelks_staff` WHERE sid = :sid LIMIT 1', array(':sid' => $sid))->fetchAssoc();
 

@@ -15,7 +15,7 @@
     {% else %}
       {% for member in staff.data %}
         <tr>
-          <td><a href="view/{{ member.sid }}">{{ member.name | title }}</a></td>
+          <td><a href="faculty/view/{{ member.sid }}">{{ member.name | title }}</a></td>
           <!-- <td>{# member.staff_category | replace({'_':' '}) | title #}</td> -->
           <td>{{ member.position | title }}</td>
           <td>{{ member.email }}</td>
