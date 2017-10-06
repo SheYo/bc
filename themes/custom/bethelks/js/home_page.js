@@ -1,10 +1,10 @@
 jQuery(document).on('ready', function(){
   /* Classy Student Steps Start */
   jQuery('.js-student-step').each(function(index){
-    var iClass = jQuery(this).find('p').html();
+    var iClass = jQuery(this).find('p').find('a').html();
     var icon = document.createElement("i");
     jQuery(icon).addClass(iClass);
-    jQuery(this).find('p').html(icon);
+    jQuery(this).find('p').find('a').html(icon);
   });
   /* Classy Student Steps End */
 

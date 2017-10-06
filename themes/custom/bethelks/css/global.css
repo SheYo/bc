@@ -166,7 +166,7 @@ div.eventCard .eventInformation-title {
   border-color:#eeb111;
 }
 
-.js-student-step p {
+.js-student-step p, .js-student-step h2 {
   text-align:center;
 }
 
