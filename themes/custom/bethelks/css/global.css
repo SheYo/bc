@@ -49,7 +49,7 @@ html {
 
 /* EVENT CAROUSEL START */
 .eventCarousel {
-  background-image:url(../eventCarouselBackground.jpg);
+  background-image:url(../images/eventCarouselBackground.jpg);
   background-size:cover;
   background-position:top center;
   padding-top:230px;
@@ -867,8 +867,17 @@ div.eventCard .eventInformation-title {
   margin:0;
 }*/
 
+.header-eyecatcher-image-default { background-image:url('../images/default_hero.jpg'); }
+.header-eyecatcher-image-about { background-image:url('../images/about_hero.jpg'); }
+.header-eyecatcher-image-admissions { background-image:url('../images/admissions_hero.jpg'); }
+.header-eyecatcher-image-academics { background-image:url('../images/academics_hero.jpg'); }
+.header-eyecatcher-image-affordability { background-image:url('../images/affordability_hero.jpg'); }
+.header-eyecatcher-image-student-life { background-image:url('../images/student-life_hero.jpg'); }
+.header-eyecatcher-image-thresher-success { background-image:url('../images/thresher-success_hero.jpg'); }
+
 .header-eyecatcher-image {
-  background:url('../example.jpg') no-repeat center center;
+  background-repeat:no-repeat;
+  background-position:center center;
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
@@ -884,7 +893,7 @@ div.eventCard .eventInformation-title {
   line-height:50px;
   text-align:center;
   margin:0;
-  padding:10px;
+  padding:10px 40px;
 }
 .header-eyecatcher-overlay > div > div > a {
   background-color:#eeb111;
@@ -1046,6 +1055,10 @@ div.eventCard .eventInformation-title {
 @media (max-width: 991px) {
   .row .postHeader-breadcrumbs {
     display:none !important;
+  }
+
+  .header-eyecatcher-overlay > div > div > h2 {
+    padding:10px 0px;
   }
 }
 

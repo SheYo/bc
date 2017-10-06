@@ -37,28 +37,29 @@
       <!-- Do nothing on article pages -->
   {% else %}
     {% if '/about/' in url %}
-      <p>About header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-about">
     {% elseif '/admissions/' in url %}
-      <p>Admissions header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-admissions">
     {% elseif '/academics/' in url %}
-      <p>Academics header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-academics">
     {% elseif '/affordability/' in url %}
-      <p>Affordability header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-affordability">
     {% elseif '/student-life/' in url %}
-      <p>Student Life header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-student-life">
     {% elseif '/thresher-success/' in url %}
-      <p>Thresher success header</p>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-thresher-success">
     {% else %}
-      <div class="container-fluid header-eyecatcher header-eyecatcher-image">
-        <div class="container">
-          <div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center">
-            <div class="row">
-              <div class="col-12"><h2>Connect to Purpose</h2></div>
-              <!--<div class="col-12"><a href="#">Explore</a></div>-->
-            </div>
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-default">
+    {% endif %}
+    <!-- <div that comes from above> -->
+      <div class="container">
+        <div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center">
+          <div class="row">
+            <div class="col-12"><h2>Connect to Purpose</h2></div>
+            <!--<div class="col-12"><a href="#">Explore</a></div>-->
           </div>
         </div>
       </div>
-    {% endif %}
+    </div>
   {% endif %}
 {% endif %}
