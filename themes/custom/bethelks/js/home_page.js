@@ -232,9 +232,10 @@ jQuery(document).on('ready', function(){
     });
 
     jQuery(this).find('h2').parent().on('click', function(){
+      var _this = this; //this scope
       if(active) {
         imgDiv.fadeOut(400, function(){
-          jQuery(this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down').hide();
+          jQuery(_this).find('i').removeClass('fa-angle-up').addClass('fa-angle-down').hide();
         });
       }
       else {
