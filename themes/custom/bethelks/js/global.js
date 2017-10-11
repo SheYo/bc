@@ -50,49 +50,6 @@ jQuery(document).on('ready', function(){
   });
   /* Navigation End */
 
-  /* Header Eyecatcher Responsive Homepage Start */
-  function checkAndChangeHeaderEyecatcher() {
-    if(jQuery(window).width() <= 991 && (document.URL == "http://localhost/bethelks/" || document.URL == "http://bc-test.com/" || document.URL == "https://www.bethelks.edu/")) {
-      var headerEyecatcher = jQuery('.header-eyecatcher');
-      headerEyecatcher.addClass('header-eyecatcher-image');
-      headerEyecatcher.html('<div class="container"><div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center"><div class="row"><div class="col-12"><h2>Connect to Purpose</h2></div><div class="col-12"><a href="#">Explore</a></div></div></div></div>');
-    }
-  }
-  checkAndChangeHeaderEyecatcher();
-
-  jQuery(window).resize(function(){
-    checkAndChangeHeaderEyecatcher();
-  });
-
-  if(jQuery('.header-eyecatcher').find('video').length) {
-    // setTimeout(function(){
-    //   jQuery('.header-eyecatcher-video-overlay').fadeOut();
-    // }, 5000);
-    //
-    // jQuery('.header-eyecatcher').hover(function(){
-    //   jQuery('.header-eyecatcher-video-overlay').fadeIn();
-    // }, function(){
-    //   jQuery('.header-eyecatcher-video-overlay').fadeOut();
-    // });
-
-    jQuery('.header-eyecatcher').find('video').on('click', function(e){
-      e.preventDefault();
-      if(jQuery(this).get(0).paused) {
-        jQuery(this).get(0).play();
-      }
-      else {
-        jQuery(this).get(0).pause();
-      }
-    });
-  }
-
-
-
-
-  jQuery('')
-
-  /* Header Eyecatcher Responsive Homepage End */
-
   /* Back to Top Button Functionality Start */
   jQuery(document).scroll(function() {
     if(jQuery(document).scrollTop() >= 700) {
