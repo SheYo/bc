@@ -17,8 +17,6 @@ jQuery(document).on('ready', function(){
   }
   else {
     var headerEyecatcher = jQuery('.header-eyecatcher');
-    headerEyecatcher.addClass('header-eyecatcher-image');
-    headerEyecatcher.addClass('header-eyecatcher-image-default');
     headerEyecatcher.html('<div class="header-eyecatcher-video"><video autoplay loop muted><source src="themes/custom/bethelks/VideoHeader.mp4" type="video/mp4"></video></div>');
   }
 
