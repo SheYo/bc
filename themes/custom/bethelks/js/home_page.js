@@ -9,25 +9,18 @@ jQuery(document).on('ready', function(){
   /* Classy Student Steps End */
 
   /* Header Eyecatcher Responsive Homepage Start */
-  function checkAndChangeHeaderEyecatcher() {
-    if(jQuery(window).width() <= 991) {
-      var headerEyecatcher = jQuery('.header-eyecatcher');
-      headerEyecatcher.addClass('header-eyecatcher-image');
-      headerEyecatcher.addClass('header-eyecatcher-image-default');
-      headerEyecatcher.html('<div class="container"><div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center"><div class="row"><div class="col-12"><h2>Connect to Purpose</h2></div></div></div></div>');
-    }
-    else {
-      var headerEyecatcher = jQuery('.header-eyecatcher');
-      headerEyecatcher.addClass('header-eyecatcher-image');
-      headerEyecatcher.addClass('header-eyecatcher-image-default');
-      headerEyecatcher.html('<div class="header-eyecatcher-video"><video autoplay loop muted><source src="themes/custom/bethelks/VideoHeader.mp4" type="video/mp4"></video></div>');
-    }
+  if(jQuery(window).width() <= 991) {
+    var headerEyecatcher = jQuery('.header-eyecatcher');
+    headerEyecatcher.addClass('header-eyecatcher-image');
+    headerEyecatcher.addClass('header-eyecatcher-image-default');
+    headerEyecatcher.html('<div class="container"><div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center"><div class="row"><div class="col-12"><h2>Connect to Purpose</h2></div></div></div></div>');
   }
-  checkAndChangeHeaderEyecatcher();
-
-  jQuery(window).resize(function(){
-    checkAndChangeHeaderEyecatcher();
-  });
+  else {
+    var headerEyecatcher = jQuery('.header-eyecatcher');
+    headerEyecatcher.addClass('header-eyecatcher-image');
+    headerEyecatcher.addClass('header-eyecatcher-image-default');
+    headerEyecatcher.html('<div class="header-eyecatcher-video"><video autoplay loop muted><source src="themes/custom/bethelks/VideoHeader.mp4" type="video/mp4"></video></div>');
+  }
 
   if(jQuery('.header-eyecatcher').find('video').length) {
     jQuery('.header-eyecatcher').find('video').on('click', function(e){
