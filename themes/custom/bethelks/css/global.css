@@ -753,11 +753,12 @@ div.eventCard .eventInformation-title {
 
 .navbar .navbar-toggler {
   float:right;
-  margin-top:15px;
+  margin-top:25px;
 }
 
 .navbar-brand > img {
-  max-width:70%;
+  max-width:406px;
+  max-height:80px;
 }
 
 .navbar-light .navbar-nav > li > a.nav-link {
