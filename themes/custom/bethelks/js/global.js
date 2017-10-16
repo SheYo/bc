@@ -128,10 +128,6 @@ jQuery(document).on('ready', function(){
   jQuery('.preFooter-recentNews').each(function(index){
     var items = jQuery(this).find('.views-row');
 
-    if(items.length > 2) {
-      items.slice(-items.length + 2).remove();
-    }
-
     items.each(function(i){
       var href = jQuery(this).find('a').attr('href');
       jQuery(this).find('.views-field-view-node').remove();

@@ -231,13 +231,27 @@ jQuery(document).on('ready', function(){
 
   /* Homepage Recent News Start */
   jQuery('.js-home-recent-news').each(function(index){
-    var newsListItems = jQuery(this).find('ul > li');
-
-    if(newsListItems.length > 3) {
-      newsListItems.slice(-newsListItems.length + 3).remove();
-    }
-
     jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
+
+    jQuery(this).find('.recent-content-view-list-wrapper').each(function(index){
+      /* Wrap a in span */
+      var text = jQuery(this).find('.views-field-view-node a').html();
+      var textSpan = document.createElement("span");
+      jQuery(textSpan).html(text).addClass('view-read-more-span');
+      jQuery(this).find('.views-field-view-node a').html(textSpan);
+
+      /* Create icon and wrap in span */
+      var iconSpan = document.createElement("span");
+      var icon = document.createElement("i");
+      jQuery(iconSpan).html(jQuery(icon).addClass('fa fa-angle-right')).addClass('view-icon-span');
+      jQuery(this).find('.views-field-view-node a').prepend(iconSpan);
+
+
+      /* Add Images */
+      jQuery(this).children('li:eq(0)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
+      jQuery(this).children('li:eq(2)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
+      jQuery(this).children('li:last-child').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
+    });
   });
   /* Homepage Recent News End */
 
@@ -273,28 +287,6 @@ jQuery(document).on('ready', function(){
   });
   /* Homepage Location Map End */
 
-  /* Homepage Latest News Start */
-  jQuery('.recent-content-view-list-wrapper').each(function(index){
-    /* Wrap a in span */
-    var text = jQuery(this).find('.views-field-view-node a').html();
-    var textSpan = document.createElement("span");
-    jQuery(textSpan).html(text).addClass('view-read-more-span');
-    jQuery(this).find('.views-field-view-node a').html(textSpan);
-
-    /* Create icon and wrap in span */
-    var iconSpan = document.createElement("span");
-    var icon = document.createElement("i");
-    jQuery(iconSpan).html(jQuery(icon).addClass('fa fa-angle-right')).addClass('view-icon-span');
-    jQuery(this).find('.views-field-view-node a').prepend(iconSpan);
-
-
-    /* Add Images */
-    jQuery(this).children('li:eq(0)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
-    jQuery(this).children('li:eq(2)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
-    jQuery(this).children('li:last-child').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
-  });
-  /* Homepage Latest News End */
-
   /* Homepage Prefooter Social Media Icons Start */
   jQuery('.homePreFooter ul li').each(function(index){
     var iClass = jQuery(this).find('a').html();
@@ -304,9 +296,13 @@ jQuery(document).on('ready', function(){
   });
   /* Homepage Prefooter Social Media Icons End */
 
+  /* Recent Headlines Homepage Footer Start */
+  jQuery('.js-recent-headlines-homepage-footer').each(function(i){
+    jQuery(this).find('img').addClass('img-fluid rounded-circle');
+  });
+  /* Recent Headlines Homepage Footer End */
 
-
-  //layout
+  // Layout
   setTimeout(function(){
     grid.isotope({filter: '.ab-filter-financial-aid'});
   }, 2000);

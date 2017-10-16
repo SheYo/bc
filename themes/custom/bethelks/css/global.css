@@ -1,7 +1,4 @@
 /* FONT CSS IMPORT START */
-/* font-family: 'Poiret One', cursive; */
-@import url('https://fonts.googleapis.com/css?family=Poiret+One');
-
 /* raleway thin - 100; raleway medium - 500; raleway semibold - 600; raleway black - 900 */
 /* font-family: 'Raleway', sans-serif; */
 @import url('https://fonts.googleapis.com/css?family=Raleway:100,500,600,900');
@@ -52,7 +49,7 @@ html {
   background-image:url(../images/eventCarouselBackground.jpg);
   background-size:cover;
   background-position:top center;
-  padding-top:230px;
+  padding-top:60px;
   padding-bottom:30px;
 }
 
@@ -89,7 +86,7 @@ html {
 
 div.eventCard .eventInformation-title {
   margin:0;
-  padding:10px 0px;
+  padding:25px 0px;
 }
 
 .eventCarousel div.eventCard .dateSpan .startDate { float:left; }
@@ -194,6 +191,14 @@ div.eventCard .eventInformation-title {
   transition:all .25s;
 }
 
+.all-aboard-top {
+  background-image:url(../images/all-aboard.jpg);
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center center;
+  margin-bottom:30px;
+}
+
 .js-home-recent-news h2, .all-aboard-top h2, .eventCarouselHeading h2 {
   font-family:'Helvetica', sans-serif;
   font-weight:900;
@@ -204,7 +209,11 @@ div.eventCard .eventInformation-title {
   text-align:center;
 }
 
-.all-aboard-top h2, .js-home-recent-news h2 {
+.all-aboard-top h2 {
+  padding:40px 0px;
+}
+
+.js-home-recent-news h2 {
   padding-bottom:35px;
   margin-bottom:50px;
   border-bottom:1px solid #d3d3d1;
@@ -559,7 +568,7 @@ div.eventCard .eventInformation-title {
 }
 
 .recent-content-view-list-wrapper .views-field-title {
-  font-family:'Poiret One', sans-serif;
+  font-family:'Roboto', sans-serif;
   font-size:30px;
   line-height:36px;
   color:36px;
@@ -619,6 +628,54 @@ div.eventCard .eventInformation-title {
 .img-test {
   background-color:#eeb111 !important;
   padding:0px !important;
+  border:0 !important;
+}
+
+.recent-headlines-homepage-title {
+  background-color:#eeb111;
+  width:100%;
+  padding:5px 20px;
+}
+
+.recent-headlines-homepage-title h4 {
+  color:#ffffff;
+  font-family:'Raleway', sans-serif;
+  font-weight:600;
+  text-transform:uppercase;
+  margin:0;
+}
+
+.js-recent-headlines-homepage-footer {
+  border-top:2px solid #3c8e96;
+  margin:10px 0px !important;
+  padding:5px 5px;
+}
+
+.js-recent-headlines-homepage-footer .col-3, .js-recent-headlines-homepage-footer .col-12 {
+  padding:0 !important;
+}
+
+.recent-headlines-authored {
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
+  text-transform:uppercase;
+  color:#777777;
+  font-size:.8em;
+}
+
+.recent-headlines-title {
+  font-family:'Roboto', sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+  color:#3c8e96;
+  font-size:.95em;
+}
+
+.recent-headlines-body {
+  font-family:'Roboto', sans-serif;
+  font-weight:400;
+  color:#777777;
+  font-size:.85em;
 }
 
 @media (max-width: 991px) {
@@ -843,30 +900,6 @@ div.eventCard .eventInformation-title {
   z-index:0;
   width:100%;
 }
-
-/*.header-eyecatcher-video-overlay {
-  position:absolute;
-  bottom:25px;
-  right:25px;
-  background-color:#882233;
-  border-radius:3px;
-  border:1px solid #ffffff;
-  opacity:.7;
-  z-index:1000000;
-  padding:5px 10px;
-}
-
-.header-eyecatcher-video-overlay p {
-  color:#ffffff;
-  text-align:center;
-  vertical-align:middle;
-  font-family:'Roboto', sans-serif;
-  font-weight:300;
-  font-size:14px;
-  line-height:28px;
-  text-transform:uppercase;
-  margin:0;
-}*/
 
 .header-eyecatcher-image-default { background-image:url('../images/default_hero.jpg'); }
 .header-eyecatcher-image-about { background-image:url('../images/about_hero.jpg'); }
@@ -1100,6 +1133,12 @@ div.eventCard .eventInformation-title {
 
 .articleOrPageContent a {
   color:#3c8e96 !important;
+}
+
+.articleNewsBanner img {
+  max-width:600px;
+  height:auto;
+  margin-bottom:10px;
 }
 
 .rightSidebar-searchForm > p, .rightSidebar-quickLinks > p, .rightSidebar-userMenu > p {

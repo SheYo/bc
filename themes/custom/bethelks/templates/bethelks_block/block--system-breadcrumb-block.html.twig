@@ -25,8 +25,18 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes.addClass('col-5 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
+{% if '/article/' in url %}
+  <div class="col-12 order-1 articleNewsBanner">
+    <img class="img-fluid" src="../themes/custom/bethelks/images/news-banner.jpg">
+  </div>
+  <div{{ attributes.addClass('col-12 order-6 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
+{% else %}
+  <div{{ attributes.addClass('col-5 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
+{% endif %}
   {% block content %}
     {{ content }}
   {% endblock %}
 </div>
+{% if '/article/' in url %}
+  <div class="col-12 order-8"><br><br></div>
+{% endif %}

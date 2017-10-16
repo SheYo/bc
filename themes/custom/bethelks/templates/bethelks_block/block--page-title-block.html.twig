@@ -25,7 +25,11 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes.addClass('postHeader-pageTitle col-12 col-lg-7') }}>
+{% if '/article/' in url %}
+  <div{{ attributes.addClass('postHeader-pageTitle col-12 order-12') }}>
+{% else %}
+  <div{{ attributes.addClass('postHeader-pageTitle col-12 col-lg-7') }}>
+{% endif %}
   {% block content %}
     {{ content }}
   {% endblock %}
