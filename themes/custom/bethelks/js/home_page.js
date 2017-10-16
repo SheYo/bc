@@ -231,26 +231,17 @@ jQuery(document).on('ready', function(){
 
   /* Homepage Recent News Start */
   jQuery('.js-home-recent-news').each(function(index){
+    var overlayColors = ['#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
+
     jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
 
-    jQuery(this).find('.recent-content-view-list-wrapper').each(function(index){
-      /* Wrap a in span */
-      var text = jQuery(this).find('.views-field-view-node a').html();
-      var textSpan = document.createElement("span");
-      jQuery(textSpan).html(text).addClass('view-read-more-span');
-      jQuery(this).find('.views-field-view-node a').html(textSpan);
+    jQuery(this).find('.homepage-featured-news-view').each(function(i){
+      if(i == 1) {
+        jQuery(this).find('.featured-news-tb-wrapper').addClass('order-12');
+        jQuery(this).find('.featured-news-img-wrapper').addClass('order-1');
+      }
 
-      /* Create icon and wrap in span */
-      var iconSpan = document.createElement("span");
-      var icon = document.createElement("i");
-      jQuery(iconSpan).html(jQuery(icon).addClass('fa fa-angle-right')).addClass('view-icon-span');
-      jQuery(this).find('.views-field-view-node a').prepend(iconSpan);
-
-
-      /* Add Images */
-      jQuery(this).children('li:eq(0)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
-      jQuery(this).children('li:eq(2)').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
-      jQuery(this).children('li:last-child').after('<li class="img-test"><img src="themes/custom/bethelks/images/placeholder.png"></li>');
+      jQuery(this).find('.featured-news-tb-wrapper').css('background-color', overlayColors[Math.floor(Math.random()*overlayColors.length)]);
     });
   });
   /* Homepage Recent News End */
