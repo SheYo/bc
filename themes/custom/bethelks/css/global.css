@@ -886,7 +886,7 @@ div.eventCard .eventInformation-title {
   line-height:50px;
   text-align:center;
   margin:0;
-  padding:10px 40px;
+  padding:10px 20px !important;
 }
 .header-eyecatcher-overlay > div > div > a {
   background-color:#eeb111;
