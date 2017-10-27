@@ -118,6 +118,10 @@ div.eventCard .eventInformation-title {
 /* EVENT CAROUSEL END */
 
 /* CLASSY PARAGRAPHS STYLES START */
+.expandEmbraceEngageCards {
+  margin-top:50px;
+}
+
 .simple_cards p {
   font-family:'Roboto', sans-serif;
   font-weight:300;
@@ -301,6 +305,9 @@ div.eventCard .eventInformation-title {
 
 .all-aboard-content {
   margin-top:50px;
+  padding-top:30px;
+  padding-bottom:30px;
+  background-color:#333333 !important;
 }
 
 .all-aboard-controls button {
