@@ -49,8 +49,9 @@ html {
   background-image:url(../images/eventCarouselBackground.jpg);
   background-size:cover;
   background-position:top center;
-  padding-top:60px;
-  padding-bottom:30px;
+  /*padding-top:60px;
+  padding-bottom:30px;*/
+  padding:0 !important;
 }
 
 .eventCarousel div.eventCard {
@@ -86,7 +87,7 @@ html {
 
 div.eventCard .eventInformation-title {
   margin:0;
-  padding:25px 0px;
+  padding:35px 0px;
 }
 
 .eventCarousel div.eventCard .dateSpan .startDate { float:left; }

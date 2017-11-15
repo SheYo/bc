@@ -193,10 +193,10 @@ jQuery(document).on('ready', function(){
 
   /* Event Carousel Start */
   jQuery('.owl-carousel').owlCarousel({
-    items: 5,
+    items: 6,
     loop: true,
     nav: false,
-    dots: true,
+    dots: false,
     autoplay: true,
     autoplayTimeout: 4000,
     autoplayHoverPause: true,
@@ -204,7 +204,7 @@ jQuery(document).on('ready', function(){
       '<',
       '>'
     ],
-    margin: 15,
+    margin: 0,
     responsive: {
       0: {
         items: 1,
