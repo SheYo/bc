@@ -42,6 +42,19 @@ html {
   color:#eeb111;
   opacity:1;
 }
+
+.capital-case-heading {
+  color:#000000;
+  text-transform:uppercase;
+  font-family:'Helvetica', sans-serif;
+  font-weight:500;
+}
+
+.capital-case-heading span {
+  font-size:.7em;
+  font-family:'Helvetica', sans-serif;
+  font-weight:500;
+}
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
 /* EVENT CAROUSEL START */
@@ -790,7 +803,7 @@ div.eventCard .eventInformation-title {
   text-transform:uppercase;
   font-family:'Raleway', sans-serif;
   font-weight:600;
-  font-size:12px;
+  font-size:13px;
   line-height:100px;
   padding-left:20px !important;
   padding-right:20px !important;

@@ -141,6 +141,19 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-<div{{ attributes.addClass(classes).addClass('container-fluid') }}>
-  <img class="img-fluid expandEmbraceEngageCards" src="{{ directory ~ "/images/expandEmbraceEngage.jpg" }}">
+<div{{ attributes.addClass(classes).addClass('container') }}>
+  <div class="row no-gutters">
+    <div class="col-12 col-md-4 text-center align-middle">
+      <img class="img-fluid" src="{{ directory ~ "/images/expand.jpg" }}">
+      <h3 class="capital-case-heading mt-2">E<span>xpand</span> Y<span>our</span> M<span>ind</span></h3>
+    </div>
+    <div class="col-12 col-md-4 text-center align-middle">
+      <img class="img-fluid" src="{{ directory ~ "/images/embrace.jpg" }}">
+      <h3 class="capital-case-heading mt-2">E<span>mbrace</span> Y<span>our</span> P<span>otential</span></h3>
+    </div>
+    <div class="col-12 col-md-4 text-center align-middle">
+      <img class="img-fluid" src="{{ directory ~ "/images/engage.jpg" }}">
+      <h3 class="capital-case-heading mt-2">E<span>ngage</span> Y<span>our</span> C<span>ommunity</span></h3>
+    </div>
+  </div>
 </div>
