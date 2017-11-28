@@ -1,44 +1,86 @@
-<script>
+<style>
 
-</script>
-<table>
-  <thead>
-    <tr>
-      <th>Name123</th>
-      <th>Position</th>
-      <th>Email</th>
-      <th>Picture</th>
-    </tr>
-  </thead>
-  <tbody>
+* {
+    box-sizing: border-box;
+}
+
+/* Three columns side by side */
+.column {
+    float: left;
+    width: 30%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+   
+   
+}
+
+
+/* Display the columns below each other instead of side by side on small screens */
+@media (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+        float: left;
+    }
+}
+
+/* Add some shadows to create a card effect */
+.card {
+ border: 1px solid #c4c4c4;
+    
+} 
+
+/* Some left and right padding inside the container */
+.container {
+    padding: 0 16px;
+}
+
+/* Clear floats */
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: grey;
+}
+
+
+</style>
+
+
+<div class="row">
     {% if staff is empty %}
-      <tr>
-        <td colspan="8">There are no staff members in the database.</td>
-      </tr>
-    {% else %}
-      {% for member in staff.data %}
-        <tr>
-          <td><a href="faculty/view/{{ member.sid }}">{{ member.name | title }}</a></td>
-          <!-- <td>{# member.staff_category | replace({'_':' '}) | title #}</td> -->
-          <td>{{ member.position | title }}</td>
-          <td>{{ member.email }}</td>
-          <td>
-              {% if member.path is not null %}
-                <img src="{{ file_url(member.path) }}">
-              {% else %}
-                No picture provided.
-              {% endif %}
-          </td>
-        </tr>
-      {% endfor %}
-    {% endif %}
-  </tbody>
-</table>
 
+    <div class="column">There are no staff members in the database.</div>
+
+    {% else %} {% for member in staff.data %}
+
+
+    <div class="column">
+        <div class="card">
+            {% if member.path is not null %}
+           <img src="{{ file_url(member.path) }}" style="width:100%; object-fit: none"> {% else %} No picture provided. {% endif %}
+
+            <div class="container">
+                <h2>
+                    <a href="faculty/view/{{ member.sid }}">{{ member.name | title }}</h2>
+                <p class="title">{{ member.position | title }}</p>
+                <p>{{ member.email }}</p>
+               
+            </div>
+        </div>
+    </div>
+     {% endfor %} {% endif %}
+</div>
+
+
+<div>
 {% if staff.prev is not null %}
-  <button type="button" onclick="window.location.href = '{{ staff.prev }}';">Previousss</button>
+  <button type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
 {% endif %}
 
 {% if staff.next is not null %}
   <button type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
-{% endif %}
+{% endif %}</div>
