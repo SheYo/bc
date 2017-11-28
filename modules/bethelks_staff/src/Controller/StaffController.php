@@ -22,7 +22,7 @@ class StaffController extends ControllerBase {
         $page = 0;
       }
 
-      $list_size = 5;
+      $list_size = 9;
 
       $response['total'] = $total;
       $maxPage = (int)(round($total /$list_size)) -1;
