@@ -694,6 +694,7 @@ div.eventCard .eventInformation-title {
   }
   .navbar-brand > img {
     max-width:30%;
+    padding-left:0;
   }
 
   .navbar-light .collapse .navbar-nav > li:not(:last-child) {
@@ -796,6 +797,7 @@ div.eventCard .eventInformation-title {
 .navbar-brand > img {
   max-width:406px;
   max-height:80px;
+  padding-left:5%;
 }
 
 .navbar-light .navbar-nav > li > a.nav-link {
