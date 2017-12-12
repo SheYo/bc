@@ -1,37 +1,45 @@
 {% if staff is null %}
   <p>The staff member you are looking for does not exist.</p>
 {% else %}
-  <style>
-    .tempTable td {
-      text-align:center;
-    }
-  </style>
 
-  <br>
-
-  <table class="tempTable" border="1">
-    <thead>
-      <tr>
-        <th colspan="2">Staff Information</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for key,val in staff %}
-        {% if val is iterable %}
-          <tr><td colspan="2">{{ key }}</td></tr>
-          {% for innerKey,innerVal in val %}
-            <tr>
-            <td>{{ innerKey }}</td>
-            <td>{{ innerVal }}</td>
-            </tr>
+<div class="row mt-2">
+  <div class="col-12 col-md-4 col-lg-3">
+    <img src="{{ file_url(staff.imguri) }}" alt="{{ staff.name }}" class="img-fluid img-thumbnail">
+    <p class="mt-1"><strong>Email:</strong><br><a href="mailto:{{staff.email}}">{{staff.email}}</a></p>
+    <p><strong>Office Phone (x{{staff.extension}}):</strong><br><a href="tel:{{staff.telephone}}">{{staff.telephone}}</a></p>
+    <p><strong>Office Location:</strong><br>{{staff.campus_location}}</p>
+  </div>
+  <div class="col-12 col-md-8 col-lg-9">
+    <div class="row">
+      <div class="col-6">
+        <ul class="list-unstyled">
+          {% for key,val in staff.categories %}
+            <li>{{ staff.position }}, {{val | replace('_', ' ') | title }}</li>
           {% endfor %}
-        {% else %}
-          <tr>
-            <td>{{ key }}</td>
-            <td>{{ val }}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </tbody>
-  </table>
+        </ul>
+      </div>
+      <div class="col-6">
+        <ul class="list-unstyled">
+          <li><em>Education:</em></li>
+          {% for key,val in staff.education %}
+            <li>{{val}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <hr>
+      </div>
+    </div>
+    <div class="row pl-2 pr-2">
+        <div class="col-12 pt-3 pb-3 mb-3" style="background-color:#d2922a;">
+          <h4 class="text-white mb-0">Summary</h4>
+        </div>
+        <div class="col-12">
+          <p>{{staff.bio}}</p>
+        </div>
+    </div>
+  </div>
+</div>
 {% endif %}

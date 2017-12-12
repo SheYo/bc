@@ -25,6 +25,14 @@
   height:210px;
   margin:20px 0px;
 }
+
+.staffPagination {
+  background-color:#EEB111;
+  color:#ffffff;
+  border:0;
+  border-radius:0;
+  padding:10px 20px;
+}
 </style>
 
 
@@ -35,7 +43,7 @@
     {% for member in staff.data %}
       <div class="col-12 col-md-6 col-lg-4">
         <div class="facultyCard">
-          <a href="faculty/view/{{ member.sid }}">
+          <a href="/faculty/view/{{ member.sid }}">
             {% if member.path is not null %}
               <img src="{{ file_url(member.path) }}" class="img-fluid">
             {% else %}
@@ -56,9 +64,9 @@
 
 <div>
 {% if staff.prev is not null %}
-  <button type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
+  <button class="staffPagination" type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
 {% endif %}
 
 {% if staff.next is not null %}
-  <button type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
+  <button class="staffPagination" type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
 {% endif %}</div>
