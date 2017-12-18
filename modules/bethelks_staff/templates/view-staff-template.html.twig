@@ -3,7 +3,7 @@
 {% else %}
 
 <div class="row mt-2">
-  <div class="col-12 col-md-4 col-lg-3">
+  <div class="col-12 col-md-4 col-lg-3 pt-2 rounded" style="background-color:#efebe8;">
     <img src="{{ file_url(staff.imguri) }}" alt="{{ staff.name }}" class="img-fluid img-thumbnail">
     <p class="mt-1"><strong>Email:</strong><br><a href="mailto:{{staff.email}}">{{staff.email}}</a></p>
     <p><strong>Office Phone (x{{staff.extension}}):</strong><br><a href="tel:{{staff.telephone}}">{{staff.telephone}}</a></p>

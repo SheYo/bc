@@ -33,6 +33,61 @@ jQuery(document).on('ready', function(){
   }
   /* Header Eyecatcher Responsive Homepage End */
 
+  /* Event Carousel Start */
+  jQuery('.owl-carousel').owlCarousel({
+    items: 6,
+    loop: true,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 4000,
+    autoplayHoverPause: true,
+    navText: [
+      '<',
+      '>'
+    ],
+    margin: 0,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 0,
+        nav: true,
+        dots: false,
+        autoplayHoverPause: false
+      },
+      767: {
+        items: 3,
+        nav: true,
+        dots: false,
+        autoplayHoverPause: false
+      },
+      991: {
+        items: 4
+      },
+      1199: {
+        items: 5
+      }
+    }
+  });
+  /* Event Carousel End */
+
+  /* Homepage Recent News Start */
+  jQuery('.js-home-recent-news').each(function(index){
+    var overlayColors = ['#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
+
+    jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
+
+    jQuery(this).find('.homepage-featured-news-view').each(function(i){
+      if(i == 1) {
+        jQuery(this).find('.featured-news-tb-wrapper').addClass('order-12');
+        jQuery(this).find('.featured-news-img-wrapper').addClass('order-1');
+      }
+
+      jQuery(this).find('.featured-news-tb-wrapper').css('background-color', overlayColors[Math.floor(Math.random()*overlayColors.length)]);
+    });
+  });
+  /* Homepage Recent News End */
+
   /* All Aboard Bethel Start */
   var categories = ["introduction", "admissions", "financial-aid", "student-experience", "careers"];
   var videos = [
@@ -150,10 +205,9 @@ jQuery(document).on('ready', function(){
         jQuery(controls).append('<li class="all-aboard-video-controls-link"><a target="_blank" href="https://www.youtube.com/watch?v=' + currentVideoId + '"><i class="fa fa-link" aria-hidden="true"></i></a></li>');
         jQuery(colWrapper).addClass('col-12 col-md-6 col-lg-4 col-xl-3 all-aboard-video').addClass('ab-filter-' + currentCategory).html(thumbnail).append(controls).append(titleDescOverlay);
         grid.append(colWrapper).isotope('appended', colWrapper);
+        grid.isotope({ filter: '.ab-filter-financial-aid' });
       }
     }
-
-    grid.isotope({ filter: '.ab-filter-financial-aid' });
 
     jQuery('.all-aboard-video').hover(function(){
       jQuery(this).find('.all-aboard-video-controls').fadeIn();
@@ -190,61 +244,6 @@ jQuery(document).on('ready', function(){
     });
   }
   /* All Aboard Bethel End */
-
-  /* Event Carousel Start */
-  jQuery('.owl-carousel').owlCarousel({
-    items: 6,
-    loop: true,
-    nav: false,
-    dots: false,
-    autoplay: true,
-    autoplayTimeout: 4000,
-    autoplayHoverPause: true,
-    navText: [
-      '<',
-      '>'
-    ],
-    margin: 0,
-    responsive: {
-      0: {
-        items: 1,
-        margin: 0,
-        nav: true,
-        dots: false,
-        autoplayHoverPause: false
-      },
-      767: {
-        items: 3,
-        nav: true,
-        dots: false,
-        autoplayHoverPause: false
-      },
-      991: {
-        items: 4
-      },
-      1199: {
-        items: 5
-      }
-    }
-  });
-  /* Event Carousel End */
-
-  /* Homepage Recent News Start */
-  jQuery('.js-home-recent-news').each(function(index){
-    var overlayColors = ['#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
-
-    jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
-
-    jQuery(this).find('.homepage-featured-news-view').each(function(i){
-      if(i == 1) {
-        jQuery(this).find('.featured-news-tb-wrapper').addClass('order-12');
-        jQuery(this).find('.featured-news-img-wrapper').addClass('order-1');
-      }
-
-      jQuery(this).find('.featured-news-tb-wrapper').css('background-color', overlayColors[Math.floor(Math.random()*overlayColors.length)]);
-    });
-  });
-  /* Homepage Recent News End */
 
   /* Homepage Location Map Start */
   jQuery('.js-location-map').each(function(index){
@@ -292,9 +291,4 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
   /* Recent Headlines Homepage Footer End */
-
-  // Layout
-  setTimeout(function(){
-    grid.isotope({filter: '.ab-filter-financial-aid'});
-  }, 2000);
 });

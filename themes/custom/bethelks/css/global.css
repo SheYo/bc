@@ -57,6 +57,39 @@ html {
 }
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
+/* HOME INFOGRAPHICS START */
+.homeInfographics {
+  width:100%;
+  height:626px;
+  background-image:url(../images/infographic_bg.jpg);
+  background-size:100% 100%;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+
+.homeInfographics > div.row {
+  height:33.3%;
+  height:calc(100% / 3);
+}
+
+.homeInfographics h1 {
+  color:#3c8e96;
+  font-family:'Raleway', sans-serif;
+  font-weight:600;
+}
+
+.homeInfographics h4 {
+  color:#000000;
+}
+
+@media (max-width: 991px) {
+  .homeInfographics {
+    height:auto;
+    background-size:contain;
+  }
+}
+/* HOME INFOGRAPHICS END */
+
 /* EVENT CAROUSEL START */
 .eventCarousel {
   background-image:url(../images/eventCarouselBackground.jpg);
