@@ -12,7 +12,7 @@
  * @see template_preprocess_region()
  */
 #}
-{% if content %}
+{% if content and '/faculty/' not in url %}
   <div{{ attributes }}>
     {{ content }}
   </div>

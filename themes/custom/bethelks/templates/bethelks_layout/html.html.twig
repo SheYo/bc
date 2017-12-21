@@ -65,7 +65,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-9">
+        {% if "/faculty/view" not in url('<current>')|render|render %}
+          <div class="col-12 col-lg-9">
+        {% else %}
+          <div class="col-12">
+        {% endif %}
           {% if page.content is empty %}
             <div class="alert alert-danger" role="alert">
               <p><strong>Error!</strong> No data found within the page content. Please contact the site administrator.</p>
@@ -74,15 +78,17 @@
             {{ page.content }}
           {% endif %}
         </div>
-        <div class="col-12 col-lg-3">
-          {% if page.rightSidebar is empty %}
-            <div class="alert alert-danger" role="alert">
-              <p><strong>Error!</strong> No data found within the page right-sidebar. Please contact the site administrator.</p>
-            </div>
-          {% else %}
-            {{ page.rightSidebar }}
-          {% endif %}
-        </div>
+        {% if '/faculty/view' not in url('<current>')|render|render %}
+          <div class="col-12 col-lg-3">
+            {% if page.rightSidebar is empty %}
+              <div class="alert alert-danger" role="alert">
+                <p><strong>Error!</strong> No data found within the page right-sidebar. Please contact the site administrator.</p>
+              </div>
+            {% else %}
+              {{ page.rightSidebar }}
+            {% endif %}
+          </div>
+        {% endif %}
       </div>
     </div>
 
