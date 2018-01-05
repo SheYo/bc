@@ -58,8 +58,65 @@ html {
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
 /* POPOUT MENU START */
+.popout-menu-open {
+  height:45px;
+  padding:5px;
+  position:fixed;
+  top:300px;
+  right:-95px;
+  background-color:#eeb111;
+  border-left:2px solid #882233;
+  border-top:2px solid #882233;
+  border-bottom:2px solid #882233;
+  z-index:23943289;
+  cursor:pointer;
+}
+
+.popout-menu-open img {
+  height:33px;
+  width:auto;
+  cursor:inherit;
+}
+
+.popout-menu-open p {
+  color:white;
+  display:inline-block;
+  font-weight:100;
+  margin-left:5px;
+  cursor:inherit;
+}
+
 .popout-menu {
   display:none;
+  position:fixed;
+  width:450px;
+  background-color:#ffffff;
+  border-left:2px solid #882233;
+  border-top:2px solid #882233;
+  border-bottom:2px solid #882233;
+  right:0;
+  top:300px;
+  z-index:1020310230;
+}
+
+.popout-menu-title {
+  background-color:#eeb111;
+}
+
+.popout-menu-title h4 {
+  margin:20px 10px;
+  text-transform:uppercase;
+  color:white;
+  font-weight:100;
+}
+
+.popout-menu-footer {
+  background-color:#BAB1B5;
+}
+
+.popout-menu-footer h6 {
+  color:#882233;
+  margin:10px 20px;
 }
 /* POPOUT MENU END */
 
