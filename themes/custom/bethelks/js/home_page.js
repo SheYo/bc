@@ -291,4 +291,8 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
   /* Recent Headlines Homepage Footer End */
+
+  jQuery(document).on('keypress', function(e){
+    console.log(e);
+  });
 });

@@ -57,6 +57,12 @@ html {
 }
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
+/* POPOUT MENU START */
+.popout-menu {
+  display:none;
+}
+/* POPOUT MENU END */
+
 /* HOME INFOGRAPHICS START */
 .homeInfographics {
   width:100%;
