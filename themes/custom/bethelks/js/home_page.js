@@ -317,4 +317,9 @@ jQuery(document).on('ready', function(){
       }
     }
   });
+
+  // Fixes layout issue in chrome
+  setTimeout(function(){
+    grid.isotope({filter: '.ab-filter-financial-aid'});
+  }, 1250);
 });
