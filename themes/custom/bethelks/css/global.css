@@ -47,11 +47,11 @@ html {
   color:#000000;
   text-transform:uppercase;
   font-family:'Helvetica', sans-serif;
-  font-weight:500;
+  font-weight:300;
 }
 
 .capital-case-heading span {
-  font-size:.7em;
+  font-size:.75em;
   font-family:'Helvetica', sans-serif;
   font-weight:500;
 }
@@ -233,6 +233,42 @@ div.eventCard .eventInformation-title {
   margin-top:50px;
 }
 
+.expand-pic-quote { background-image:url('../images/expand.jpg'); }
+.embrace-pic-quote { background-image:url('../images/embrace.jpg'); }
+.engage-pic-quote { background-image:url('../images/engage.jpg'); }
+
+.expand-pic-quote, .embrace-pic-quote, .engage-pic-quote {
+  height:360px;
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:contain;
+}
+
+.expand-pic-quote > div, .embrace-pic-quote > div, .engage-pic-quote > div {
+  width:360px;
+  height:360px;
+  background-color:#333333;
+  padding:20px;
+  margin:0px auto;
+  opacity:0;
+  transition:all .5s;
+  -o-transition:all .5s;
+  -moz-transition:all .5s;
+  -webkit-transition:all .5s;
+}
+
+.expand-pic-quote > div:hover, .embrace-pic-quote > div:hover, .engage-pic-quote > div:hover {
+  opacity:.85;
+}
+
+.expand-pic-quote > div > div, .embrace-pic-quote > div > div, .engage-pic-quote > div > div {
+  width:100%;
+  height:100%;
+  color:white;
+  border:1px solid #ffffff;
+  font-size:1.1em;
+}
+
 .simple_cards p {
   font-family:'Roboto', sans-serif;
   font-weight:300;
@@ -280,6 +316,7 @@ div.eventCard .eventInformation-title {
 
 .js-student-step p, .js-student-step h2 {
   text-align:center;
+  font-weight:100;
 }
 
 .js-student-step {
@@ -709,22 +746,23 @@ div.eventCard .eventInformation-title {
 }
 
 .recent-headlines-homepage-title {
-  background-color:#eeb111;
   width:100%;
-  padding:5px 20px;
+  padding:5px 0px;
+  border-bottom:1px solid #929292;
 }
 
 .recent-headlines-homepage-title h4 {
   color:#ffffff;
-  font-family:'Raleway', sans-serif;
-  font-weight:600;
-  text-transform:uppercase;
+  font-weight:100;
+  color:#5E5D5E;
+  font-style:italic;
   margin:0;
 }
 
 .js-recent-headlines-homepage-footer {
-  border-top:2px solid #3c8e96;
+  border-top:1px solid #CFCFCF;
   margin:10px 0px !important;
+  margin-top:1px !important;
   padding:5px 5px;
 }
 
@@ -742,16 +780,17 @@ div.eventCard .eventInformation-title {
 
 .recent-headlines-title {
   font-family:'Roboto', sans-serif;
-  font-weight:500;
+  font-weight:900;
   text-transform:uppercase;
-  color:#3c8e96;
   font-size:.95em;
 }
 
+.js-recent-headlines-homepage-footer > .recent-headlines-title > a { color:#882233 !important; }
+
 .recent-headlines-body {
   font-family:'Roboto', sans-serif;
-  font-weight:400;
-  color:#777777;
+  font-weight:300;
+  color:#929292;
   font-size:.85em;
 }
 
