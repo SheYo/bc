@@ -75,7 +75,7 @@ jQuery(document).on('ready', function(){
   jQuery('.js-home-recent-news').each(function(index){
     var overlayColors = ['#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
 
-    jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
+    //jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
 
     jQuery(this).find('.homepage-featured-news-view').each(function(i){
       if(i == 1) {
