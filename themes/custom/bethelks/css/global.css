@@ -62,7 +62,7 @@ html {
   height:45px;
   padding:5px;
   position:fixed;
-  top:300px;
+  top:200px;
   right:-95px;
   background-color:#eeb111;
   border-left:2px solid #882233;
@@ -95,8 +95,12 @@ html {
   border-top:2px solid #882233;
   border-bottom:2px solid #882233;
   right:0;
-  top:300px;
+  top:200px;
   z-index:1020310230;
+}
+
+.popout-menu ul {
+  list-style-type:none;
 }
 
 .popout-menu-title {
@@ -110,13 +114,105 @@ html {
   font-weight:100;
 }
 
-.popout-menu-footer {
+.popout-menu-middle {
   background-color:#BAB1B5;
 }
 
-.popout-menu-footer h6 {
+.popout-menu-middle a, .popout-menu-middle a:hover {
+  color:#000000;
+  text-decoration:none;
+}
+
+.popout-menu-middle h6 {
   color:#882233;
   margin:10px 20px;
+}
+
+.popout-menu-social {
+  background-color:#F1F1F1;
+}
+
+.popout-menu-social a {
+  color:#000000;
+  transition:all .25s;
+  -o-transition:all .25s;
+  -moz-transition:all .25s;
+  -webkit-transition:all .25s;
+}
+
+.popout-menu-social a:hover {
+  color:#eeb111;
+}
+
+.popout-menu-social i {
+  color:inherit;
+  font-size:1.35em;
+  padding:10px 5px;
+}
+
+.popout-menu-main-navigation {
+  margin-left:0px;
+  margin-right:0px;
+  padding:0px 20px;
+}
+
+.popout-menu-main-navigation li {
+  margin:3px 0px;
+}
+
+.popout-menu-main-navigation a {
+  display:inline-block;
+  width:100%;
+}
+
+.popout-menu-main-navigation a, .popout-menu-main-navigation a::after {
+  color:#7A7A7A;
+  text-transform:uppercase;
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
+  font-size:1.15em;
+}
+
+.popout-menu-main-navigation a:hover {
+  color:#7A7A7A;
+  text-decoration:none;
+}
+
+.popout-menu-main-navigation a::after {
+  content:">";
+  float:right;
+}
+
+.popout-menu-button-list {
+  margin-left:0px;
+  margin-right:0px;
+  padding:0px 15px;
+}
+
+.popout-menu-button-list li {
+  margin:10px 0px;
+}
+
+.popout-menu-button {
+  text-align:center;
+  font-size:1.1em;
+  font-family:'Roboto', sans-serif;
+  font-weight:500;
+  color:#ffffff;
+  background-color:#882233;
+  width:100%;
+  padding:10px 0px;
+  display:inline-block;
+}
+
+.popout-menu-button:hover {
+  color:#ffffff;
+  text-decoration:none;
+}
+
+.popout-menu-button-yellow, .popout-menu-button-yellow:hover {
+  color:#882233 !important;
+  background-color:#eeb111 !important;
 }
 /* POPOUT MENU END */
 
