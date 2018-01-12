@@ -239,15 +239,22 @@ div.eventCard .eventInformation-title {
 
 .expand-pic-quote, .embrace-pic-quote, .engage-pic-quote {
   height:360px;
+  width:360px;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
   background-repeat:no-repeat;
   background-position:center center;
-  background-size:contain;
+  background-size:cover;
 }
 
 .expand-pic-quote > div, .embrace-pic-quote > div, .engage-pic-quote > div {
-  width:360px;
-  height:360px;
+  width:100%;
+  height:100%;
   background-color:#333333;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  border-radius:50%;
   padding:20px;
   margin:0px auto;
   opacity:0;
@@ -265,8 +272,18 @@ div.eventCard .eventInformation-title {
   width:100%;
   height:100%;
   color:white;
+  padding:25px;
   border:1px solid #ffffff;
-  font-size:1.1em;
+  font-size:1em;
+  border-radius:180px;
+}
+
+.expandEmbraceEngageBehind {
+  background-color:#882233;
+  height:140px;
+  position:absolute;
+  z-index:-1;
+  top:400px;
 }
 
 .simple_cards p {
