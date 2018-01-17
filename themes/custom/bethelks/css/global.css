@@ -99,6 +99,19 @@ html {
   z-index:1020310230;
 }
 
+.gsc-input-box {
+  height:32px !important;
+}
+
+.cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {
+  width:auto !important;
+  height:auto !important;
+  border-color:#474747;
+  background-color:#474747;
+  background-image:none;
+  filter:none;
+}
+
 .popout-menu ul {
   list-style-type:none;
 }
@@ -289,11 +302,6 @@ html {
 .eventCarousel div.eventCard .dateSpan {
   overflow:auto;
   margin-bottom:10px;
-}
-
-div.eventCard .eventInformation-title {
-  margin:0;
-  padding:35px 0px;
 }
 
 .eventCarousel div.eventCard .dateSpan .startDate { float:left; }
