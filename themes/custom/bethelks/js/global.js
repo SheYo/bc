@@ -13,7 +13,7 @@ jQuery(document).on('ready', function(){
       jQuery(this).find('.dropdown-menu:lt(1)').css('top', topOffset + 'px');
 
       var uppermostIndex = jQuery(this).closest('.dropdown').index();
-      if(uppermostIndex >= jQuery('.dropdown').size()) {
+      if((uppermostIndex+1) >= (jQuery('.dropdown').size()-1)) {
         jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-200px');
       }
 
