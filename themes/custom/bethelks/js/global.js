@@ -12,6 +12,11 @@ jQuery(document).on('ready', function(){
       var topOffset = (parentNumber * 45) - 4;
       jQuery(this).find('.dropdown-menu:lt(1)').css('top', topOffset + 'px');
 
+      var uppermostIndex = jQuery(this).closest('.dropdown').index();
+      if((uppermostIndex+1) == jQuery('.dropdown').size()) {
+        jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-200px');
+      }
+
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeIn(250);
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);

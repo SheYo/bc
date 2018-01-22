@@ -60,14 +60,15 @@ html {
 /* POPOUT MENU START */
 .popout-menu-open {
   height:45px;
+  width:100px;
   padding:5px;
   position:fixed;
   top:200px;
-  right:-95px;
-  background-color:#eeb111;
-  border-left:2px solid #882233;
-  border-top:2px solid #882233;
-  border-bottom:2px solid #882233;
+  right:-50px;
+  background-color:#882233;
+  border-left:2px solid #000000;
+  border-top:2px solid #000000;
+  border-bottom:2px solid #000000;
   z-index:23943289;
   cursor:pointer;
 }
@@ -76,27 +77,47 @@ html {
   height:33px;
   width:auto;
   cursor:inherit;
+  float:left;
 }
 
-.popout-menu-open p {
-  color:white;
-  display:inline-block;
-  font-weight:100;
-  margin-left:5px;
-  cursor:inherit;
+@media (max-width: 575px) {
+  .popout-menu {
+    width:100% !important;
+    height:100% !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .popout-menu {
+    height:auto !important;
+  }
+}
+
+.popout-exit {
+  color:#ffffff;
+  opacity:.75;
+  margin:0;
+  padding:5px;
+  padding-left:10px;
+  font-size:1.25em !important;
+}
+
+.popout-exit:hover {
+  opacity:1;
 }
 
 .popout-menu {
   display:none;
   position:fixed;
-  width:450px;
+  width:400px;
   background-color:#ffffff;
   border-left:2px solid #882233;
   border-top:2px solid #882233;
   border-bottom:2px solid #882233;
   right:0;
-  top:200px;
+  top:0;
   z-index:1020310230;
+  overflow-y:scroll !important;
 }
 
 .gsc-input-box {
@@ -110,21 +131,27 @@ html {
   background-color:#474747;
   background-image:none;
   filter:none;
+  border-radius:0 !important;
+  margin-left:0px !important;
+  margin-top:5px !important;
+  padding:9px 20px !important;
+}
+
+.gsc-control-cse {
+  padding-top:0px !important;
+}
+
+.gsc-input {
+  padding-right:0px !important;
+}
+
+.popout-search, .popout-search > .col-12, .gsc-control-cse {
+  background-color:#eeb111 !important;
+  border:0 !important;
 }
 
 .popout-menu ul {
   list-style-type:none;
-}
-
-.popout-menu-title {
-  background-color:#eeb111;
-}
-
-.popout-menu-title h4 {
-  margin:20px 10px;
-  text-transform:uppercase;
-  color:white;
-  font-weight:100;
 }
 
 .popout-menu-middle {
@@ -955,7 +982,7 @@ html {
   }
 
   .navbar-light .collapse .navbar-nav > li:not(:last-child) {
-    border-bottom:1px solid #777777;
+    border-bottom:1px solid #c4c4c4;
   }
 
   .navbar-light .collapse .navbar-nav {

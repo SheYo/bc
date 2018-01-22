@@ -303,18 +303,24 @@ jQuery(document).on('ready', function(){
   });
   /* Recent Headlines Homepage Footer End */
 
-  jQuery('.popout-menu-open').hover(function(e){
-    jQuery(this).animate({
-      right: '0'
-    }, 400, function(){});
-  },function(e){
-    jQuery(this).animate({
-      right: '-95px'
-    }, 400, function(){});
-  });
+  jQuery('.popout-menu').css('height', jQuery(window).height());
+
+  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    jQuery('.popout-menu-open').hover(function(e){
+      jQuery(this).animate({
+        right: '0'
+      }, 400, function(){});
+    },function(e){
+      jQuery(this).animate({
+        right: '-50px'
+      }, 400, function(){});
+    });
+  }
 
   jQuery('.popout-menu-open').on('click', function(e){
-    jQuery(this).hide(400, function(e){}).css('right', '-95px');
+    if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+      jQuery(this).hide(400, function(e){}).css('right', '-95px');
+    }
 
     jQuery('.popout-menu').show(400, function(e){});
   });
@@ -327,6 +333,13 @@ jQuery(document).on('ready', function(){
         });
       }
     }
+  });
+
+  jQuery('.popout-exit').on('click', function(e){
+    e.preventDefault();
+    jQuery('.popout-menu').hide(400, function(e){
+      jQuery('.popout-menu-open').show(400);
+    });
   });
 
   // Fixes layout issue in chrome
