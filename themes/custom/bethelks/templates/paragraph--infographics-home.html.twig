@@ -141,29 +141,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   {% set classes = classes|merge(layout_background_classes) %}
 {% endif %}
 
-<div class="container homeInfographics mt-5">
-  <div class="row">
-    <div class="col-12 h-50 d-flex align-items-end">
-      <h1>10:1</h1>
-    </div>
-    <div class="col-12 h-50 d-flex align-items-start">
-      <h4 class="mb-0">Student to Faculty Ratio</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 h-50 d-flex align-items-end justify-content-center">
-      <h1>1,891</h1>
-    </div>
-    <div class="col-12 h-50 d-flex align-items-start justify-content-center">
-      <h4 class="mb-0">Possible majors when you design your own iMajor</h4>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 h-50 d-flex align-items-end justify-content-end">
-      <h1>40+</h1>
-    </div>
-    <div class="col-12 h-50 d-flex align-items-start justify-content-end">
-      <h4 class="mb-0">Clubs & Organizations</h4>
-    </div>
-  </div>
+<div class="container mt-5">
+  <img class="d-none d-md-inline img-fluid" src="{{ directory ~ "/images/infographic.png"}}" alt="Bethel Infographic">
+  <img class="d-md-none img-fluid" src="{{ directory ~ "/images/mobile-infographic.png"}}" alt="Bethel Infographic">
 </div>
