@@ -235,6 +235,16 @@ jQuery(document).on('ready', function(){
       jQuery("#all-aboard-viewbox").modal();
     });
 
+    jQuery('.all-aboard-video').on('click', function(e) {
+      e.preventDefault();
+      var title = jQuery(this).find('.all-aboard-video-controls').attr('data');
+      var loc = jQuery(this).find('.all-aboard-video-controls-view').attr('data');
+
+      jQuery('#all-aboard-viewbox').find('.modal-body').html('<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + loc + '" allowfullscreen></iframe></div>');
+      jQuery('#all-aboard-viewbox').find('.modal-header h5').text(title);
+      jQuery("#all-aboard-viewbox").modal();
+    });
+
     jQuery('.all-aboard-controls button').on('click', function(e){
       e.preventDefault();
 

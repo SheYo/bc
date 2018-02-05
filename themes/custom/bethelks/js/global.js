@@ -129,6 +129,14 @@ jQuery(document).on('ready', function(){
   });
   /* Parallax (Classy Paragraphs) End */
 
+  /* Accordion Start */
+  if(jQuery('.paragraph--type--bp-accordion a[data-toggle="collapse"]').length) {
+    jQuery('.paragraph--type--bp-accordion a[data-toggle="collapse"]').on('click', function(){
+        jQuery(this).toggleClass('opened');
+    });
+  }
+  /* Accordion End */
+
   /* preFooter Recent News Start */
   jQuery('.preFooter-recentNews').each(function(index){
     var items = jQuery(this).find('.views-row');
