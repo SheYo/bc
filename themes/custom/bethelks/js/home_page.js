@@ -24,7 +24,7 @@ jQuery(document).on('ready', function(){
     var headerEyecatcher = jQuery('.header-eyecatcher');
     headerEyecatcher.addClass('header-eyecatcher-image');
     headerEyecatcher.addClass('header-eyecatcher-image-default');
-    headerEyecatcher.html('<div class="container"><div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center"><div class="row"><div class="col-12"><h2>Connect to Purpose</h2></div></div></div></div>');
+    headerEyecatcher.html('<div class="row d-flex justify-content-start align-items-end"><div class="col-12 mb-5"><img class="img-fluid" src="themes/custom/bethelks/images/connectToPurpose.png" alt="Connect To Purpose"></div></div>');
   }
   else {
     var headerEyecatcher = jQuery('.header-eyecatcher');

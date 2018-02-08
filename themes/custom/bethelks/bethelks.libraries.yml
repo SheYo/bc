@@ -27,6 +27,11 @@ isotope-js:
 ### DEPENDENCIES END ###
 
 ### GLOBAL LIBS START ###
+avenirfont-css:
+  css:
+    theme:
+      css/bethelks.css: {}
+
 bootstrap-css:
   css:
     theme:

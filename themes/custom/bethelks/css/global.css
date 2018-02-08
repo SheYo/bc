@@ -281,8 +281,9 @@ html {
 }
 
 .eventCarousel div.eventCard h2, .eventCarousel div.eventCard h5, .eventCarousel div.eventCard h3 {
-  font-family:'Raleway', sans-serif;
-  font-weight:600;
+  font-family:'AvenirLTStd-Heavy', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:600; */
   text-transform:uppercase;
   opacity:.9;
 }
@@ -406,8 +407,9 @@ html {
 
 .simple_cards h2 {
   color:#323232;
-  font-family:'Raleway', sans-serif;
-  font-weight:900;
+  font-family:'AvenirLTStd-Black', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:900; */
   font-size:32px;
   text-transform:uppercase;
   margin-bottom:10px;
@@ -443,7 +445,8 @@ html {
 
 .js-student-step p, .js-student-step h2 {
   text-align:center;
-  font-weight:100;
+  font-family:'AvenirLTStd-Light', sans-serif;
+  text-transform:uppercase;
 }
 
 .js-student-step {
@@ -790,8 +793,9 @@ html {
 }
 
 .bethelWebformSelector fieldset legend {
-  font-family:'Raleway', sans-serif;
-  font-weight:500;
+  font-family:'AvenirLTStd-Heavy', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:500; */
   text-transform:uppercase;
   color:#eeb111;
   margin-bottom:0 !important;
@@ -866,8 +870,9 @@ html {
 }
 
 .preFooter-recentNews .views-row .views-field-title {
-  font-family:'Raleway', sans-serif;
-  font-weight:500;
+  font-family:'AvenirLTStd-Heavy', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:500; */
   font-size:15px;
   line-height:26px;
 }
@@ -1108,8 +1113,9 @@ html {
 }
 
 .header-thresherConnectBar a {
-  font-family:'Raleway', sans-serif;
-  font-weight:600;
+  font-family:'AvenirLTStd-Heavy', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:600; */
   font-size:12px;
   text-transform:uppercase;
   padding:5px;
@@ -1135,8 +1141,9 @@ html {
 .navbar-light .navbar-nav > li > a.nav-link {
 	color:#5d5d5d !important;
   text-transform:uppercase;
-  font-family:'Raleway', sans-serif;
-  font-weight:600;
+  font-family:'AvenirLTStd-Medium', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:600; */
   font-size:13px;
   line-height:100px;
   padding-left:20px !important;
@@ -1231,7 +1238,9 @@ html {
   -o-background-size:cover;
   background-size:cover;
 }
-.header-eyecatcher-image > div, .header-eyecatcher-image > div > div { height:100%; }
+
+.header-eyecatcher-image img { max-width:80%; }
+.header-eyecatcher-image > div{ height:100%; }
 /* .header-eyecatcher-overlay > div > div { margin:10px 0px; }
 .header-eyecatcher-overlay > div > div > h2 {
   background-color:rgba(0, 0, 0, .65);
@@ -1288,8 +1297,9 @@ html {
   padding-top:70px;
   padding-bottom:70px;
   background-color:#3A3A3C;
-  font-family:'Raleway', sans-serif;
-  font-weight:500;
+  font-family:'AvenirLTStd-Medium', sans-serif;
+  /* font-family:'Raleway', sans-serif;
+  font-weight:500; */
   color:#999;
   font-size:14px;
   line-height:26px;
