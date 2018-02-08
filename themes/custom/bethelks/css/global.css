@@ -1133,7 +1133,7 @@ html {
 }
 
 .navbar-light .navbar-nav > li > a.nav-link {
-	color:#333333 !important;
+	color:#5d5d5d !important;
   text-transform:uppercase;
   font-family:'Raleway', sans-serif;
   font-weight:600;
@@ -1232,7 +1232,7 @@ html {
   background-size:cover;
 }
 .header-eyecatcher-image > div, .header-eyecatcher-image > div > div { height:100%; }
-.header-eyecatcher-overlay > div > div { margin:10px 0px; }
+/* .header-eyecatcher-overlay > div > div { margin:10px 0px; }
 .header-eyecatcher-overlay > div > div > h2 {
   background-color:rgba(0, 0, 0, .65);
   color:#ffffff;
@@ -1254,7 +1254,7 @@ html {
   padding:15px 25px;
   transition:all .25s;
 }
-.header-eyecatcher-overlay > div > div > a:hover { background-color:#d69f0f; }
+.header-eyecatcher-overlay > div > div > a:hover { background-color:#d69f0f; } */
 /* HEADER CSS RULES END */
 
 /* PRE FOOTER & FOOTER CSS RULES START */
@@ -1443,6 +1443,7 @@ html {
   font-family:'Roboto', sans-serif !important;
   font-weight:300 !important;
   color:#777777;
+  padding:0;
 }
 
 .articleOrPageContent a {

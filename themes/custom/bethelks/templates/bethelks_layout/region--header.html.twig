@@ -12,9 +12,8 @@
  * @see template_preprocess_region()
  */
 #}
-<!-- <div class="container-fluid header-thresherConnectBar d-flex justify-content-center justify-content-sm-end"> -->
 <div class="container-fluid header-thresherConnectBar d-flex justify-content-end">
-  <a href="#">Thresher Connect</a>
+  <a href="bethelthreshers.com">Athletics</a><a href="#"> / </a><a href="/academics/areas-of-study/art">Fine Arts</a>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light">
   {{ content }}
@@ -43,13 +42,9 @@
     {% else %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-default">
     {% endif %}
-    <!-- <div that comes from above> -->
-      <div class="container">
-        <div class="header-eyecatcher-overlay d-flex justify-content-center justify-content-md-start align-items-center">
-          <div class="row">
-            <div class="col-12"><h2>Connect to Purpose</h2></div>
-            <!--<div class="col-12"><a href="#">Explore</a></div>-->
-          </div>
+      <div class="row d-flex justify-content-start align-items-end">
+        <div class="col-12 mb-5">
+          <img style="img-fluid" src="{{ directory ~ "/images/connectToPurpose.png" }}" alt="Connect To Purpose">
         </div>
       </div>
     </div>
