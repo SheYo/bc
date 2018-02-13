@@ -60,11 +60,11 @@ html {
 /* POPOUT MENU START */
 .popout-menu-open {
   height:45px;
-  width:100px;
+  width:110px;
   padding:5px;
   position:fixed;
   top:200px;
-  right:-50px;
+  right:-60px;
   background-color:#882233;
   border-left:2px solid #000000;
   border-top:2px solid #000000;
@@ -78,6 +78,17 @@ html {
   width:auto;
   cursor:inherit;
   float:left;
+}
+
+.popout-menu-open p {
+  float:right;
+  font-family:'Roboto', sans-serif;
+  font-weight:300;
+  margin:0;
+  margin-top:1px;
+  margin-right:5px;
+  font-size:1.1em;
+  color:#ffffff;
 }
 
 @media (max-width: 575px) {

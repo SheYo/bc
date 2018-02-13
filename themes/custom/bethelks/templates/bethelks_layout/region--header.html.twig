@@ -27,7 +27,7 @@
   {% if '/article/' in url %}
       <!-- Do nothing on article pages -->
   {% else %}
-    {% if '/about/' in url %}
+    {% if '/about-bc' in url %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-about">
     {% elseif '/admissions' in url %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-admissions">
@@ -44,7 +44,7 @@
     {% endif %}
       <div class="row d-flex justify-content-start align-items-end">
         <div class="col-12 mb-5">
-          <img class="img-fluid" src="{{ directory ~ "/images/connectToPurpose.png" }}" alt="Connect To Purpose">
+          <img class="img-fluid" src="/{{ directory ~ "/images/connectToPurpose.png" }}" alt="Connect To Purpose">
         </div>
       </div>
     </div>

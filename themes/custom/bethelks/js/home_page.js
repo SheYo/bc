@@ -313,7 +313,7 @@ jQuery(document).on('ready', function(){
   });
   /* Recent Headlines Homepage Footer End */
 
-  jQuery('.popout-menu').css('height', jQuery(window).height());
+  //jQuery('.popout-menu').css('height', jQuery(window).height());
 
   if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
     jQuery('.popout-menu-open').hover(function(e){
@@ -322,7 +322,7 @@ jQuery(document).on('ready', function(){
       }, 400, function(){});
     },function(e){
       jQuery(this).animate({
-        right: '-50px'
+        right: '-60px'
       }, 400, function(){});
     });
   }
