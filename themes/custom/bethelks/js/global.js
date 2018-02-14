@@ -74,45 +74,6 @@ jQuery(document).on('ready', function(){
   });
   /* Back to Top Button Functionality End */
 
-  if(jQuery('.rightSidebar-searchForm').length) {
-    /* Right Sidebar Search Form Start */
-    jQuery(".rightSidebar-searchForm")
-    .find('input[type="submit"]')
-    .replaceWith('<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>');
-
-    jQuery(".rightSidebar-searchForm")
-    .find('input[type="search"]')
-    .attr('placeholder', 'Search...');
-    /* Right Sidebar Search Form End */
-
-    /* Right Sidebar Quick Links and User Menu Icons Start */
-    jQuery('.rightSidebar-quickLinks ul li, .rightSidebar-userMenu ul li').each(function(index) {
-      switch(jQuery.trim(jQuery(this).text())) {
-        case 'Calendar(s)':
-          jQuery(this).append('<i style="float:right;" class="fa fa-calendar" aria-hidden="true"></i>');
-          break;
-        case 'Forum':
-          jQuery(this).append('<i class="fa fa-pencil" aria-hidden="true"></i>');
-          break;
-        case 'News':
-          jQuery(this).append('<i class="fa fa-rss" aria-hidden="true"></i>');
-          break;
-        case 'My account':
-          jQuery(this).append('<i class="fa fa-user" aria-hidden="true"></i>');
-          break;
-        case 'Log out':
-          jQuery(this).append('<i class="fa fa-sign-out" aria-hidden="true"></i>');
-          break;
-        case 'Log in':
-          jQuery(this).append('<i class="fa fa-sign-in" aria-hidden="true"></i>');
-          break;
-        default:
-          break;
-      }
-    });
-    /* Right Sidebar Quick Links and User Menu Icons End */
-  }
-
   /* Responsive Image (Classy Paragraphs) Start */
   jQuery('.js-resp-image').each(function(index){
     jQuery(this).find('img').addClass('img-fluid');
