@@ -55,6 +55,15 @@ jQuery(document).on('ready', function(){
   });
   /* Navigation End */
 
+  /* rightSidebar Start */
+  jQuery('.rightSidebar-hook').each(function(index){
+    jQuery(this).prepend('<div class="d-flex align-items-center justify-content-center innerStudentSteps"></div>');
+    jQuery(this).find('.innerStudentSteps').html(`<a class="d-flex align-items-center justify-content-center" href="http://bc-test.com/form/inquire"><i class="fa fa-info-circle"></i></a>
+        <a class="d-flex align-items-center justify-content-center" href="http://bc-test.com/form/visit"><i class="fa fa-map-marker"></i></a>
+        <a class="d-flex align-items-center justify-content-center" href="http://bc-test.com/form/application"><i class="fa fa-check"></i></a>`);
+  });
+  /* rightSidebar End */
+
   /* Back to Top Button Functionality Start */
   jQuery(document).scroll(function() {
     if(jQuery(document).scrollTop() >= 700) {

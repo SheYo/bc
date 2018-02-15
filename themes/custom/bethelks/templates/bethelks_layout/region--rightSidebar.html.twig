@@ -12,8 +12,8 @@
  * @see template_preprocess_region()
  */
 #}
-{% if content and '/faculty/' not in url %}
-  <div{{ attributes }}>
+{% if content and ('/faculty/' not in url or '/user/' not in url) %}
+  <div{{ attributes.addClass('rightSidebar-hook') }}>
     {{ content }}
   </div>
 {% endif %}
