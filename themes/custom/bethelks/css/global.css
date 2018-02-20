@@ -1422,7 +1422,7 @@ html {
 }
 
 @media (max-width: 991px) {
-  .row .postHeader-breadcrumbs {
+  .row .postHeader-breadcrumbs, .postHeader-basicPageBanner, .postHeader-basicPageBannerTriangle {
     display:none !important;
   }
 
@@ -1534,5 +1534,27 @@ html {
 
 .articleOrPageContent {
   background-color:#f6f5f5;
+}
+
+.postHeader-basicPageBanner {
+  background-color:#528B94;
+}
+
+.postHeader-basicPageBanner h2 {
+  color:#ffffff;
+  font-family:'AvenirLTStd-Medium', sans-serif;
+  text-transform:uppercase;
+  padding:20px;
+  padding-top:23px;
+  margin:0;
+  vertical-align:center;
+  line-height:32px;
+}
+
+.postHeader-basicPageBannerTriangle {
+  width:0;
+  height:0;
+  border-top:75px solid #528B94;
+  border-right:75px solid transparent;
 }
 /* BLOCK CSS END */
