@@ -860,6 +860,10 @@ html {
   border-top:1px solid #DFDFDF;
 }
 
+.paragraph--type--bp-accordion .card-block {
+  padding-right:15px;
+}
+
 .paragraph--type--bp-accordion .card {
   border:none !important;
   border-bottom:1px solid #DFDFDF !important;
