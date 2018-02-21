@@ -1464,7 +1464,14 @@ html {
   font-family:'Roboto', sans-serif !important;
   font-weight:300 !important;
   color:#777777;
-  padding:0;
+  padding:0 !important;
+}
+
+.mainContentBlock p, .mainContentBlock h1, .mainContentBlock h2,
+.mainContentBlock h3, .mainContentBlock h4, .mainContentBlock h5,
+.mainContentBlock h6 {
+  padding-left:15px;
+  padding-right:15px;
 }
 
 .articleOrPageContent a {
@@ -1477,13 +1484,13 @@ html {
   margin-bottom:10px;
 }
 
-.rightSidebar-hook {
+.rightSidebar-hook nav, .rightSidebar-hook .innerStudentSteps {
   background-color:#F6F5F5;
 }
 
 .rightSidebar-hook nav ul {
   list-style-type:none;
-  padding:5px 15px;;
+  padding:5px 15px;
 }
 
 .rightSidebar-hook nav ul li {
@@ -1556,5 +1563,23 @@ html {
   height:0;
   border-top:75px solid #528B94;
   border-right:75px solid transparent;
+}
+
+.rightSidebar-hook > div:nth-child(3) {
+  border:2px solid #9A964C;
+  padding:5px;
+}
+
+.rightSidebar-hook > div:nth-child(3) p {
+  color:#777777;
+  margin:10px;
+}
+
+.articleOrPageVideo {
+  width:100%;
+  background-color:#7E2B35;
+  border-top:20px solid #ffffff;
+  border-bottom:20px solid #ffffff;
+  padding:30px 0px;
 }
 /* BLOCK CSS END */

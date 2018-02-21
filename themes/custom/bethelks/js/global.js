@@ -107,6 +107,15 @@ jQuery(document).on('ready', function(){
   }
   /* Accordion End */
 
+  /* Video within Content Start */
+  jQuery('.articleOrPageContent iframe').each(function(index){
+    if(jQuery(this).parent().is('p')) {
+      jQuery(this).unwrap();
+    }
+    jQuery(this).wrap('<div class="d-flex align-items-center justify-content-center articleOrPageVideo"></div>');
+  });
+  /* Video within Content End */
+
   /* preFooter Recent News Start */
   jQuery('.preFooter-recentNews').each(function(index){
     var items = jQuery(this).find('.views-row');
