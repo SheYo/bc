@@ -1467,8 +1467,17 @@ html {
 .mainContentBlock {
   font-family:'Roboto', sans-serif !important;
   font-weight:300 !important;
+  background-color:#f6f5f5;
   color:#777777;
   padding:0 !important;
+}
+
+@media (max-width: 991px) {
+    .articleOrPageContent {
+      padding-left:15px;
+      padding-right:15px;
+      padding-bottom:30px;
+    }
 }
 
 .mainContentBlock p, .mainContentBlock h1, .mainContentBlock h2,
@@ -1541,10 +1550,6 @@ html {
 .adminTasks-hook {
   background-color:#ffffff;
   padding:10px 0px;
-}
-
-.articleOrPageContent {
-  background-color:#f6f5f5;
 }
 
 .postHeader-basicPageBanner {
