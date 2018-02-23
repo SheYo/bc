@@ -27,7 +27,7 @@
   {% if '/article/' in url %}
       <!-- Do nothing on article pages -->
   {% else %}
-    {% if '/about-bc' in url %}
+    {% if '/about' in url or '/about-bc' in url %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-about">
     {% elseif '/admissions' in url %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-admissions">
@@ -47,6 +47,52 @@
           <img class="img-fluid" src="/{{ directory ~ "/images/connectToPurpose.png" }}" alt="Connect To Purpose">
         </div>
       </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+{% if '/article/' not in url and not is_front %}
+  {% if '/about' in url or '/about-bc' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">About BC</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/admissions' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">Admissions</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/academics' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">Academics</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/affordability' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">Affordability</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/student-life' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">Student Life</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/thresher-success' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-2">Thresher Success</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
     </div>
   {% endif %}
 {% endif %}

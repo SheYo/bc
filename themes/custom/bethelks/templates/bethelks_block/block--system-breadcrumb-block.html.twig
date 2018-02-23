@@ -31,45 +31,7 @@
   </div>
   <div{{ attributes.addClass('col-12 order-6 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
 {% else %}
-  {% if '/about-bc' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>About BC</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% elseif '/admissions' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>Admissions</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% elseif '/academics' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>Academics</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% elseif '/affordability' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>Affordability</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% elseif '/student-life' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>Student Life</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% elseif '/thresher-success' in url %}
-    <div class="col-5 postHeader-basicPageBanner align-middle">
-      <h2>Thresher Success</h2>
-    </div>
-    <div class="col-1 postHeader-basicPageBannerTriangle"></div>
-    <div{{ attributes.addClass('col float-right d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% else %}
-    <div{{ attributes.addClass('col-12 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
-  {% endif %}
+  <div{{ attributes.addClass('col-12 d-flex justify-content-end align-items-center postHeader-breadcrumbs') }}>
 {% endif %}
   {% block content %}
     {{ content }}

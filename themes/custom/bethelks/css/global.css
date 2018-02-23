@@ -1140,6 +1140,7 @@ html {
 
 .navbar {
   padding:0px 20px !important;
+  background-color:#ffffff !important;
 }
 
 .navbar .navbar-toggler {
@@ -1391,6 +1392,11 @@ html {
   color:#333333;
 }
 
+.postHeader-pageTitle {
+  padding-left:0px !important;
+  padding-right:0px !important;
+}
+
 .postHeader-breadcrumbs > nav > ol {
   padding:0;
   margin:0;
@@ -1426,12 +1432,24 @@ html {
 }
 
 @media (max-width: 991px) {
-  .row .postHeader-breadcrumbs, .postHeader-basicPageBanner, .postHeader-basicPageBannerTriangle {
+  .row .postHeader-breadcrumbs {
     display:none !important;
+  }
+
+  .row .header-basicPageBanner {
+    margin-bottom:30px;
+  }
+
+  .row .header-basicPageBanner h2 {
+    font-size:1.5em;
   }
 
   .header-eyecatcher-overlay > div > div > h2 {
     padding:10px 0px;
+  }
+
+  .articleOrPageContent {
+    margin-bottom:30px;
   }
 }
 
@@ -1467,24 +1485,18 @@ html {
 .mainContentBlock {
   font-family:'Roboto', sans-serif !important;
   font-weight:300 !important;
-  background-color:#f6f5f5;
   color:#777777;
   padding:0 !important;
 }
 
-@media (max-width: 991px) {
-    .articleOrPageContent {
-      padding-left:15px;
-      padding-right:15px;
-      padding-bottom:30px;
-    }
+.articleOrPageContent {
+  background-color:#ffffff;
 }
 
-.mainContentBlock p, .mainContentBlock h1, .mainContentBlock h2,
-.mainContentBlock h3, .mainContentBlock h4, .mainContentBlock h5,
-.mainContentBlock h6 {
-  padding-left:15px;
-  padding-right:15px;
+.articleOrPageContent p, .articleOrPageContent h1, .articleOrPageContent h2,
+.articleOrPageContent h3, .articleOrPageContent h4, .articleOrPageContent h5,
+.articleOrPageContent h6, .articleOrPageContent form {
+  padding:0px 15px;
 }
 
 .articleOrPageContent a {
@@ -1498,7 +1510,7 @@ html {
 }
 
 .rightSidebar-hook nav, .rightSidebar-hook .innerStudentSteps {
-  background-color:#F6F5F5;
+  background-color:#ffffff;
 }
 
 .rightSidebar-hook nav ul {
@@ -1548,15 +1560,14 @@ html {
 }
 
 .adminTasks-hook {
-  background-color:#ffffff;
   padding:10px 0px;
 }
 
-.postHeader-basicPageBanner {
+.header-basicPageBanner {
   background-color:#528B94;
 }
 
-.postHeader-basicPageBanner h2 {
+.header-basicPageBanner h2 {
   color:#ffffff;
   font-family:'AvenirLTStd-Medium', sans-serif;
   text-transform:uppercase;
@@ -1567,7 +1578,7 @@ html {
   line-height:32px;
 }
 
-.postHeader-basicPageBannerTriangle {
+.header-basicPageBannerTriangle {
   width:0;
   height:0;
   border-top:75px solid #528B94;
@@ -1587,8 +1598,8 @@ html {
 .articleOrPageVideo {
   width:100%;
   background-color:#7E2B35;
-  border-top:20px solid #ffffff;
-  border-bottom:20px solid #ffffff;
+  border-top:20px solid #F6F5F5;
+  border-bottom:20px solid #F6F5F5;
   padding:30px 0px;
 }
 /* BLOCK CSS END */
