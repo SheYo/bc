@@ -312,46 +312,7 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
   /* Recent Headlines Homepage Footer End */
-
-  //jQuery('.popout-menu').css('height', jQuery(window).height());
-
-  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-    jQuery('.popout-menu-open').hover(function(e){
-      jQuery(this).animate({
-        right: '0'
-      }, 400, function(){});
-    },function(e){
-      jQuery(this).animate({
-        right: '-60px'
-      }, 400, function(){});
-    });
-  }
-
-  jQuery('.popout-menu-open').on('click', function(e){
-    if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-      jQuery(this).hide(400, function(e){}).css('right', '-95px');
-    }
-
-    jQuery('.popout-menu').show(400, function(e){});
-  });
-
-  jQuery(document).on('click', function(e){
-    if(jQuery('.popout-menu').is(':visible')){
-      if(!jQuery(e.target).closest('.popout-menu').length && !jQuery(e.target).closest('.popout-menu-open').length) {
-        jQuery('.popout-menu').hide(400, function(e){
-          jQuery('.popout-menu-open').show(400);
-        });
-      }
-    }
-  });
-
-  jQuery('.popout-exit').on('click', function(e){
-    e.preventDefault();
-    jQuery('.popout-menu').hide(400, function(e){
-      jQuery('.popout-menu-open').show(400);
-    });
-  });
-
+  
   // Fixes layout issue in chrome
   setTimeout(function(){
     grid.isotope({filter: '.ab-filter-financial-aid'});

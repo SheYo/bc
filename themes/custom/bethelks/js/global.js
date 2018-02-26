@@ -62,7 +62,58 @@ jQuery(document).on('ready', function(){
         <a class="d-flex align-items-center justify-content-center" href="http://bc-test.com/form/visit"><i class="fa fa-map-marker"></i></a>
         <a class="d-flex align-items-center justify-content-center" href="http://bc-test.com/form/application"><i class="fa fa-check"></i></a>`);
   });
+
+  jQuery('.rightSidebar-hook').find('nav').each(function(index){
+    jQuery(this).find('a').on('click', function(e){
+      if(e.offsetX < e.target.offsetLeft) {
+        e.preventDefault();
+        jQuery(this).parent('li').find('ul').toggle();
+        jQuery(this).toggleClass('expanded');
+      } else {
+        alert('clicked on');
+      }
+    });
+  });
   /* rightSidebar End */
+
+  /* Popout Menu Start */
+  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+    jQuery('.popout-menu-open').hover(function(e){
+      jQuery(this).animate({
+        right: '0'
+      }, 400, function(){});
+    },function(e){
+      jQuery(this).animate({
+        right: '-60px'
+      }, 400, function(){});
+    });
+  }
+
+  jQuery('.popout-menu-open').on('click', function(e){
+    if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+      jQuery(this).hide(400, function(e){}).css('right', '-95px');
+    }
+
+    jQuery('.popout-menu').show(400, function(e){});
+  });
+
+  jQuery(document).on('click', function(e){
+    if(jQuery('.popout-menu').is(':visible')){
+      if(!jQuery(e.target).closest('.popout-menu').length && !jQuery(e.target).closest('.popout-menu-open').length) {
+        jQuery('.popout-menu').hide(400, function(e){
+          jQuery('.popout-menu-open').show(400);
+        });
+      }
+    }
+  });
+
+  jQuery('.popout-exit').on('click', function(e){
+    e.preventDefault();
+    jQuery('.popout-menu').hide(400, function(e){
+      jQuery('.popout-menu-open').show(400);
+    });
+  });
+  /* Popout Menu End */
 
   /* Back to Top Button Functionality Start */
   jQuery(document).scroll(function() {
