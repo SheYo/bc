@@ -1232,7 +1232,7 @@ html {
 
 .header-eyecatcher-image {
   background-repeat:no-repeat;
-  background-position:center;
+  background-position:center top;
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
