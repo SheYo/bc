@@ -43,6 +43,12 @@
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-alumni">
     {% elseif '/donors' in url %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-donors">
+    {% elseif '/community' in url %}
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-community">
+    {% elseif '/fine-arts' in url %}
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-fine-arts">
+    {% elseif '/newsroom' in url %}
+      <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-news-events">
     {% else %}
       <div class="container-fluid header-eyecatcher header-eyecatcher-image header-eyecatcher-image-default">
     {% endif %}
@@ -118,6 +124,27 @@
     <div class="row">
       <div class="col-7 col-md-4 header-basicPageBanner align-middle">
         <h2 class="ml-md-2">Donors</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/newsroom' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-md-2">News and Events</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/community' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-md-2">Community</h2>
+      </div>
+      <div class="col-1 header-basicPageBannerTriangle"></div>
+    </div>
+  {% elseif '/fine-arts' in url %}
+    <div class="row">
+      <div class="col-7 col-md-4 header-basicPageBanner align-middle">
+        <h2 class="ml-md-2">Fine Arts</h2>
       </div>
       <div class="col-1 header-basicPageBannerTriangle"></div>
     </div>

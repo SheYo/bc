@@ -1231,6 +1231,9 @@ html {
 .header-eyecatcher-image-thresher-success { background-image:url('../images/thresher-success_hero.jpg'); }
 .header-eyecatcher-image-alumni { background-image:url('../images/alumni_hero.jpg'); }
 .header-eyecatcher-image-donors { background-image:url('../images/donors_hero.jpg'); }
+.header-eyecatcher-image-community { background-image:url('../images/community_hero.jpg'); }
+.header-eyecatcher-image-fine-arts { background-image:url('../images/fine-arts_hero.jpg'); }
+.header-eyecatcher-image-news-events { background-image:url('../images/articles_hero.jpg'); }
 
 .header-eyecatcher-image {
   background-repeat:no-repeat;
