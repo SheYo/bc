@@ -1229,6 +1229,8 @@ html {
 .header-eyecatcher-image-affordability { background-image:url('../images/affordability_hero.jpg'); }
 .header-eyecatcher-image-student-life { background-image:url('../images/student-life_hero.jpg'); }
 .header-eyecatcher-image-thresher-success { background-image:url('../images/thresher-success_hero.jpg'); }
+.header-eyecatcher-image-alumni { background-image:url('../images/alumni_hero.jpg'); }
+.header-eyecatcher-image-donors { background-image:url('../images/donors_hero.jpg'); }
 
 .header-eyecatcher-image {
   background-repeat:no-repeat;
