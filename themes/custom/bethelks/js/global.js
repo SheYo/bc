@@ -1,4 +1,15 @@
 jQuery(document).on('ready', function(){
+  /* Google search API */
+  (function() {
+    var cx = '011494971176792296194:gssdfusp1cy';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+
   /* Navigation Start */
   if(jQuery(window).width() > 991) {
     jQuery('ul.navbar-nav li.dropdown').hover(function() {
@@ -157,6 +168,21 @@ jQuery(document).on('ready', function(){
     });
   }
   /* Accordion End */
+
+  /* Image within Article Content Start */
+  if(window.location.href.indexOf("/article") > -1) {
+    jQuery('.mainContentBlock img').each(function(index){
+      jQuery(this).css('vertical-align', 'middle');
+      jQuery(this).css('padding', '0px 20px')
+
+      if(index % 2 == 0) {
+        jQuery(this).css('float', 'left');
+      } else {
+        jQuery(this).css('float', 'right');
+      }
+    });
+  }
+  /* Image within Article Content End */
 
   /* Video within Content Start */
   jQuery('.articleOrPageContent iframe').each(function(index){

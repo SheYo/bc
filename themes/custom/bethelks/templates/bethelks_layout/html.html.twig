@@ -45,7 +45,11 @@
     {{ attach_library('bethelks/isotope-js') }}
     {{ attach_library('bethelks/global-js') }}
   </head>
-  <body{{ attributes }} style="background-color:#F6F5F5;">
+  {% if '/article' in url %}
+    <body{{ attributes }}>
+  {% else %}
+    <body{{ attributes }} style="background-color:#F6F5F5;">
+  {% endif %}
     {{ page_top }}
 
     <div class="popout-menu-open">
@@ -139,10 +143,10 @@
     <div class="container">
       <div class="row" style="margin-left:0px;margin-right:0px;">
         {% if "/faculty/view" not in url('<current>')|render|render %}
-          {% if not is_front %}
-            <div class="col-12 col-lg-9 articleOrPageContent">
+          {% if page.rightSidebar is empty %}
+            <div class="col-12 articleOrPageContent">
           {% else %}
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 articleOrPageContent">
           {% endif %}
         {% else %}
           <div class="col-12">
@@ -156,15 +160,13 @@
           {% endif %}
         </div>
         {% if '/faculty/view' not in url('<current>')|render|render %}
-          <div class="col-12 col-lg-3">
             {% if page.rightSidebar is empty %}
-              <!-- <div class="alert alert-danger" role="alert">
-                <p><strong>Error!</strong> No data found within the page right-sidebar. Please contact the site administrator.</p>
-              </div> -->
+              <!-- nothing -->
             {% else %}
-              {{ page.rightSidebar }}
+              <div class="col-12 col-lg-3">
+                {{ page.rightSidebar }}
+              </div>
             {% endif %}
-          </div>
         {% endif %}
       </div>
     </div>

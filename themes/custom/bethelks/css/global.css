@@ -279,8 +279,6 @@ html {
   background-image:url(../images/eventCarouselBackground.jpg);
   background-size:cover;
   background-position:top center;
-  /*padding-top:60px;
-  padding-bottom:30px;*/
   padding:0 !important;
 }
 
@@ -419,8 +417,6 @@ html {
 .simple_cards h2 {
   color:#323232;
   font-family:'AvenirLTStd-Black', sans-serif;
-  /* font-family:'Raleway', sans-serif;
-  font-weight:900; */
   font-size:32px;
   text-transform:uppercase;
   margin-bottom:10px;
@@ -736,7 +732,6 @@ html {
   line-height:50px;
   height:50px;
   border:1px solid #E5E5E5;
-  /*border-radius:3px;*/
 }
 
 .bethelWebformSelector select option {
@@ -797,7 +792,6 @@ html {
 
 .bethelWebformSelector fieldset {
   background-color:#f9f9f9;
-  /*border-radius:5px;*/
   margin:10px 0px;
   padding:0px 10px;
   padding-bottom:10px;
@@ -886,8 +880,6 @@ html {
 
 .preFooter-recentNews .views-row .views-field-title {
   font-family:'AvenirLTStd-Heavy', sans-serif;
-  /* font-family:'Raleway', sans-serif;
-  font-weight:500; */
   font-size:15px;
   line-height:26px;
 }
@@ -1129,8 +1121,6 @@ html {
 
 .header-thresherConnectBar a {
   font-family:'AvenirLTStd-Heavy', sans-serif;
-  /* font-family:'Raleway', sans-serif;
-  font-weight:600; */
   font-size:12px;
   text-transform:uppercase;
   padding:5px;
@@ -1258,29 +1248,6 @@ html {
 
 .header-eyecatcher-image img { max-width:80%; }
 .header-eyecatcher-image > div{ height:100%; }
-/* .header-eyecatcher-overlay > div > div { margin:10px 0px; }
-.header-eyecatcher-overlay > div > div > h2 {
-  background-color:rgba(0, 0, 0, .65);
-  color:#ffffff;
-  font-family:'Raleway', sans-serif;
-  font-weight:700;
-  line-height:50px;
-  text-align:center;
-  margin:0;
-  padding:10px 20px !important;
-}
-.header-eyecatcher-overlay > div > div > a {
-  background-color:#eeb111;
-  color:#ffffff;
-  font-family:'Roboto', sans-serif;
-  font-weight:400;
-  text-decoration:none;
-  text-transform:uppercase;
-  font-size:16px;
-  padding:15px 25px;
-  transition:all .25s;
-}
-.header-eyecatcher-overlay > div > div > a:hover { background-color:#d69f0f; } */
 /* HEADER CSS RULES END */
 
 /* PRE FOOTER & FOOTER CSS RULES START */
@@ -1315,8 +1282,6 @@ html {
   padding-bottom:70px;
   background-color:#3A3A3C;
   font-family:'AvenirLTStd-Medium', sans-serif;
-  /* font-family:'Raleway', sans-serif;
-  font-weight:500; */
   color:#999;
   font-size:14px;
   line-height:26px;

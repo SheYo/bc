@@ -1,15 +1,4 @@
 jQuery(document).on('ready', function(){
-  /* Google search API */
-  (function() {
-    var cx = '011494971176792296194:gssdfusp1cy';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-
   /* Classy Student Steps Start */
   jQuery('.js-student-step').each(function(index){
     var iClass = jQuery(this).find('p').find('a').html();
@@ -312,7 +301,7 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
   /* Recent Headlines Homepage Footer End */
-  
+
   // Fixes layout issue in chrome
   setTimeout(function(){
     grid.isotope({filter: '.ab-filter-financial-aid'});
