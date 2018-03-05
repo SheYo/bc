@@ -14,6 +14,11 @@ jQuery(document).on('ready', function(){
   if(jQuery(window).width() > 991) {
     jQuery('ul.navbar-nav li.dropdown').hover(function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeIn(250);
+
+      var uppermostIndex = jQuery(this).closest('.dropdown').index();
+      if((uppermostIndex + 1) == jQuery('.dropdown').size()) {
+        jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-75px');
+      }
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
     });
