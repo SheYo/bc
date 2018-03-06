@@ -69,6 +69,21 @@ jQuery(document).on('ready', function(){
       }
     }
   });
+
+  var calURL = 'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_c0vujpfbmn1um8e0gvr53td35k@group.calendar.google.com/events?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=';
+  var d = new Date();
+  d.setDate(d.getDate() - 7);
+  calURL += d.toISOString();
+
+  var req = new XMLHttpRequest();
+  req.open("GET", calURL, true);
+  req.send(null);
+  req.onloadend = function(){
+    var calObj = JSON.parse(req.responseText)
+    for(var index in calObj.items) {
+      console.log(calObj.items[index]);
+    }
+  };
   /* Event Carousel End */
 
   /* Homepage Recent News Start */
