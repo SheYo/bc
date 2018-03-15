@@ -1452,6 +1452,10 @@ html {
   padding:0 !important;
 }
 
+.articleOrPageContent form {
+  padding-bottom:80px !important;
+}
+
 .articleOrPageContent {
   background-color:#ffffff;
 }
