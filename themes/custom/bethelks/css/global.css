@@ -931,8 +931,12 @@ html {
 
 .recent-headlines-homepage-title {
   width:100%;
-  padding:5px 0px;
+  padding:5px 0px !important;
   border-bottom:1px solid #929292;
+}
+
+.recent-headlines-homepage-title a, .recent-headlines-homepage-title a:hover {
+  text-decoration:none;
 }
 
 .recent-headlines-homepage-title h4 {
@@ -940,6 +944,7 @@ html {
   font-weight:100;
   color:#5E5D5E;
   font-style:italic;
+  padding:0px !important;
   margin:0;
 }
 

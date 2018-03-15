@@ -315,6 +315,8 @@ jQuery(document).on('ready', function(){
   jQuery('.js-recent-headlines-homepage-footer').each(function(i){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
+
+  jQuery('.recent-headlines-homepage-title').find('h4').wrap('<a href="/newsroom"></a>');
   /* Recent Headlines Homepage Footer End */
 
   // Fixes layout issue in chrome
