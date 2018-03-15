@@ -53,36 +53,18 @@ html {
 
 /* POPOUT MENU START */
 .popout-menu-open {
-  height:45px;
-  width:110px;
-  padding:5px;
   position:fixed;
   top:200px;
-  right:-60px;
-  background-color:#882233;
-  border-left:2px solid #000000;
-  border-top:2px solid #000000;
-  border-bottom:2px solid #000000;
+  right:0;
   z-index:23943289;
   cursor:pointer;
 }
 
 .popout-menu-open img {
-  height:33px;
-  width:auto;
   cursor:inherit;
-  float:left;
-}
-
-.popout-menu-open p {
+  height:50%;
+  width:50%;
   float:right;
-  font-family:'Roboto', sans-serif;
-  font-weight:300;
-  margin:0;
-  margin-top:1px;
-  margin-right:5px;
-  font-size:1.1em;
-  color:#ffffff;
 }
 
 @media (max-width: 575px) {
@@ -100,7 +82,7 @@ html {
 
 @media (min-height: 780px) {
   .popout-menu {
-    height:780px !important;
+    height:770px !important;
     overflow-y:hidden !important;
   }
 }
@@ -1113,14 +1095,26 @@ html {
   overflow:auto;
 }
 
-.header-thresherConnectBar a {
-  font-family:'AvenirLTStd-Heavy', sans-serif;
-  font-size:12px;
-  text-transform:uppercase;
-  padding:5px;
-  color:#ffffff;
+.header-thresherConnectBar p {
+  font-family:'AvenirLTStd-Light', sans-serif;
+  font-size:1em;
+  margin:0;
+  color:#63111f;
 }
-.header-thresherConnectBar a:hover { color:#ffffff; }
+
+.header-thresherConnectBar p a {
+  padding:7px 5px;
+  color:#e5e5e5;
+  text-decoration:none;
+  display:inline-block;
+  border-top:3px solid #882233;
+  border-bottom:3px solid #882233;
+  transition:all .25s;
+}
+
+.header-thresherConnectBar p a:hover {
+  border-bottom:3px solid #eeb111;
+}
 
 .navbar {
   padding:0px 20px !important;

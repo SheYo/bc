@@ -93,21 +93,9 @@ jQuery(document).on('ready', function(){
   /* rightSidebar End */
 
   /* Popout Menu Start */
-  if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-    jQuery('.popout-menu-open').hover(function(e){
-      jQuery(this).animate({
-        right: '0'
-      }, 400, function(){});
-    },function(e){
-      jQuery(this).animate({
-        right: '-60px'
-      }, 400, function(){});
-    });
-  }
-
   jQuery('.popout-menu-open').on('click', function(e){
     if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-      jQuery(this).hide(400, function(e){}).css('right', '-95px');
+      jQuery(this).hide(400, function(e){});
     }
 
     jQuery('.popout-menu').show(400, function(e){});
