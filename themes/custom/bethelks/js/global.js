@@ -85,8 +85,6 @@ jQuery(document).on('ready', function(){
         e.preventDefault();
         jQuery(this).parent('li').find('ul').toggle();
         jQuery(this).toggleClass('expanded');
-      } else {
-        alert('clicked on');
       }
     });
   });
