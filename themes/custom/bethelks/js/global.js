@@ -91,8 +91,10 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('a').on('click', function(e){
       if(e.offsetX < e.target.offsetLeft) {
         e.preventDefault();
-        jQuery(this).parent('li').find('ul').toggle();
-        jQuery(this).toggleClass('expanded');
+        if(jQuery(this).parent('li').find('ul').length) {
+          jQuery(this).parent('li').find('ul').toggle();
+          jQuery(this).toggleClass('expanded');
+        }
       }
     });
   });
