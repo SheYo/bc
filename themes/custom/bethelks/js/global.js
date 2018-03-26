@@ -35,6 +35,7 @@ jQuery(document).on('ready', function(){
 
       if(uppermostIndex+1 == jQuery('.dropdown').size()) {
         jQuery('.popout-menu-open').fadeOut(100);
+        console.log('what: ' + uppermostIndex);
       } else {
         console.log(uppermostIndex);
       }
