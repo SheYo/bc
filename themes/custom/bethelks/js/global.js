@@ -33,7 +33,7 @@ jQuery(document).on('ready', function(){
         jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-200px');
       }
 
-      if(jQuery(this).hasClass('dropdown') && jQuery(this).is(':last-child')) {
+      if(jQuery(this).is(':last-child')) {
         jQuery('.popout-menu-open').fadeOut(100);
       }
 
@@ -41,7 +41,7 @@ jQuery(document).on('ready', function(){
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
 
-      if(jQuery(this).hasClass('dropdown') && jQuery(this).is(':last-child')) {
+      if(jQuery(this).is(':last-child')) {
         jQuery('.popout-menu-open').fadeIn(100);
       }
     });
