@@ -432,6 +432,10 @@ html {
   text-transform:uppercase;
 }
 
+.js-student-step h2 {
+  font-size:1.75em !important;
+}
+
 .js-student-step {
   padding:45px 0px;
   border-bottom:2px solid #eaeaea;
