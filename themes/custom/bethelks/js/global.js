@@ -33,15 +33,17 @@ jQuery(document).on('ready', function(){
         jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-200px');
       }
 
-      if(jQuery(this).is(':last-child')) {
+      if(uppermostIndex+1 == jQuery('.dropdown').size()) {
         jQuery('.popout-menu-open').fadeOut(100);
+      } else {
+        console.log(uppermostIndex);
       }
 
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeIn(250);
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
 
-      if(jQuery(this).is(':last-child')) {
+      if(!jQuery('.popout-menu-open').is(':visible')) {
         jQuery('.popout-menu-open').fadeIn(100);
       }
     });
