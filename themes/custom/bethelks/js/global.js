@@ -19,8 +19,16 @@ jQuery(document).on('ready', function(){
       if((uppermostIndex + 1) == jQuery('.dropdown').size()) {
         jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-75px');
       }
+
+      if(uppermostIndex+1 == jQuery('.dropdown').size()) {
+        jQuery('.popout-menu-open').fadeOut(100);
+      }
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
+
+      if(!jQuery('.popout-menu-open').is(':visible')) {
+        jQuery('.popout-menu-open').fadeIn(100);
+      }
     });
 
     jQuery('ul.navbar-nav li.dropdown ul.dropdown-menu li.dropdown-submenu').hover(function() {
@@ -33,20 +41,9 @@ jQuery(document).on('ready', function(){
         jQuery(this).find('.dropdown-menu:lt(1)').css('left', '-200px');
       }
 
-      if(uppermostIndex+1 == jQuery('.dropdown').size()) {
-        jQuery('.popout-menu-open').fadeOut(100);
-        console.log('what: ' + uppermostIndex);
-      } else {
-        console.log(uppermostIndex);
-      }
-
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeIn(250);
     }, function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeOut(250);
-
-      if(!jQuery('.popout-menu-open').is(':visible')) {
-        jQuery('.popout-menu-open').fadeIn(100);
-      }
     });
 
     // Override jQuery/Bootstrap e.preventDefault on dropdowns
