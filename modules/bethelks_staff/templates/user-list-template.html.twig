@@ -67,9 +67,9 @@
 
 <div>
 {% if staff.prev is not null %}
-  <button class="staffPagination" type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
+  <button class="staffPagination" style="margin-right:0px;" type="button" onclick="window.location.href = '{{ staff.prev }}';">Previous</button>
 {% endif %}
 
 {% if staff.next is not null %}
-  <button class="staffPagination" type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
+  <button class="staffPagination" style="margin-left:0px" type="button" onclick="window.location.href = '{{ staff.next }}';">Next</button>
 {% endif %}</div>
