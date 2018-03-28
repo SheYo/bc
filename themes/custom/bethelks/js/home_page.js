@@ -70,27 +70,44 @@ jQuery(document).on('ready', function(){
     }
   });
 
-  var calURL = 'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_c0vujpfbmn1um8e0gvr53td35k@group.calendar.google.com/events?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=';
-  var d = new Date();
-  d.setDate(d.getDate() - 7);
-  calURL += d.toISOString();
+  var calendarUrls = [
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_ra6vjploqhssetjnpmcor4t854@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //athletics
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_dji0648m46honauq7g3m85t04g@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //events
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_c3od092nt54lla09bvh5gme2ac@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //fine arts
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_1e2fuf824hc2oibsuol4c4tqa0@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //bcapa
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_7mouimn1lm4itflbp1a9jmcjag@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=' //non event bc cal
+  ];
 
-  var req = new XMLHttpRequest();
-  req.open("GET", calURL, true);
-  req.send(null);
-  req.onloadend = function(){
-    var calObj = JSON.parse(req.responseText)
-    for(var index in calObj.items) {
-      console.log(calObj.items[index]);
-    }
-  };
+  var d = new Date();
+  var timeStart = d.toISOString();
+
+  d.setDate(d.getDate() + 7);
+  var timeEnd = d.toISOString();
+
+  jQuery(calendarUrls).each(function(k, v) {
+    calendarUrls[k] = v += timeStart + "&timeMax=" + timeEnd;
+  });
+
+  jQuery(calendarUrls).each(function(k, v) {
+    var req = new XMLHttpRequest();
+    req.open("GET", v, true);
+    req.send(null);
+    req.onloadend = function(){
+      // var calObj = JSON.parse(req.responseText)
+      // for(var index in calObj.items) {
+      //   console.log(calObj.items[index]);
+      // }
+
+      console.log(req.responseText);
+    };
+  });
+
+
   /* Event Carousel End */
 
   /* Homepage Recent News Start */
   jQuery('.js-home-recent-news').each(function(index){
     var overlayColors = ['#9b9740', '#de413a', '#3c8e96', '#7a7a7a'];
-
-    //jQuery(this).append('<center><a href="#" class="recent-news-more-news">More News</a></center>');
 
     jQuery(this).find('.homepage-featured-news-view').each(function(i){
       if(i == 1) {
@@ -316,7 +333,7 @@ jQuery(document).on('ready', function(){
     jQuery(this).find('img').addClass('img-fluid rounded-circle');
   });
 
-  jQuery('.recent-headlines-homepage-title').find('h4').wrap('<a href="/newsroom"></a>');
+  jQuery('.recent-headlines-homepage-title').find('h4').wrap('<a href="/news-events"></a>');
   /* Recent Headlines Homepage Footer End */
 
   // Fixes layout issue in chrome
