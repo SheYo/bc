@@ -9,7 +9,7 @@ bethelks_staff.adminList:
 
 # Staff List
 bethelks_staff.faculty:
-  path: '/faculty/{page}'
+  path: '/employee/{page}'
   defaults:
     _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaffPaginated'
     _title: 'BethelKS Staff'
@@ -28,7 +28,7 @@ bethelks_staff.adminList.add:
 
 # View Single Staff
 bethelks_staff.faculty.view:
-  path: '/faculty/view/{sid}'
+  path: '/employee/view/{sid}'
   defaults:
     _controller: '\Drupal\bethelks_staff\Controller\StaffController::viewStaff'
     _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::viewStaffTitle'

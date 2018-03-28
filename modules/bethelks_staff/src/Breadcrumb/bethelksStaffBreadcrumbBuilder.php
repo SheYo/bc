@@ -22,7 +22,7 @@ class bethelksStaffBreadcrumbBuilder implements BreadcrumbBuilderInterface {
     $breadcrumb = new Breadcrumb();
 
     $breadcrumb->addLink(Link::createFromRoute('Home', '<front>'));
-    $breadcrumb->addLink(Link::createFromRoute('BethelKS Staff', 'bethelks_staff.faculty'));
+    $breadcrumb->addLink(Link::createFromRoute('Employee', 'bethelks_staff.faculty'));
 
     return $breadcrumb;
   }

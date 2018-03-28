@@ -1461,8 +1461,18 @@ html {
 
 .articleOrPageContent p, .articleOrPageContent h1, .articleOrPageContent h2,
 .articleOrPageContent h3, .articleOrPageContent h4, .articleOrPageContent h5,
-.articleOrPageContent h6, .articleOrPageContent form {
+.articleOrPageContent h6, .articleOrPageContent form, .articleOrPageContent ul,
+.articleOrPageContent table {
   padding:0px 30px;
+}
+
+.articleOrPageContent table {
+  margin:0px 30px;
+  margin-bottom:10px;
+}
+
+.articleOrPageContent table td, .articleOrPageContent table th {
+  border:1px solid #777777;
 }
 
 .articleOrPageContent a {
