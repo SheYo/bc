@@ -46,7 +46,7 @@
     {% for member in staff.data %}
       <div class="col-12 col-md-6 col-lg-4">
         <div class="facultyCard">
-          <a href="/faculty/view/{{ member.sid }}">
+          <a href="/employee/view/{{ member.sid }}">
             {% if member.path is not null %}
               <img src="{{ file_url(member.path) }}" class="img-fluid">
             {% else %}

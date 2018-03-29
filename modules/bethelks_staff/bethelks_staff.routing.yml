@@ -3,7 +3,7 @@ bethelks_staff.adminList:
   path: '/admin/content/bethelks_staff'
   defaults:
     _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaff'
-    _title: 'BethelKS Staff'
+    _title: 'Employees'
   requirements:
     _permission: 'administer staff'
 
@@ -12,7 +12,7 @@ bethelks_staff.faculty:
   path: '/employee/{page}'
   defaults:
     _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaffPaginated'
-    _title: 'BethelKS Staff'
+    _title: 'Employees'
     page: 0
   requirements:
     _access: 'TRUE'
