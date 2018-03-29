@@ -15,7 +15,7 @@ bethelks_staff.faculty:
     _title: 'BethelKS Staff'
     page: 0
   requirements:
-    _access: true
+    _access: 'TRUE'
 
 # Add Staff
 bethelks_staff.adminList.add:
@@ -35,7 +35,7 @@ bethelks_staff.faculty.view:
     sid: null
     singleStaff: true
   requirements:
-    _access: true
+    _access: 'TRUE'
 
 # Edit Page Routing
 bethelks_staff.adminList.edit:
