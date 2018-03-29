@@ -1,0 +1,4 @@
+administer staff:
+  title: "Administer Staff"
+  description: "Create, update, and delete staff"
+  restrict access: false
