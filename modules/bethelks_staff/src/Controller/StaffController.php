@@ -47,7 +47,7 @@ class StaffController extends ControllerBase {
       $response['offset'] = $off;
       $staffArray = array();
       $data = array();
-      $retval = $connection->query('SELECT * FROM bethelks_staff LIMIT '.$list_size.' OFFSET '.$off.';')->fetchAllAssoc('sid');
+      $retval = $connection->query('SELECT * FROM bethelks_staff ORDER BY name LIMIT '.$list_size.' OFFSET '.$off.';')->fetchAllAssoc('sid');
 
       foreach ($retval as &$dt) {
         if ($dt->img != "") {
