@@ -37,17 +37,9 @@ html {
   opacity:1;
 }
 
-.capital-case-heading {
-  color:#000000;
-  text-transform:uppercase;
-  font-family:'Helvetica', sans-serif;
-  font-weight:300;
-}
-
-.capital-case-heading span {
-  font-size:.75em;
-  font-family:'Helvetica', sans-serif;
-  font-weight:500;
+.eee-selector h3 {
+  font-family:'AvenirLTStd-Light', sans-serif !important;
+  font-size:1.3em !important;
 }
 /* GENERAL CSS RULES && UTILITY CLASSES END */
 
@@ -1135,7 +1127,7 @@ html {
 .navbar-brand > img {
   max-width:406px;
   max-height:80px;
-  padding-left:5%;
+  padding-left:7%;
 }
 
 .navbar-light .navbar-nav > li > a.nav-link {
@@ -1500,8 +1492,7 @@ html {
 
 .rightSidebar-hook nav ul li {
   color:#777777;
-  font-family:'Roboto', sans-serif;
-  font-weight:400;
+  font-family:"AvenirLTStd-Light", sans-serif;
   font-size:1.05em;
   padding:3px 0px;
 }
@@ -1517,6 +1508,7 @@ html {
 
 .rightSidebar-hook nav ul li a::before {
   content:'>';
+  font-family:"AvenirLTStd-Light", sans-serif;
   margin-right:10px;
 }
 
@@ -1556,6 +1548,7 @@ html {
   font-family:'AvenirLTStd-Medium', sans-serif;
   text-transform:uppercase;
   padding:20px;
+  padding-left:35px;
   padding-top:23px;
   margin:0;
   vertical-align:center;
