@@ -71,11 +71,12 @@ jQuery(document).on('ready', function(){
   });
 
   var calendarUrls = [
-    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_ra6vjploqhssetjnpmcor4t854@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //athletics
-    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_dji0648m46honauq7g3m85t04g@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //events
-    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_c3od092nt54lla09bvh5gme2ac@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //fine arts
-    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_1e2fuf824hc2oibsuol4c4tqa0@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //bcapa
-    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_7mouimn1lm4itflbp1a9jmcjag@group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=' //non event bc cal
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_ra6vjploqhssetjnpmcor4t854%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //athletics
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_dji0648m46honauq7g3m85t04g%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //events
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_c3od092nt54lla09bvh5gme2ac%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //fine arts
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_1e2fuf824hc2oibsuol4c4tqa0%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //bcapa
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_7mouimn1lm4itflbp1a9jmcjag%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=', //non event bc cal
+    'https://www.googleapis.com/calendar/v3/calendars/bethelks.edu_jeij854r3daai0co6h70ckmjco%40group.calendar.google.com?key=AIzaSyCKZNHJs4AfcckoQvLSWJ1YVeNL5jzxJFk&singleEvents=true&timeMin=' // student life
   ];
 
   var d = new Date();

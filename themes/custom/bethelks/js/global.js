@@ -1,7 +1,7 @@
 jQuery(document).on('ready', function(){
   /* Google search API */
   (function() {
-    var cx = '011494971176792296194:gssdfusp1cy';
+    var cx = '016362371049769519793:dv2pst7xijo';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;
