@@ -1152,8 +1152,6 @@ html {
   border:none;
   padding:0px;
   border-top:2px solid #eeb111;
-  max-height:700px !important;
-  overflow-y:scroll !important;
 }
 
 .dropdown-toggle::after {
