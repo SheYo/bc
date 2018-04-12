@@ -1067,8 +1067,6 @@ html {
     margin:0 !important;
     padding-left:30px !important;
     width:100% !important;
-    max-height:700px !important;
-    overflow-y:scroll !important;
   }
 
   .separate_nav_cols {
@@ -1154,6 +1152,8 @@ html {
   border:none;
   padding:0px;
   border-top:2px solid #eeb111;
+  max-height:700px !important;
+  overflow-y:scroll !important;
 }
 
 .dropdown-toggle::after {
