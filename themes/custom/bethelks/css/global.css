@@ -1186,6 +1186,7 @@ html {
 .dropdown .dropdown-menu .dropdown-submenu .dropdown-menu {
   position:absolute;
   left:100%;
+  max-height:700px;
 }
 
 .header-eyecatcher {

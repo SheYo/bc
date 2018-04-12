@@ -11,6 +11,8 @@ jQuery(document).on('ready', function(){
   })();
 
   /* Navigation Start */
+  jQuery(".dropdown-submenu.a:contains('Areas of Study')").parent().find('ul').css('overflow-y', 'scroll');
+
   if(jQuery(window).width() > 991) {
     jQuery('ul.navbar-nav li.dropdown').hover(function() {
       jQuery(this).find('.dropdown-menu:lt(1)').stop(true, true).delay(100).fadeIn(250);
