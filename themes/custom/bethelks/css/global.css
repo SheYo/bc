@@ -1067,6 +1067,8 @@ html {
     margin:0 !important;
     padding-left:30px !important;
     width:100% !important;
+    max-height:700px !important;
+    overflow-y:scroll !important;
   }
 
   .separate_nav_cols {
