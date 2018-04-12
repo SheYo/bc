@@ -11,7 +11,7 @@ jQuery(document).on('ready', function(){
   })();
 
   /* Navigation Start */
-  jQuery(".dropdown-submenu.a:contains('Areas of Study')").parent().find('ul').css('overflow-y', 'scroll');
+  jQuery(".dropdown-submenu.a:contains('Areas of Study')").parent().find('.dropdown-menu').css('overflow-y', 'scroll');
 
   if(jQuery(window).width() > 991) {
     jQuery('ul.navbar-nav li.dropdown').hover(function() {
