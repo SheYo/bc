@@ -84,9 +84,9 @@ jQuery(document).on('ready', function(){
   /* rightSidebar Start */
   jQuery('.rightSidebar-hook').each(function(index){
     jQuery(this).prepend('<div class="d-flex align-items-center justify-content-center innerStudentSteps"></div>');
-    jQuery(this).find('.innerStudentSteps').html(`<a class="d-flex align-items-center justify-content-center" href="http://bethelks.edu/form/inquire"><i class="fa fa-info-circle"></i></a>
-        <a class="d-flex align-items-center justify-content-center" href="http://bethelks.edu/form/visit"><i class="fa fa-map-marker"></i></a>
-        <a class="d-flex align-items-center justify-content-center" href="http://bethelks.edu/form/application"><i class="fa fa-check"></i></a>`);
+    jQuery(this).find('.innerStudentSteps').html(`<a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/inquire"><i class="fa fa-info-circle"></i></a>
+        <a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/visit"><i class="fa fa-map-marker"></i></a>
+        <a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/application"><i class="fa fa-check"></i></a>`);
   });
 
   jQuery('.rightSidebar-hook').find('nav').each(function(index){

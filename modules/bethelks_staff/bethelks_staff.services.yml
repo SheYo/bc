@@ -1,5 +1,0 @@
-services:
-  mymodule.breadcrumb:
-    class: Drupal\bethelks_staff\Breadcrumb\bethelksStaffBreadcrumbBuilder
-    tags:
-      - { name: breadcrumb_builder, priority: 100 }
