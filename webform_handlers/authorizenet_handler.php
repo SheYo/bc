@@ -36,7 +36,7 @@ if(isset($_POST['credit_card_number']) &&
        retrieved from the constants file */
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
     $merchantAuthentication->setName("8B8et3kYhP");
-    $merchantAuthentication->setTransactionKey("8329e58PUtHtuCLX");
+    $merchantAuthentication->setTransactionKey("9236dK9G58k9fwU4");
 
     // Set the transaction's refId
     $refId = 'ref' . time();
