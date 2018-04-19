@@ -35,8 +35,8 @@ if(isset($_POST['credit_card_number']) &&
     /* Create a merchantAuthenticationType object with authentication details
        retrieved from the constants file */
     $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
-    $merchantAuthentication->setName("4ZZg8Cu582rf"); // $merchantAuthentication->setName("8B8et3kYhP");
-    $merchantAuthentication->setTransactionKey("8W8ZnhL7Afr233ap"); // $merchantAuthentication->setTransactionKey("9236dK9G58k9fwU4");
+    $merchantAuthentication->setName("8B8et3kYhP");
+    $merchantAuthentication->setTransactionKey("9236dK9G58k9fwU4");
 
     // Set the transaction's refId
     $refId = 'ref' . time();
@@ -76,9 +76,9 @@ if(isset($_POST['credit_card_number']) &&
     // Create the controller and get the response
     $controller = new AnetController\CreateTransactionController($request);
     // For PRODUCTION use
-    // $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
+    $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
     // For SANDBOX use
-    $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
+    // $response = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
 
     if ($response != null) {
         // Check to see if the API request was successfully received and acted upon
