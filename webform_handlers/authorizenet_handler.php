@@ -61,7 +61,7 @@ if(isset($_POST['credit_card_number']) &&
 
     // Create a TransactionRequestType object and add the previous objects to it
     $transactionRequestType = new AnetAPI\TransactionRequestType();
-    $transactionRequestType->setTransactionType("authOnlyTransaction");
+    $transactionRequestType->setTransactionType("authCaptureTransaction");
     $transactionRequestType->setAmount($transaction_amount_usd); //$transactionRequestType->setAmount(20.20);
     $transactionRequestType->setOrder($order);
     $transactionRequestType->setPayment($paymentOne);
