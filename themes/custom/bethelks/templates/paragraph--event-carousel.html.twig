@@ -149,26 +149,26 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
   </div>
 </div> -->
 
-<div class="container-fluid eventCarousel">
+<div class="container-fluid eventCarousel" style="height:350px;">
   <div class="row">
-    <div class="owl-carousel owl-theme col-12">
-      {% set colors = ['eeb111', '882233', 'de413a', '3c8e96', '9b9740'] %} <!-- 7a7a7a -->
-      {% for i in 1..31 %}
-        <div class="eventCard" style="background-color:#{{ colors[i % colors|length] }}">
+    <!-- <div class="owl-carousel owl-theme col-12">
+      {# set colors = ['eeb111', '882233', 'de413a', '3c8e96', '9b9740'] #}
+      {# for i in 1..31 #}
+        <div class="eventCard" style="background-color:#{# colors[i % colors|length] #}">
           <div class="dateSpan">
             <div class="startDate">
-              <h2>{{i}}</h2>
+              <h2>{#i#}</h2>
               <p>May</p>
             </div>
-            {% if i is divisible by(6) %}
+            {# if i is divisible by(6) #}
               <div class="dateDivider">
                 <p>&#45;</p>
               </div>
               <div class="endDate">
-                <h5>{{ i - 5 }}</h5>
+                <h5>{# i - 5 #}</h5>
                 <p>Jun</p>
               </div>
-            {% endif %}
+            {# endif #}
           </div>
           <div class="eventInformation">
             <h3 class="pt-5">Event Name</h3>
@@ -177,7 +177,7 @@ view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
             <p class="eventInformation-location"><i class="fa fa-map-marker" aria-hidden="true"></i> 300 E 27th St, North Newton, KS 67117</p>
           </div>
         </div>
-      {% endfor %}
-    </div>
+      {# endfor #}
+    </div> -->
   </div>
 </div>
