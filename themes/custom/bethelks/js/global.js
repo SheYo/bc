@@ -218,7 +218,7 @@ jQuery(document).on('ready', function(){
   jQuery('#webform-submission-donor-form, #webform-submission-deposit-form').on('submit', function(e){
     console.log('working...');
 
-    $.ajax({
+    jQuery.ajax({
       type: "POST",
       url: "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
       data: {
