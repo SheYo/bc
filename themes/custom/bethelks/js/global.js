@@ -213,4 +213,23 @@ jQuery(document).on('ready', function(){
     });
   });
   /* preFooter Recent News End */
+
+  /* donor/deposit form start */
+  jQuery('#webform-submission-donor-form, #webform-submission-deposit-form').on('submit', function(e){
+    jQuery.post(
+      "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
+      {
+        credit_card_number: jQuery(this).find("input[name='credit_card_number']").val(),
+        credit_card_expiration: jQuery(this).find("input[name='credit_card_expiration']").val(),
+        credit_card_code: jQuery(this).find("input[name='credit_card_code']").val(),
+        order_description: jQuery(this).find("input[name='order_description']").val(),
+        customer_email: jQuery(this).find("input[name='customer_email']").val(),
+        transaction_amount_usd: jQuery(this).find("input[name='transaction_amount_usd']").val()
+      },
+      function(data) {
+        return;
+      }
+    );
+  });
+  /* donor/deposit form end */
 });
