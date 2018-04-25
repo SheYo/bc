@@ -216,6 +216,7 @@ jQuery(document).on('ready', function(){
 
   /* donor/deposit form start */
   jQuery('#webform-submission-donor-form, #webform-submission-deposit-form').on('submit', function(e){
+    console.log('working...');
     jQuery.post(
       "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
       {
@@ -227,7 +228,7 @@ jQuery(document).on('ready', function(){
         transaction_amount_usd: jQuery(this).find("input[name='transaction_amount_usd']").val()
       },
       function(data) {
-        return;
+        console.log('worked');
       }
     );
   });
