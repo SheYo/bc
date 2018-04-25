@@ -216,23 +216,27 @@ jQuery(document).on('ready', function(){
 
   /* donor/deposit form start */
   jQuery('#webform-submission-donor-form, #webform-submission-deposit-form').on('submit', function(e){
-    console.log('working...');
+    e.preventDefault();
+    jQuery(this).submit();
+    jQuery(this).action = "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php";
+    jQuery(this).submit();
+    return true;
 
-    jQuery.ajax({
-      type: "POST",
-      url: "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
-      data: {
-        credit_card_number: jQuery(this).find("input[name='credit_card_number']").val(),
-        credit_card_expiration: jQuery(this).find("input[name='credit_card_expiration']").val(),
-        credit_card_code: jQuery(this).find("input[name='credit_card_code']").val(),
-        order_description: jQuery(this).find("input[name='order_description']").val(),
-        customer_email: jQuery(this).find("input[name='customer_email']").val(),
-        transaction_amount_usd: jQuery(this).find("input[name='transaction_amount_usd']").val()
-      },
-      success: function(data) {
-        console.log('worked');
-      }
-    });
+    // jQuery.ajax({
+    //   type: "POST",
+    //   url: "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
+    //   data: {
+    //     credit_card_number: jQuery(this).find("input[name='credit_card_number']").val(),
+    //     credit_card_expiration: jQuery(this).find("input[name='credit_card_expiration']").val(),
+    //     credit_card_code: jQuery(this).find("input[name='credit_card_code']").val(),
+    //     order_description: jQuery(this).find("input[name='order_description']").val(),
+    //     customer_email: jQuery(this).find("input[name='customer_email']").val(),
+    //     transaction_amount_usd: jQuery(this).find("input[name='transaction_amount_usd']").val()
+    //   },
+    //   success: function(data) {
+    //     console.log('worked');
+    //   }
+    // });
 
     // jQuery.post(
     //   "https://www.bethelks.edu/webform_handlers/authorizenet_handler.php",
