@@ -127,7 +127,14 @@ fwrite($fp, "\n");
 fclose($fp);
 
 if(isset($_POST["customer_email"])) {
-  mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+  if(isset($_POST["order_description"])) {
+    if($_POST["order_description"] == "Donation") {
+      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+    }
+    else {
+      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+    }
+  }
 }
 
 mail("ghiebert@bethelks.edu", "New donation submission", print_r($_POST, true));
