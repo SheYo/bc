@@ -186,11 +186,11 @@ if(isset($_POST['order_description'])) {
 
       mail($_POST["customer_email"], "Thank you for your deposit to Bethel College", $msg, $headers);
     }
-    } else {
-      mail("debbic@bethelks.edu", "New authorizenet charge (UNKNOWN FORM LOCATION)", print_r($_POST, true));
-    }
+  } else {
+    mail("debbic@bethelks.edu", "New authorizenet charge (UNKNOWN FORM LOCATION)", print_r($_POST, true));
   }
 }
+
 
 header('Location: https://www.bethelks.edu/');
 exit();
