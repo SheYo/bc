@@ -14,6 +14,12 @@ require 'vendor/autoload.php';
 use net\authorize\api\contract\v1 as AnetAPI;
 use net\authorize\api\controller as AnetController;
 
+header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
+
 define("AUTHORIZENET_LOG_FILE", "authorizenet_log.txt");
 
 $fp = fopen("response-file.txt", "a+");
@@ -23,7 +29,14 @@ if(isset($_POST['credit_card_number']) &&
   isset($_POST['credit_card_code']) &&
   isset($_POST['order_description']) &&
   isset($_POST['customer_email']) &&
-  isset($_POST['transaction_amount_usd'])) {
+  isset($_POST['transaction_amount_usd']) &&
+  isset($_POST['first_name']) &&
+  isset($_POST['last_name']) &&
+  isset($_POST['address']) &&
+  isset($_POST['city']) &&
+  isset($_POST['state_province']) &&
+  isset($_POST['zip_postal_code']) &&
+  isset($_POST['country'])) {
 
     $credit_card_number = $_POST['credit_card_number'];
     $credit_card_expiration = $_POST['credit_card_expiration'];
@@ -55,6 +68,15 @@ if(isset($_POST['credit_card_number']) &&
     $order = new AnetAPI\OrderType();
     $order->setDescription($order_description); //$order->setDescription("Donation");
 
+    $customerAddress = new AnetAPI\CustomerAddressType();
+    $customerAddress->setFirstName($_POST['first_name']);
+    $customerAddress->setLastName($_POST['last_name']);
+    $customerAddress->setAddress($_POST['address']);
+    $customerAddress->setCity($_POST['city']);
+    $customerAddress->setState($_POST['state_province']);
+    $customerAddress->setZip($_POST['zip_postal_code']);
+    $customerAddress->setCountry($_POST['country']);
+
     // Set the customer's identifying information
     $customerData = new AnetAPI\CustomerDataType();
     $customerData->setEmail($customer_email); //$customerData->setEmail("george.shaw@ennovar.wichita.edu");
@@ -66,6 +88,7 @@ if(isset($_POST['credit_card_number']) &&
     $transactionRequestType->setOrder($order);
     $transactionRequestType->setPayment($paymentOne);
     $transactionRequestType->setCustomer($customerData);
+    $transactionRequestType->setBillTo($customerAddress);
 
     // Assemble the complete transaction request
     $request = new AnetAPI\CreateTransactionRequest();
@@ -126,18 +149,48 @@ else {
 fwrite($fp, "\n");
 fclose($fp);
 
-if(isset($_POST["customer_email"])) {
-  if(isset($_POST["order_description"])) {
-    if($_POST["order_description"] == "Donation") {
+// hide CC number
+$_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
+
+
+
+if(isset($_POST['order_description'])) {
+  if($_POST['order_description'] == "Donation") {
+    mail("ghiebert@bethelks.edu", "New donation submission", print_r($_POST, true));
+    mail("clbeth@bethelks.edu", "New donation submission", print_r($_POST, true));
+    mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true));
+
+    if(isset($_POST['customer_email'])) {
       mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
     }
-    else {
-      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+  } else if($_POST['order_description'] == "Deposit") {
+    mail("debbic@bethelks.edu", "New deposit submission", print_r($_POST, true));
+    mail("admissions@bethelks.edu", "New deposit submission", print_r($_POST, true));
+
+    if(isset($_POST['customer_email'])) {
+      $headers = "From: admissions@bethelks.edu\r\n";
+      $headers .= "Reply-To: admissions@bethelks.edu\r\n";
+      $headers .= "MIME-Version: 1.0\r\n";
+      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+      $msg = "<html><body>";
+      $msg .= "<h3>Now that you've submitted your deposit, take the final steps toward launching a life-changing experience.</h3>";
+      $msg .= "<ul>";
+      $msg .= "<li>Submit your <a href=\"\">Student Life Contract</a></li>";
+      $msg .= "<li>Sign up for an <a href=\"\">Enrollment Day</a></li>";
+      $msg .= "<li>Prepare for <a href=\"\">Thresher Days</a> orientation</li>";
+	    $msg .= "</ul>";
+      $msg .= "<h3 style=\"color:grey;\"><i>“All the different experiences I’ve had have really helped define who I am as a person.”</i> — Kiley Varney '18</h3>";
+      $msg .= "<h2>Prepare to work alongside faculty who are your mentors, advisers and potentially research partners, some of whom who will also be a reference, resource and friend for a lifetime.</h2>";
+      $msg .= "</body></html>";
+
+      mail($_POST["customer_email"], "Thank you for your deposit to Bethel College", $msg, $headers);
+    }
+    } else {
+      mail("debbic@bethelks.edu", "New authorizenet charge (UNKNOWN FORM LOCATION)", print_r($_POST, true));
     }
   }
 }
-
-mail("ghiebert@bethelks.edu", "New donation submission", print_r($_POST, true));
 
 header('Location: https://www.bethelks.edu/');
 exit();
