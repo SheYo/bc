@@ -143,6 +143,10 @@ if(isset($_POST['credit_card_number']) &&
 else {
   fwrite($fp, "Not all of the required post data was sent at " . date("l jS \of F Y h:i:s A") . "\n");
   fwrite($fp, "Post Dump:\n");
+  
+  if(isset($_POST['credit_card_number'])) {
+    $_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
+  }
   fwrite($fp, var_dump($_POST));
 }
 
