@@ -152,12 +152,9 @@ fclose($fp);
 // hide CC number
 $_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
 
-
-
 if(isset($_POST['order_description'])) {
   if($_POST['order_description'] == "Donation") {
-    mail("ghiebert@bethelks.edu", "New donation submission", print_r($_POST, true));
-    mail("clbeth@bethelks.edu", "New donation submission", print_r($_POST, true));
+    mail("development@bethelks.edu", "New donation submission", print_r($_POST, true));
     mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true));
 
     if(isset($_POST['customer_email'])) {
