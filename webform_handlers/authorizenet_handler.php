@@ -122,11 +122,14 @@ if(isset($_POST['credit_card_number']) &&
 
                 if(isset($_POST['order_description'])) {
                   if($_POST['order_description'] == "Donation") {
-                    mail("development@bethelks.edu", "New donation submission", print_r($_POST, true));
-                    mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true));
+                    $headers = "From: development@bethelks.edu\r\n";
+                    $headers .= "Reply-To: development@bethelks.edu\r\n";
+
+                    mail("development@bethelks.edu", "New donation submission", print_r($_POST, true), $headers);
+                    mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true), $headers);
 
                     if(isset($_POST['customer_email'])) {
-                      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+                      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team", $headers);
                     }
                   } else if($_POST['order_description'] == "Deposit") {
                     mail("debbic@bethelks.edu", "New deposit submission", print_r($_POST, true));
