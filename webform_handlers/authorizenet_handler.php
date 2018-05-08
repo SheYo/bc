@@ -116,6 +116,46 @@ if(isset($_POST['credit_card_number']) &&
                 fwrite($fp," Message Code: " . $tresponse->getMessages()[0]->getCode() . "\n");
                 fwrite($fp," Auth Code: " . $tresponse->getAuthCode() . "\n");
                 fwrite($fp," Description: " . $tresponse->getMessages()[0]->getDescription() . "\n");
+
+                // hide CC number
+                $_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
+
+                if(isset($_POST['order_description'])) {
+                  if($_POST['order_description'] == "Donation") {
+                    mail("development@bethelks.edu", "New donation submission", print_r($_POST, true));
+                    mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true));
+
+                    if(isset($_POST['customer_email'])) {
+                      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
+                    }
+                  } else if($_POST['order_description'] == "Deposit") {
+                    mail("debbic@bethelks.edu", "New deposit submission", print_r($_POST, true));
+                    mail("admissions@bethelks.edu", "New deposit submission", print_r($_POST, true));
+
+                    if(isset($_POST['customer_email'])) {
+                      $headers = "From: admissions@bethelks.edu\r\n";
+                      $headers .= "Reply-To: admissions@bethelks.edu\r\n";
+                      $headers .= "MIME-Version: 1.0\r\n";
+                      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+                      $msg = "<html><body>";
+                      $msg .= "<h3>Now that you've submitted your deposit, take the final steps toward launching a life-changing experience.</h3>";
+                      $msg .= "<ul>";
+                      $msg .= "<li>Submit your <a href=\"\">Student Life Contract</a></li>";
+                      $msg .= "<li>Sign up for an <a href=\"\">Enrollment Day</a></li>";
+                      $msg .= "<li>Prepare for <a href=\"\">Thresher Days</a> orientation</li>";
+                	    $msg .= "</ul>";
+                      $msg .= "<h3 style=\"color:grey;\"><i>“All the different experiences I’ve had have really helped define who I am as a person.”</i> — Kiley Varney '18</h3>";
+                      $msg .= "<h2>Prepare to work alongside faculty who are your mentors, advisers and potentially research partners, some of whom who will also be a reference, resource and friend for a lifetime.</h2>";
+                      $msg .= "</body></html>";
+
+                      mail($_POST["customer_email"], "Thank you for your deposit to Bethel College", $msg, $headers);
+                    }
+                  } else {
+                    mail("debbic@bethelks.edu", "New authorizenet charge (UNKNOWN FORM LOCATION)", print_r($_POST, true));
+                  }
+                }
+
             } else {
                 fwrite($fp,"Transaction Failed \n");
                 if ($tresponse->getErrors() != null) {
@@ -143,7 +183,7 @@ if(isset($_POST['credit_card_number']) &&
 else {
   fwrite($fp, "Not all of the required post data was sent at " . date("l jS \of F Y h:i:s A") . "\n");
   fwrite($fp, "Post Dump:\n");
-  
+
   if(isset($_POST['credit_card_number'])) {
     $_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
   }
@@ -152,45 +192,6 @@ else {
 
 fwrite($fp, "\n");
 fclose($fp);
-
-// hide CC number
-$_POST['credit_card_number'] = substr_replace($_POST['credit_card_number'], '*', 0, 12);
-
-if(isset($_POST['order_description'])) {
-  if($_POST['order_description'] == "Donation") {
-    mail("development@bethelks.edu", "New donation submission", print_r($_POST, true));
-    mail("debbic@bethelks.edu", "New donation submission", print_r($_POST, true));
-
-    if(isset($_POST['customer_email'])) {
-      mail($_POST["customer_email"], "Thank you for your donation to Bethel College", "Thank you for your generous support of Bethel College and our students.  We appreciate your gift and the ways it helps to enhance the educational experience of our students. Please check us out on any of our social media platforms.\r\n\r\nSincerely,\r\nYour Bethel College Advancement Team");
-    }
-  } else if($_POST['order_description'] == "Deposit") {
-    mail("debbic@bethelks.edu", "New deposit submission", print_r($_POST, true));
-    mail("admissions@bethelks.edu", "New deposit submission", print_r($_POST, true));
-
-    if(isset($_POST['customer_email'])) {
-      $headers = "From: admissions@bethelks.edu\r\n";
-      $headers .= "Reply-To: admissions@bethelks.edu\r\n";
-      $headers .= "MIME-Version: 1.0\r\n";
-      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
-      $msg = "<html><body>";
-      $msg .= "<h3>Now that you've submitted your deposit, take the final steps toward launching a life-changing experience.</h3>";
-      $msg .= "<ul>";
-      $msg .= "<li>Submit your <a href=\"\">Student Life Contract</a></li>";
-      $msg .= "<li>Sign up for an <a href=\"\">Enrollment Day</a></li>";
-      $msg .= "<li>Prepare for <a href=\"\">Thresher Days</a> orientation</li>";
-	    $msg .= "</ul>";
-      $msg .= "<h3 style=\"color:grey;\"><i>“All the different experiences I’ve had have really helped define who I am as a person.”</i> — Kiley Varney '18</h3>";
-      $msg .= "<h2>Prepare to work alongside faculty who are your mentors, advisers and potentially research partners, some of whom who will also be a reference, resource and friend for a lifetime.</h2>";
-      $msg .= "</body></html>";
-
-      mail($_POST["customer_email"], "Thank you for your deposit to Bethel College", $msg, $headers);
-    }
-  } else {
-    mail("debbic@bethelks.edu", "New authorizenet charge (UNKNOWN FORM LOCATION)", print_r($_POST, true));
-  }
-}
 
 
 header('Location: https://www.bethelks.edu/');
