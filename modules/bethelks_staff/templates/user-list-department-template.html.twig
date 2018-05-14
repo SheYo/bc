@@ -26,18 +26,7 @@
   height:310px;
   margin:20px 0px;
 }
-
-.staffPagination {
-  background-color:#EEB111;
-  color:#ffffff;
-  border:0;
-  border-radius:0;
-  padding:10px 20px;
-  margin:10px;
-  cursor:pointer;
-}
 </style>
-
 
 <div class="row">
   {% if staff.data is empty %}
@@ -47,9 +36,13 @@
       <div class="col-12">
         <p class="d-inline">Deparment: </p>
         <select class="filterCategory mt-3 mb-3" name="staffCategory">
-          <option name="all" selected="selected">All departments</option>
+          <option name="all">All departments</option>
           {% for category in staff.categories %}
-            <option name="{{ category.safe }}">{{ category.clean | title }}</option>
+            {% if staff.department == category.safe %}
+              <option name="{{ category.safe }}" selected="selected">{{ category.clean | title }}</option>
+            {% else %}
+              <option name="{{ category.safe }}">{{ category.clean | title }}</option>
+            {% endif %}
           {% endfor %}
         </select>
       </div>
@@ -74,16 +67,6 @@
     {% endfor %}
   {% endif %}
 </div>
-
-
-<div>
-{% if staff.prev is not null %}
-  <button class="staffPagination" style="margin-right:0px;" type="button" onclick="window.location.href = '/employee/{{ staff.prev }}';">Previous</button>
-{% endif %}
-
-{% if staff.next is not null %}
-  <button class="staffPagination" style="margin-left:0px" type="button" onclick="window.location.href = '/employee/{{ staff.next }}';">Next</button>
-{% endif %}</div>
 
 <script>
 jQuery('.filterCategory').on('change', function(){

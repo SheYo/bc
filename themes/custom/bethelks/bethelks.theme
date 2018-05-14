@@ -13,4 +13,14 @@ function bethelks_preprocess_html(&$variables) {
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
   $variables['url'] = $_SERVER['REQUEST_URI'];
 }
+
+function bethelks_preprocess_breadcrumb(&$variables) {
+  foreach($variables['breadcrumb'] as $key => $value) {
+    if(isset($value["url"])) {
+      if(strpos($value["url"], '/employee/department')) {
+        unset($variables['breadcrumb'][$key]);
+      }
+    }
+  }
+}
 ?>

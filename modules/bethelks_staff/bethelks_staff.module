@@ -16,6 +16,9 @@ function bethelks_staff_theme($existing, $type, $theme, $path) {
     'user_list_template' => [
       'variables' => ['staff' => NULL]
     ],
+    'user_list_department_template' => [
+      'variables' => ['staff' => NULL]
+    ],
   ];
 }
 ?>

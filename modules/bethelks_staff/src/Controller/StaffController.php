@@ -1,5 +1,6 @@
 <?php
 namespace Drupal\bethelks_staff\Controller;
+
 use Drupal\Core\Url;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\Request;
@@ -73,8 +74,64 @@ class StaffController extends ControllerBase {
       $response = null;
     }
 
+    $categories = $connection->query('SELECT DISTINCT `category` FROM `bethelks_staff_category`')->fetchAllAssoc('category');
+
+    $clean = array();
+    foreach($categories as $key => $value) {
+      $temp = array('safe' => $key, 'clean' => str_replace("_", " ", $key));
+      array_push($clean, $temp);
+    }
+
+    $response['categories'] = $clean;
+
     return array(
       '#theme' => 'user_list_template',
+      '#staff' => $response
+    );
+  }
+
+  public function listStaffByDepartment(Request $request) {
+    $connection = \Drupal::service('database');
+    $response = array();
+    $response['department'] = $request->get('department');
+    $response['total'] = $connection->query('SELECT count(*) as number FROM `bethelks_staff_category` WHERE `category` = :department', array(':department' => $request->get('department')))->fetchAssoc()['number'];
+
+    if($response['total'] > 0) {
+      $retval = $connection->query('SELECT * FROM `bethelks_staff` INNER JOIN `bethelks_staff_category` ON `bethelks_staff`.`sid` = `bethelks_staff_category`.`staff_id` AND `bethelks_staff_category`.`category` = ?', array($response['department']))->fetchAllAssoc('sid');
+
+      $data = array();
+      foreach ($retval as &$dt) {
+        if ($dt->img != "") {
+          if(strpos($dt->img, ".jpg") != false) { //imported users from old site
+            $path = 'sites/default/files/staff-pictures/' . $dt->img;
+          }
+          else {
+            $file = \Drupal\file\Entity\File::load($dt->img);
+            $path = $file->getFileUri();
+          }
+        }
+        else {
+          $path = null;
+        }
+
+        array_push($data, array('name'=>$dt->name, 'sid'=>$dt->sid, 'img'=>$dt->img, 'path'=>$path, 'staff_catagory'=>$dt->staff_category, 'position'=>$dt->position, 'email'=>$dt->email, 'telephone'=>$dt->telephone));
+      }
+
+      $response['data'] = $data;
+    }
+
+    $categories = $connection->query('SELECT DISTINCT `category` FROM `bethelks_staff_category`')->fetchAllAssoc('category');
+
+    $clean = array();
+    foreach($categories as $key => $value) {
+      $temp = array('safe' => $key, 'clean' => str_replace("_", " ", $key));
+      array_push($clean, $temp);
+    }
+
+    $response['categories'] = $clean;
+
+    return array(
+      '#theme' => 'user_list_department_template',
       '#staff' => $response
     );
   }
@@ -86,6 +143,8 @@ class StaffController extends ControllerBase {
     $staffArray = array();
     $getStaff = $connection->query('SELECT * FROM `bethelks_staff`');
     while($row = $getStaff->fetchAssoc()) {
+      $getStaffCategory = $connection->query('SELECT `category` FROM `bethelks_staff_category` WHERE `staff_id` = :sid LIMIT 1', array(':sid' => $row["sid"]))->fetchAssoc();
+      $row["category"] = str_replace("_", " ", $getStaffCategory["category"]);
       array_push($staffArray, $row);
     }
 
@@ -180,6 +239,10 @@ class StaffController extends ControllerBase {
 
     if(!empty($getStaffName["name"])) return $getStaffName["name"];
     else return "Error";
+  }
+
+  public function staffByDepartmentTitle($department) {
+    return ucwords(str_replace("_", " ", $department));
   }
 
   public function editStaffTitle($sid) {

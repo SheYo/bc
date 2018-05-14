@@ -17,6 +17,16 @@ bethelks_staff.faculty:
   requirements:
     _access: 'TRUE'
 
+# Staff List
+bethelks_staff.faculty.department:
+  path: '/employee/department/{department}'
+  defaults:
+    _controller: '\Drupal\bethelks_staff\Controller\StaffController::listStaffByDepartment'
+    _title_callback: '\Drupal\bethelks_staff\Controller\StaffController::staffByDepartmentTitle'
+    department: 'cabinet'
+  requirements:
+    _access: 'TRUE'
+
 # Add Staff
 bethelks_staff.adminList.add:
   path: '/admin/content/bethelks_staff/add'
