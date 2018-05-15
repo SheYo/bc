@@ -45,10 +45,10 @@
   {% else %}
     {% if staff.categories %}
       <div class="col-12">
-        <p class="d-inline">Deparment: </p>
+        <p class="d-inline">Department: </p>
         <select class="filterCategory mt-3 mb-3" name="staffCategory">
           <option name="all" selected="selected">All departments</option>
-          {% for category in staff.categories %}
+          {% for category in staff.categories|sort %}
             <option name="{{ category.safe }}">{{ category.clean | title }}</option>
           {% endfor %}
         </select>
