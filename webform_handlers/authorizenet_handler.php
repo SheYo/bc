@@ -43,7 +43,7 @@ if(isset($_POST['credit_card_number']) &&
     $credit_card_code = $_POST['credit_card_code'];
     $order_description = $_POST['order_description'];
     $customer_email = $_POST['customer_email'];
-    $transaction_amount_usd = intval($_POST['transaction_amount_usd']);
+    $transaction_amount_usd = floatval($_POST['transaction_amount_usd']);
 
     /* Create a merchantAuthenticationType object with authentication details
        retrieved from the constants file */
