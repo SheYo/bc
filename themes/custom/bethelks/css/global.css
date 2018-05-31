@@ -4,6 +4,47 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 /* FONT CSS IMPORT END */
 
+
+/* TABLE OF CONTENTS
+
+1. General CSS rules & utility classes (15-52)
+2. Popout Menu (54-251)
+3. Event Carousel (253-319)
+4. Classy Paragraphs Styles (321-682)
+	a. Homepage Elements
+5. Webform CSS Rules (684-842)
+6. Views CSS Rules (844-998)
+	a. Featured Elements
+7. Header CSS Rules (1000-1250)
+	a. Navigation Styles
+	b. Dropdown
+	c. Toggle
+	d. Icon
+8. Prefooter & Footer CSS Rules (1252-1337)
+9. Blocks CSS (1339-1596)
+	a. Page Title
+	b. Media
+	c. Breadcrumbs
+	d. Page Banner
+	e. Page Content
+	f. Tasks List
+	g. Content
+	h. Article
+	i. Right Sidebar
+	j. Admin Tasks
+	k. Basic Page - 
+		1a. Header Basic Page Banner
+		1b. Dropdown Icon
+	 	1c. Right Sidebar
+		1d. Article or Page Video
+	l. Campus Map
+
+TABLE OF CONTENTS */
+	
+
+
+
+
 /* GENERAL CSS RULES && UTILITY CLASSES START */
 html {
   overflow-x:hidden;
