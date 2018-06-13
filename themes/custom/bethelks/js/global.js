@@ -88,11 +88,6 @@ jQuery(document).on('ready', function(){
         <a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/application"><i class="fa fa-check"></i></a>
         <a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/donor"><i class="fa fa-usd"></i></a>`);
   });
-
-  
-  
-  
-  
   
   jQuery('.rightSidebar-hook').find('nav').each(function(index){
     jQuery(this).find('a').on('click', function(e){
