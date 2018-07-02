@@ -84,7 +84,7 @@ jQuery(document).on('ready', function(){
   /* rightSidebar Start */
   jQuery('.rightSidebar-hook').each(function(index){
     jQuery(this).prepend('<div class="d-flex align-items-center justify-content-center innerStudentSteps"></div>');
-    jQuery(this).find('.innerStudentSteps').html(`<a class="d-flex align-items-center justify-content-center" href="https://engage.bethelks.edu/register/inquiry"><i class="fa-info-circle"></i>
+    jQuery(this).find('.innerStudentSteps').html(`<a class="d-flex align-items-center justify-content-center" href="https://engage.bethelks.edu/register/inquiry"><i class="fa fa-info-circle"></i>
         <a class="d-flex align-items-center justify-content-center" href="https://engage.bethelks.edu/portal/visit"><i class="fa fa-map-marker"></i></a>
         <a class="d-flex align-items-center justify-content-center" href="http://www.bethelks.edu/form/application"><i class="fa fa-check"></i></a>`);
   });
